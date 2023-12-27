@@ -1,22 +1,9 @@
-@media screen and (max-width: 400px) {
-  .header__main {
-    .header__container {
-      .header__logo {
-        a {
-          font-size: 22px;
-        }
-      }
-      nav {
-        ul {
-          li {
-            margin-left: 10px;
-          }
-        }
-      }
-    }
-  }
+@media screen and (max-width: 512px) {
   .current__content {
     padding: 40px;
+    h2 {
+      margin: 0 0 30px;
+    }
   }
   .search {
     padding: 40px 20px;
@@ -38,8 +25,26 @@
       margin: 30px 0 30px;
       div {
         img {
-          width: 330px;
+          width: 100%;
           margin-right: 0;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  .header__main {
+    .header__container {
+      .header__logo {
+        a {
+          font-size: 22px;
+        }
+      }
+      nav {
+        ul {
+          li {
+            margin-left: 10px;
+          }
         }
       }
     }
@@ -53,5 +58,4 @@
       }
     }
   }
-  //  elements
 }
