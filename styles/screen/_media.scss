@@ -1,4 +1,19 @@
 @media screen and (max-width: 512px) {
+  .header__main {
+    .header__container {
+      padding: 0 20px;
+      nav {
+        ul {
+          li {
+            margin-left: 10px;
+            a {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
   .current__content {
     padding: 40px;
     h2 {
@@ -31,6 +46,21 @@
       }
     }
   }
+  .footer__main {
+    .footer__container {
+      padding: 0 20px;
+      .footer__logo {
+        span {
+          font-size: 14px;
+        }
+        .footer__logo_item {
+          img {
+            width: 50px;
+          }
+        }
+      }
+    }
+  }
 }
 @media screen and (max-width: 400px) {
   .header__main {
@@ -44,6 +74,9 @@
         ul {
           li {
             margin-left: 10px;
+            a {
+              font-size: 16px;
+            }
           }
         }
       }
@@ -53,7 +86,12 @@
     .footer__container {
       .footer__logo {
         span {
-          font-size: 22px;
+          font-size: 12px;
+        }
+        .footer__logo_item {
+          img {
+            width: 40px;
+          }
         }
       }
     }
