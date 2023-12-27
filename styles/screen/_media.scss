@@ -1,0 +1,15 @@
+@media screen and (max-width: 512px) {
+  .search {
+    padding: 40px 20px;
+    margin-bottom: 0;
+    .search__container {
+      .search__form {
+        .search__switcher {
+          input[type="radio"] {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}
