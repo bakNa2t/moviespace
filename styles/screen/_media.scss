@@ -1,4 +1,20 @@
-@media screen and (max-width: 512px) {
+@media screen and (max-width: 400px) {
+  .header__main {
+    .header__container {
+      .header__logo {
+        a {
+          font-size: 22px;
+        }
+      }
+      nav {
+        ul {
+          li {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
   .search {
     padding: 40px 20px;
     margin-bottom: 0;
@@ -12,4 +28,14 @@
       }
     }
   }
+  .footer__main {
+    .footer__container {
+      .footer__logo {
+        span {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+  //  elements
 }
