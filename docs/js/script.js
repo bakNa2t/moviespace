@@ -371,7 +371,7 @@ function displayBackgroundImage(type, backgroundPath) {
   imageDiv.style.top = "0";
   imageDiv.style.left = "0";
   imageDiv.style.zIndex = "-1";
-  imageDiv.style.opacity = "0.2";
+  imageDiv.style.opacity = "0.35";
 
   if (type === "movie") {
     document.querySelector("#movie__details").appendChild(imageDiv);
