@@ -308,7 +308,9 @@ a {
   padding: 20px 0;
   margin-top: 20px;
   .footer__container {
-    padding: 0 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
