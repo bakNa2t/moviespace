@@ -73,7 +73,10 @@
     .header__container {
       .header__logo {
         a {
-          font-size: 22px;
+          font-size: 20px;
+          span {
+            font-size: 28px;
+          }
         }
       }
       nav {
