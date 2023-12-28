@@ -478,6 +478,12 @@ function displayNavLinkActive() {
   });
 }
 
+// Return to the top of the page
+function moveToTheTopBtn() {
+  document.body.top = 0;
+  document.documentElement.scrollTop = 0;
+}
+
 // Separete big numbers with comma
 function separeteNumberWithComma(number) {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -531,6 +537,9 @@ function init() {
   }
 
   displayNavLinkActive();
+  document
+    .querySelector(".btn__top")
+    .addEventListener("click", moveToTheTopBtn);
 }
 
 document.addEventListener("DOMContentLoaded", init);
