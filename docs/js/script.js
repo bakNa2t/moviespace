@@ -478,6 +478,19 @@ function displayNavLinkActive() {
   });
 }
 
+// Hide Btn to top when scroll
+function displayToTheTopBtn() {
+  const toTheTopBtn = document.querySelector(".btn__top");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 500) {
+      toTheTopBtn.style.opacity = 1;
+    } else {
+      toTheTopBtn.style.opacity = 0;
+    }
+  });
+}
+
 // Return to the top of the page
 function moveToTheTopBtn() {
   document.body.top = 0;
@@ -537,9 +550,12 @@ function init() {
   }
 
   displayNavLinkActive();
+
   document
     .querySelector(".btn__top")
     .addEventListener("click", moveToTheTopBtn);
+
+  displayToTheTopBtn();
 }
 
 document.addEventListener("DOMContentLoaded", init);

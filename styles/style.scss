@@ -416,13 +416,12 @@ a {
   align-items: center;
   font-size: 20px;
   color: var(--secondary-color);
-  opacity: 0.6;
+  opacity: 0;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
   &:hover {
     transform: translateY(-5px);
     color: #fff;
-    opacity: 1;
     border: 1px solid var(--secondary-color);
     box-shadow: 0 0 3px 1px var(--secondary-color);
     transition: all 0.4s ease-in-out;
