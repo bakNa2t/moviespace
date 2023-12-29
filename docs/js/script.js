@@ -1,4 +1,4 @@
-const apiAccessToken = "3fd2be6f0c70a2a598f084ddfb75487c";
+import apiAccessToken from "./api.js";
 
 // display slider movies
 const globalPathName = {
@@ -525,26 +525,25 @@ function displayAlert(message, className = "alert-error") {
 //Initialize App with routes
 function init() {
   switch (globalPathName.currentPage) {
-    case "/docs/":
-    case "/docs/index.html":
+    case "/":
+    case "/index.html":
       //   console.log("Home");
       displayNowWatchingMoviesSlider();
       displayMostWatchedMovies();
       break;
-    case "/docs/pages/tv-shows.html":
+    case "/pages/tv-shows.html":
       // console.log("TV Shows");
       displayMostWatchedTVShoes();
       break;
-    case "/docs/pages/movie-details.html":
+    case "/pages/movie-details.html":
       // console.log("Movie Details");
       displayMovieDetails();
       break;
-    case "/docs/pages/tv-details.html": //change to "tv-details"
+    case "/pages/tv-details.html": //change to "tv-details"
       // console.log("TV Show Details");
       displayTVShowDetails();
       break;
-    case "/docs/pages/search-result.html":
-      console.log("Search");
+    case "/pages/search-result.html":
       searchContent();
       break;
   }
