@@ -50,8 +50,9 @@ a {
 }
 
 .active {
+  border-bottom: 2px solid var(--secondary-color);
   color: var(--secondary-color);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .back {
@@ -121,6 +122,9 @@ a {
           color: var(--secondary-color);
           text-shadow: 0 0 4px var(--secondary-color);
           -webkit-text-stroke: 0.025rem #e4ffff;
+          -moz-text-stroke: 0.025rem #e4ffff;
+          -ms-text-stroke: 0.025rem #e4ffff;
+          -o-text-stroke: 0.025rem #e4ffff;
         }
       }
     }
@@ -132,6 +136,7 @@ a {
           a {
             position: relative;
             font-size: 20px;
+            padding-bottom: 3px;
             transition: all 0.4s ease-in-out;
             &::after {
               content: "";
@@ -140,7 +145,7 @@ a {
               height: 2px;
               width: 0;
               left: 0;
-              bottom: -5px;
+              bottom: -2px;
               transition: all 0.4s ease-in-out;
             }
             &:hover::after {
