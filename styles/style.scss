@@ -130,8 +130,23 @@ a {
         li {
           margin-left: 20px;
           a {
+            position: relative;
             font-size: 20px;
             transition: all 0.4s ease-in-out;
+            &::after {
+              content: "";
+              position: absolute;
+              background-color: var(--secondary-color);
+              height: 2px;
+              width: 0;
+              left: 0;
+              bottom: -5px;
+              transition: all 0.4s ease-in-out;
+            }
+            &:hover::after {
+              width: 100%;
+              transition: all 0.4s ease-in-out;
+            }
             &:hover {
               color: var(--secondary-color);
               transition: all 0.4s ease-in-out;
@@ -160,7 +175,7 @@ a {
   h2 {
     position: relative;
     z-index: 2;
-    font-size: 24px;
+    font-size: 28px;
     margin: 20px 0;
     text-align: center;
     text-transform: uppercase;
