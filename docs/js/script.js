@@ -1,4 +1,4 @@
-import apiAccessToken from "./api.js";
+const apiAccessToken = "3fd2be6f0c70a2a598f084ddfb75487c";
 
 // display slider movies
 const globalPathName = {
