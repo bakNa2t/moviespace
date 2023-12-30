@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import "./abstracts/mixins";
 @import "./components/spinner";
 
 *,
@@ -28,8 +29,9 @@ body {
   font-size: 16px;
   font-family: "Rubik", sans-serif;
   color: #fff;
-  background: var(--primary-color);
+  // background: var(--primary-color);
   overflow-x: hidden;
+  @include backgroundImg;
 }
 
 // default styles
