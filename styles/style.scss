@@ -19,6 +19,7 @@
   // --secondary-color: #f1c40f;
   --secondary-color: #bf94e4;
   --light-color: #e4ffff;
+  --text-color-yellow-light: #f1c40f99;
 }
 
 html {
@@ -224,6 +225,15 @@ a {
         }
         .swiper__rating {
           padding: 10px;
+          .fa-star {
+            &::before {
+              text-shadow: 0 0 4px var(--text-color-yellow-light);
+              -webkit-text-stroke: 0.05rem var(--text-color-yellow-light);
+              -moz-text-stroke: 0.05rem var(--text-color-yellow-light);
+              -ms-text-stroke: 0.05rem var(--text-color-yellow-light);
+              -o-text-stroke: 0.05rem var(--text-color-yellow-light);
+            }
+          }
         }
       }
     }
