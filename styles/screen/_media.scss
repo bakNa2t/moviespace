@@ -27,11 +27,18 @@
     .search__container {
       .search__form {
         .search__switcher {
+          width: fit-content;
+          margin: 0 auto;
           input[type="radio"] {
             margin-bottom: 10px;
           }
         }
       }
+    }
+  }
+  .popular__container {
+    h2 {
+      font-size: 22px;
     }
   }
   .content__details {
