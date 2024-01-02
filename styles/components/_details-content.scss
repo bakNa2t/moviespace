@@ -1,0 +1,34 @@
+.details__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px 0 30px;
+  img {
+    width: 400px;
+    height: 100%;
+    margin-right: 60px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  p {
+    margin: 20px 0;
+  }
+  .btn {
+    margin-top: 20px;
+  }
+}
+.details__bottom {
+  h2 {
+    margin: 20px 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  ul {
+    li {
+      margin: 15px 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #fff;
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
