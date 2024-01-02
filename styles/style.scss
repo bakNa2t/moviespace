@@ -5,6 +5,7 @@
 @import "./components/header";
 @import "./components/current-content";
 @import "./components/search";
+@import "./components/popular-content";
 @import "./components/details-content";
 @import "./components/footer";
 
@@ -131,37 +132,6 @@ a {
 }
 
 //  === Popular content
-.popular__container {
-  h2 {
-    font-size: 28px;
-    margin: 20px 0;
-    text-align: center;
-    text-transform: uppercase;
-    text-shadow: 0 0 3px var(--light-color);
-  }
-  .card {
-    // background: #04376b;
-    background: #9678b6;
-    padding: 5px;
-    border-radius: 3px;
-    transition: all 0.4s ease-in-out;
-    img {
-      width: 100%;
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px;
-    }
-    .card-body {
-      padding: 10px;
-      font-size: 20px;
-    }
-    &:hover {
-      transform: translate(3px, -5px); //new
-      background: #7851a9;
-      box-shadow: var(--box-shadow-card-img);
-      transition: all 0.4s ease-in-out;
-    }
-  }
-}
 
 // === Footer
 
