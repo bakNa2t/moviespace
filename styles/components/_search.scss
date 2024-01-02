@@ -1,0 +1,70 @@
+.search {
+  padding: 60px;
+  margin-bottom: 40px;
+  .search__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      margin-bottom: 20px;
+    }
+    .search__form {
+      width: 100%;
+      max-width: 600px;
+      .search__switcher {
+        input[type="radio"] {
+          margin-bottom: 20px;
+        }
+        label {
+          margin-right: 25px;
+        }
+      }
+      .search__flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+        input[type="text"] {
+          flex: 6;
+          width: 100%;
+          height: 50px;
+          color: #fff;
+          padding: 10px;
+          margin-right: 10px;
+          font-size: 16px;
+          border-radius: 5px;
+          border: 1px solid #fff;
+          background: transparent;
+          transition: all 0.4s ease-in-out;
+          &::placeholder {
+            font-size: 16px;
+            color: rgba(254, 255, 255, 0.4);
+          }
+          &:focus {
+            border: 1px solid var(--secondary-color);
+            box-shadow: 0 0 5px var(--secondary-color);
+            outline: none;
+            transition: all 0.4s ease-in-out;
+          }
+        }
+        button {
+          flex: 1;
+          display: block;
+          width: 100%;
+          height: 50px;
+          padding: 10px;
+          color: var(--primary-color);
+          cursor: pointer;
+          border-radius: 5px;
+          background: var(--secondary-color);
+          &:hover {
+            color: var(--secondary-color);
+            background: transparent;
+            box-shadow: 0 0 5px var(--secondary-color);
+          }
+        }
+      }
+    }
+  }
+}
