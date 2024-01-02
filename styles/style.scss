@@ -5,6 +5,7 @@
 @import "./components/header";
 @import "./components/current-content";
 @import "./components/details-content";
+@import "./components/footer";
 
 *,
 *::after,
@@ -232,53 +233,6 @@ a {
 }
 
 // === Footer
-.footer__main {
-  @include backgroundComponent;
-  padding: 10px 0;
-  margin-top: 20px;
-  .footer__container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .footer__logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      span {
-        color: var(--primary-color);
-        font-size: 20px;
-        font-weight: 700;
-      }
-      .footer__logo_item {
-        filter: grayscale(100%);
-        transition: all 0.4s ease-in-out;
-        img {
-          width: 70px;
-        }
-        &:hover {
-          filter: grayscale(0%);
-          transform: translateY(-5px);
-          transition: all 0.4s ease-in-out;
-        }
-      }
-    }
-    .social__links {
-      display: flex;
-      font-size: 25px;
-      a {
-        margin-left: 20px;
-        color: #fff;
-        &:hover {
-          color: var(--secondary-color);
-        }
-      }
-    }
-  }
-}
 
 //=== Content details
 
