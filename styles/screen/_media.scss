@@ -2,6 +2,11 @@
   .header__main {
     .header__container {
       padding: 0 20px;
+      .header__logo {
+        &:hover {
+          letter-spacing: 3px;
+        }
+      }
       nav {
         ul {
           li {
@@ -85,6 +90,9 @@
           span {
             font-size: 28px;
           }
+        }
+        &:hover {
+          letter-spacing: 2px;
         }
       }
       nav {
