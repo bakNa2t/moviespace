@@ -1,10 +1,36 @@
 .popular__container {
   h2 {
-    font-size: 28px;
+    font-size: 32px;
     margin: 20px 0;
     text-align: center;
     text-transform: uppercase;
-    text-shadow: 0 0 3px var(--light-color);
+    // === animation linear gradient
+    --bg-size: 400%;
+    --color-one: #5a2a80;
+    --color-two: #e4ffff;
+    --color-three: #bf94e4;
+    font-weight: 700;
+    background: linear-gradient(
+        135deg,
+        var(--color-one),
+        var(--color-two),
+        var(--color-three),
+        var(--color-two),
+        var(--color-one)
+      )
+      0 0 / var(--bg-size) 100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animateBgColor 13s linear infinite;
+    -webkit-animation: animateBgColor 13s linear infinite;
+
+    @keyframes animateBgColor {
+      to {
+        background-position: var(--bg-size) 0;
+      }
+    }
   }
   .card {
     // background: #04376b;
