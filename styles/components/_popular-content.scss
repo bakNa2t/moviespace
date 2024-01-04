@@ -35,7 +35,7 @@
   .card {
     // background: #04376b;
     background: #9678b6;
-    padding: 5px;
+    padding: 3px;
     border-radius: 3px;
     transition: all 0.4s ease-in-out;
     img {
@@ -46,7 +46,17 @@
     .card-body {
       padding: 10px;
       font-size: 20px;
+      .card-title {
+        color: var(--text-color);
+        text-shadow: 0 0 1px var(--light-color);
+      }
+      .card-text {
+        .text-muted {
+          color: var(--primary-color-light);
+        }
+      }
     }
+
     &:hover {
       transform: translate(3px, -5px); //new
       background: #7851a9;
