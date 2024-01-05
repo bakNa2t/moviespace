@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 @import "./abstracts/mixins";
+@import "./abstracts/colors";
 @import "./components/spinner";
 @import "./components/header";
 @import "./components/current-content";
@@ -15,27 +16,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-
-:root {
-  // --primary-color: #020d18;
-  --primary-color: #4c516d;
-  // --primary-color-light: rgba(2, 13, 24, 0.8);
-  --primary-color-light: rgba(76, 81, 109, 0.8);
-  // --secondary-color: #f1c40f;
-  --secondary-color: #bf94e4;
-  --light-color: #a4f4f9;
-  --text-color: #e8ccd7;
-  --text-color-yellow-light: #f1c40f99;
-  // --box-shadow for card img
-  --box-shadow-card-img: -1px 1px 0 0px rgba(150, 120, 182, 0.8),
-    -2px 2px 0 0px rgba(150, 120, 182, 0.7),
-    -3px 3px 0 0px rgba(150, 120, 182, 0.6),
-    -4px 4px 0 0px rgba(150, 120, 182, 0.5),
-    -5px 5px 0 0px rgba(150, 120, 182, 0.4),
-    -6px 6px 0 0px rgba(150, 120, 182, 0.35),
-    -7px 7px 0 0px rgba(150, 120, 182, 0.25),
-    -8px 8px 0 0px rgba(150, 120, 182, 0.2);
 }
 
 html {
