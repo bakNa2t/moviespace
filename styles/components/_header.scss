@@ -47,6 +47,17 @@
             font-size: 22px;
             padding-bottom: 3px;
             transition: all 0.4s ease-in-out;
+            span {
+              font-size: 30px;
+              margin-right: 3px;
+              font-family: "Permanent Marker", cursive;
+              color: var(--secondary-color);
+              text-shadow: 0 0 4px var(--secondary-color);
+              -webkit-text-stroke: 0.025rem var(--light-color);
+              -moz-text-stroke: 0.025rem var(--light-color);
+              -ms-text-stroke: 0.025rem var(--light-color);
+              -o-text-stroke: 0.025rem var(--light-color);
+            }
             &::after {
               content: "";
               position: absolute;
