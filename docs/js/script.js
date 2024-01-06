@@ -43,7 +43,9 @@ async function displayMostWatchedMovies() {
     <div class="card-body">
       <h5 class="card-title">${movie.title}</h5>
       <p class="card-text">
-        <small class="text-muted">Release date: ${movie.release_date}</small>
+        <small class="text-muted">Release date: <span>${
+          movie.release_date
+        }</span></small>
       </p>
     </div>`;
 
@@ -78,7 +80,9 @@ async function displayMostWatchedTVShoes() {
     <div class="card-body">
       <h5 class="card-title">${show.name}</h5>
       <p class="card-text">
-        <small class="text-muted">Release date: ${show.first_air_date}</small>
+        <small class="text-muted">Release date: <span>${
+          show.first_air_date
+        }</span></small>
       </p>
     </div>`;
 
