@@ -118,7 +118,9 @@ alt="${movieDetail.title}"
     <p><i class="fas fa-star text-primary"></i> ${movieDetail.vote_average.toFixed(
       1
     )} / 10</p>
-    <p class="text__muted">Release date: ${movieDetail.release_date}</p>
+    <p class="text__muted"><span class="text-secondary">Release date:</span> ${
+      movieDetail.release_date
+    }</p>
     <p>
       ${movieDetail.overview}
     </p>
@@ -145,7 +147,7 @@ alt="${movieDetail.title}"
     } minutes</li>
     <li><span class="text-secondary">Staus:</span> ${movieDetail.status}</li>
   </ul>
-  <h4>Production Companies</h4>
+  <h4 class="text-secondary">Production Companies:</h4>
   <div class="list__group">${movieDetail.production_companies
     .map((company) => `<span>${company.name}</span>`)
     .join(", ")}</div>
@@ -188,7 +190,9 @@ alt="${showDetail.name}"
     <p><i class="fas fa-star text-primary"></i> ${showDetail.vote_average.toFixed(
       1
     )} / 10</p>
-    <p class="text__muted">Last air date: ${showDetail.last_air_date}</p>
+    <p class="text__muted"><span class="text-secondary">Last air date:</span> ${
+      showDetail.last_air_date
+    }</p>
     <p>
       ${showDetail.overview}
     </p>
@@ -215,7 +219,7 @@ alt="${showDetail.name}"
     }</li>
     <li><span class="text-secondary">Staus:</span> ${showDetail.status}</li>
   </ul>
-  <h4>Production Companies</h4>
+  <h4 class="text-secondary">Production Companies</h4>
   <div class="list__group">${showDetail.production_companies
     .map((company) => `<span>${company.name}</span>`)
     .join(", ")}</div>
