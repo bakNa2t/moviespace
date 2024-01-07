@@ -1,3 +1,10 @@
+.back {
+  .btn {
+    &:hover {
+      box-shadow: 0 0 4px var(--secondary-color);
+    }
+  }
+}
 .details__top {
   display: flex;
   justify-content: space-between;
@@ -16,6 +23,9 @@
   }
   .btn {
     margin-top: 20px;
+    &:hover {
+      box-shadow: 0 0 4px var(--secondary-color);
+    }
   }
 }
 .details__bottom {
