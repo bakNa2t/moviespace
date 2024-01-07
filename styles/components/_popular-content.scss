@@ -48,13 +48,15 @@
       font-size: 20px;
       .card-title {
         color: var(--text-color);
-        text-shadow: 0 0 1px var(--light-color);
+        text-shadow: 0 0 2px var(--light-color);
       }
       .card-text {
         .text-muted {
           color: var(--primary-color-light);
+          text-shadow: 0 0 1px var(--light-color);
           span {
-            color: var(--light-color);
+            color: var(--text-color);
+            text-shadow: 0 0 2px var(--light-color);
           }
         }
       }
