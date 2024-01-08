@@ -12,7 +12,10 @@
           li {
             margin-left: 10px;
             a {
-              font-size: 20px;
+              font-size: 18px;
+              span {
+                font-size: 26px;
+              }
             }
           }
         }
@@ -23,7 +26,7 @@
     padding: 40px;
     h2 {
       font-size: 26px;
-      margin: 0 0 30px;
+      margin: 0 auto 30px;
     }
   }
   .search {
@@ -100,7 +103,10 @@
           li {
             margin-left: 10px;
             a {
-              font-size: 16px;
+              font-size: 13px;
+              span {
+                font-size: 23px;
+              }
             }
           }
         }
