@@ -12,10 +12,11 @@
     background: rgba(0, 0, 0, 0.7);
   }
   h2 {
+    width: fit-content;
     position: relative;
     z-index: 2;
     font-size: 32px;
-    margin: 20px 0;
+    margin: 20px auto;
     text-align: center;
     text-transform: uppercase;
     // === animation linear gradient
