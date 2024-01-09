@@ -1,4 +1,10 @@
 import apiAccessToken from "./api.js";
+import {
+  displaySpinner,
+  hideSpinner,
+  displayToTheTopBtn,
+  moveToTheTopBtn,
+} from "./supportFunctions.js";
 
 // display slider movies
 const globalPathName = {
@@ -486,38 +492,9 @@ function displayNavLinkActive() {
   });
 }
 
-// Hide Btn to top when scroll
-function displayToTheTopBtn() {
-  const toTheTopBtn = document.querySelector(".btn__top");
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 500) {
-      toTheTopBtn.style.opacity = 1;
-    } else {
-      toTheTopBtn.style.opacity = 0;
-    }
-  });
-}
-
-// Return to the top of the page
-function moveToTheTopBtn() {
-  document.body.top = 0;
-  document.documentElement.scrollTop = 0;
-}
-
 // Separete big numbers with comma
 function separeteNumberWithComma(number) {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-// Display spinner
-function displaySpinner() {
-  document.querySelector(".spinner").classList.add("show");
-}
-
-// Hide spinner
-function hideSpinner() {
-  document.querySelector(".spinner").classList.remove("show");
 }
 
 // Display Alert message
