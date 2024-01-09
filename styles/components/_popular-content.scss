@@ -1,7 +1,10 @@
 .popular__container {
   h2 {
+    position: relative;
+    width: fit-content;
     font-size: 32px;
-    margin: 20px 0;
+    margin: 0 auto 40px;
+    padding: 3px 0;
     text-align: center;
     text-transform: uppercase;
     // === animation linear gradient
@@ -30,6 +33,15 @@
       to {
         background-position: var(--bg-size) 0;
       }
+    }
+
+    &::before {
+      @include lineHeading;
+      top: 0;
+    }
+    &::after {
+      @include lineHeading;
+      bottom: 0;
     }
   }
   .card {

@@ -34,7 +34,7 @@
           margin-right: 10px;
           font-size: 16px;
           border-radius: 5px;
-          border: 1px solid #fff;
+          border: 1px solid var(--light-color);
           background: transparent;
           transition: all 0.4s ease-in-out;
           &::placeholder {
@@ -59,7 +59,7 @@
           border-radius: 5px;
           background: var(--secondary-color);
           &:hover {
-            color: var(--secondary-color);
+            color: var(--light-color);
             background: transparent;
             box-shadow: 0 0 5px var(--secondary-color);
           }
