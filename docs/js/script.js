@@ -325,7 +325,7 @@ function displaySearchResults(results) {
 
     document.querySelector(
       "#search-results-heading"
-    ).innerHTML = `<h2>${results.length} of ${globalPathName.searchResult.totalResults} Results for ${globalPathName.searchResult.term}</h2>`;
+    ).innerHTML = `<div><span>${results.length}</span> of <span>${globalPathName.searchResult.totalResults}</span> Results for <span>${globalPathName.searchResult.term}</span></div>`;
 
     document.querySelector("#search__content").appendChild(elemDiv);
   });
