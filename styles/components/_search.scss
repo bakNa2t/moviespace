@@ -14,7 +14,7 @@
       max-width: 600px;
       .search__switcher {
         display: flex;
-        justify-content: center;
+        align-items: center;
         input[type="radio"] {
           margin-bottom: 20px;
           -webkit-appearance: none;
