@@ -461,6 +461,16 @@ async function displayNowWatchingMoviesSlider() {
   });
 }
 
+// Display nav link active after click
+function displayNavLinkActive() {
+  const navLinks = document.querySelectorAll(".nav__link");
+  navLinks.forEach((link) => {
+    if (link.getAttribute("href") === globalPathName.currentPage) {
+      link.classList.add("active");
+    }
+  });
+}
+
 //Initialize App with routes
 function init() {
   switch (globalPathName.currentPage) {

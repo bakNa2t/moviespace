@@ -32,16 +32,6 @@ export function separeteNumberWithComma(number) {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-// Display nav link active after click
-export function displayNavLinkActive() {
-  const navLinks = document.querySelectorAll(".nav__link");
-  navLinks.forEach((link) => {
-    if (link.getAttribute("href") === globalPathName.currentPage) {
-      link.classList.add("active");
-    }
-  });
-}
-
 // Display Alert message of empty search or not found
 export function displayAlert(message, className = "alert-error") {
   const alertElement = document.createElement("div");
