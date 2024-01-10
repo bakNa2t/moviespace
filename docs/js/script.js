@@ -8,6 +8,7 @@ import {
   displayNavLinkActive,
   displayAlert,
 } from "./supportFunctions.js";
+import { initSwiper } from "./swiper.js"; //Sliding with swiper
 
 // display slider movies
 const globalPathName = {
@@ -460,31 +461,6 @@ async function displayNowWatchingMoviesSlider() {
   });
 }
 
-// Init swiper plugin
-function initSwiper() {
-  const swiper = new Swiper(".swiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    freeMode: true,
-    loop: true,
-    autoplay: {
-      delau: 4000,
-      disableOnInteraction: false,
-    },
-    breakpoints: {
-      500: {
-        slidesPerView: 2,
-      },
-      700: {
-        slidesPerView: 3,
-      },
-      1200: {
-        slidesPerView: 5,
-      },
-    },
-  });
-}
-
 //Initialize App with routes
 function init() {
   switch (globalPathName.currentPage) {
@@ -502,8 +478,7 @@ function init() {
       // console.log("Movie Details");
       displayMovieDetails();
       break;
-    case "/pages/tv-details.html": //change to "tv-details"
-      // console.log("TV Show Details");
+    case "/pages/tv-details.html":
       displayTVShowDetails();
       break;
     case "/pages/search-result.html":
