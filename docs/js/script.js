@@ -5,7 +5,6 @@ import {
   displayToTheTopBtn,
   moveToTheTopBtn,
   separeteNumberWithComma,
-  displayNavLinkActive,
   displayAlert,
 } from "./supportFunctions.js";
 import { initSwiper } from "./swiper.js"; //Sliding with swiper
