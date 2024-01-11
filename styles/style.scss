@@ -73,7 +73,8 @@ a {
 
 .btn:hover {
   background: var(--secondary-color);
-  color: #000;
+  color: var(--primary-color);
+  box-shadow: 0 0 5px var(--secondary-color);
 }
 
 .btn:disabled {
@@ -84,6 +85,7 @@ a {
 .btn:disabled:hover {
   background: transparent;
   color: #fff;
+  box-shadow: none;
 }
 
 .container {
