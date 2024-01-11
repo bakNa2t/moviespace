@@ -50,7 +50,9 @@ async function displayMostWatchedMovies() {
       }
     </a>
     <div class="card-body">
-      <h5 class="card-title">${movie.title}</h5>
+      <h5 class="card-title">
+        <a href="pages/movie-details.html?id=${movie.id}">${movie.title}</a>
+      </h5>
       <p class="card-text">
         <small class="text-muted">Release date: <span>${
           movie.release_date
@@ -87,7 +89,9 @@ async function displayMostWatchedTVShoes() {
       }
     </a>
     <div class="card-body">
-      <h5 class="card-title">${show.name}</h5>
+      <h5 class="card-title">
+        <a href="tv-details.html?id=${show.id}">${show.name}</a>
+      </h5>
       <p class="card-text">
         <small class="text-muted">Air date: <span>${
           show.first_air_date

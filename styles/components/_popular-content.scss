@@ -61,6 +61,15 @@
       .card-title {
         color: var(--text-color);
         text-shadow: 0 0 2px var(--light-color);
+        a {
+          border-bottom: 2px solid transparent;
+          transition: all 0.4s ease-in-out;
+          &:hover {
+            border-bottom: 2px solid var(--secondary-color);
+            text-shadow: 0 0 4px var(--text-color);
+            transition: all 0.4s ease-in-out;
+          }
+        }
       }
       .card-text {
         .text-muted {
