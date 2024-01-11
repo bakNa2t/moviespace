@@ -309,21 +309,25 @@ function displaySearchResults(results) {
       }
     </a>
     <div class="card-body">
-      <h5 class="card-title">${
+      <h5 class="card-title"><a href="${
+        globalPathName.searchResult.type
+      }-details.html?id=${result.id}">
+      ${
         globalPathName.searchResult.type === "movie"
           ? result.title
           : result.name
-      }</h5>
+      }</a>
+      </h5>
       <p class="card-text">
         <small class="text-muted">${
           globalPathName.searchResult.type === "movie"
             ? "Release date"
             : "First air date"
-        }: ${
+        }: <span>${
       globalPathName.searchResult.type === "movie"
         ? result.release_date
         : result.first_air_date
-    }</small>
+    }</span></small>
       </p>
     </div>`;
 
