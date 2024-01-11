@@ -27,6 +27,12 @@ export function moveToTheTopBtn() {
   document.documentElement.scrollTop = 0;
 }
 
+// Add "click" event listeners to move-to-the-top button
+export function clickMoveToTheTopBtn() {
+  const moveUp = document.querySelector(".btn__top");
+  moveUp.addEventListener("click", moveToTheTopBtn);
+}
+
 // Separete big numbers with comma
 export function separeteNumberWithComma(number) {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

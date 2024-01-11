@@ -3,7 +3,7 @@ import {
   displaySpinner,
   hideSpinner,
   displayToTheTopBtn,
-  moveToTheTopBtn,
+  clickMoveToTheTopBtn,
   separeteNumberWithComma,
   displayAlert,
 } from "./supportFunctions.js";
@@ -483,16 +483,17 @@ function init() {
   switch (globalPathName.currentPage) {
     case "/":
     case "/index.html":
-      //   console.log("Home");
       displayNowWatchingMoviesSlider();
       displayMostWatchedMovies();
+      displayToTheTopBtn();
+      clickMoveToTheTopBtn();
       break;
     case "/pages/tv-shows.html":
-      // console.log("TV Shows");
       displayMostWatchedTVShoes();
+      displayToTheTopBtn();
+      clickMoveToTheTopBtn();
       break;
     case "/pages/movie-details.html":
-      // console.log("Movie Details");
       displayMovieDetails();
       break;
     case "/pages/tv-details.html":
@@ -500,16 +501,12 @@ function init() {
       break;
     case "/pages/search-result.html":
       searchContent();
+      displayToTheTopBtn();
+      clickMoveToTheTopBtn();
       break;
   }
 
   displayNavLinkActive();
-
-  document
-    .querySelector(".btn__top")
-    .addEventListener("click", moveToTheTopBtn);
-
-  displayToTheTopBtn();
 }
 
 document.addEventListener("DOMContentLoaded", init);
