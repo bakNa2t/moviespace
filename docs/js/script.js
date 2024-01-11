@@ -333,7 +333,7 @@ function displaySearchResults(results) {
 
     document.querySelector(
       "#search-results-heading"
-    ).innerHTML = `<div><span>${results.length}</span> of <span>${globalPathName.searchResult.totalResults}</span> Results for <span>${globalPathName.searchResult.term}</span></div>`;
+    ).innerHTML = `<div><span>${results.length}</span> of <span>${globalPathName.searchResult.totalResults}</span> Results for <span><em>"${globalPathName.searchResult.term}"</em></span></div>`;
 
     document.querySelector("#search__content").appendChild(elemDiv);
   });
