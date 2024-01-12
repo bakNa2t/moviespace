@@ -1,4 +1,4 @@
-import apiAccessToken from "./api.js";
+import globalPathName from "./globalParam.js";
 import {
   displaySpinner,
   hideSpinner,
@@ -8,22 +8,6 @@ import {
   displayAlert,
 } from "./supportFunctions.js";
 import { initSwiper } from "./swiper.js"; //Sliding with swiper
-
-// display slider movies
-const globalPathName = {
-  currentPage: window.location.pathname,
-  searchResult: {
-    term: "",
-    type: "",
-    page: 1,
-    totalPages: 0,
-    totalResults: 0,
-  },
-  api: {
-    apiKey: apiAccessToken,
-    apiUrl: "https://api.themoviedb.org/3/",
-  },
-};
 
 //Display 20 most watched Movies
 async function displayMostWatchedMovies() {
