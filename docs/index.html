@@ -72,12 +72,18 @@
               <label for="tv">TV Shows</label>
             </div>
             <div class="search__flex">
-              <input
-                type="text"
-                id="search__term"
-                name="search__term"
-                placeholder="Enter search term"
-              />
+              <div class="input__form">
+                <input
+                  type="text"
+                  id="search__term"
+                  name="search__term"
+                  autocomplete="off"
+                  placeholder
+                />
+                <label for="search__term" class="label__form"
+                  ><em>Enter search term</em></label
+                >
+              </div>
               <button class="btn" type="submit">
                 <i class="fas fa-search fa-2x"></i>
               </button>

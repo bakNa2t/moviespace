@@ -57,27 +57,61 @@
         justify-content: space-between;
         align-items: center;
         margin-top: 10px;
-        input[type="text"] {
-          flex: 6;
-          width: 100%;
+        .input__form {
+          position: relative;
+          width: 500px;
           height: 50px;
-          color: #fff;
-          padding: 10px;
-          margin-right: 10px;
-          font-size: 16px;
-          border-radius: 5px;
-          border: 1px solid var(--light-color);
-          background: transparent;
           transition: all 0.4s ease-in-out;
-          &::placeholder {
+          input[type="text"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            flex: 6;
+            width: 100%;
+            height: 50px;
+            color: #fff;
+            padding: 10px;
+            margin-right: 10px;
             font-size: 16px;
-            color: rgba(254, 255, 255, 0.4);
-          }
-          &:focus {
-            border: 1px solid var(--secondary-color);
-            box-shadow: 0 0 5px var(--secondary-color);
-            outline: none;
+            border-radius: 5px;
+            border: 1px solid var(--light-color);
+            background: transparent;
             transition: all 0.4s ease-in-out;
+            &:focus {
+              border: 1px solid var(--secondary-color);
+              box-shadow: 0 0 5px var(--secondary-color);
+              outline: none;
+              transition: all 0.4s ease-in-out;
+            }
+            &:focus ~ .label__form {
+              top: -8px;
+              left: 14px;
+              font-size: 12px;
+              padding: 1px 3px;
+              border-radius: 3px;
+              color: var(--primary-color);
+              background-color: var(--secondary-color);
+              z-index: 10;
+              transition: all 0.4s ease-in-out;
+            }
+            &:not(:placeholder-shown) ~ .label__form {
+              top: -8px;
+              left: 14px;
+              font-size: 12px;
+              padding: 2px 4px;
+              border-radius: 3px;
+              color: var(--primary-color);
+              background-color: var(--secondary-color);
+              z-index: 10;
+              transition: all 0.4s ease-in-out;
+            }
+          }
+          .label__form {
+            position: absolute;
+            top: 16px;
+            left: 20px;
+            color: var(--primary-color-light);
+            transition: all 0.4s ease;
           }
         }
         button {
