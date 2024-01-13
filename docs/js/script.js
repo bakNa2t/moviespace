@@ -249,6 +249,7 @@ async function searchContent() {
 
     if (results.length === 0) {
       displayAlert("No results found");
+      document.querySelector("main").classList.add("alert-flex");
       return;
     }
 
@@ -257,6 +258,7 @@ async function searchContent() {
     document.querySelector("#search__term").value = "";
   } else {
     displayAlert("Please enter search term");
+    document.querySelector("main").classList.add("alert-flex");
   }
 }
 

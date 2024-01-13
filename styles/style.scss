@@ -119,6 +119,14 @@ a {
 }
 
 // === Alert message
+// Flex display style for Alert message
+.alert-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
 .alert {
   background: red;
   padding: 10px 20px;
