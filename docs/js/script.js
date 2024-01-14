@@ -6,6 +6,7 @@ import {
   clickMoveToTheTopBtn,
   separeteNumberWithComma,
   displayAlert,
+  convertReleaseDate,
 } from "./supportFunctions.js";
 import { initSwiper } from "./swiper.js"; //Sliding with swiper
 
@@ -119,9 +120,9 @@ alt="${movieDetail.title}"
     <p><i class="fas fa-star text-primary"></i> ${movieDetail.vote_average.toFixed(
       1
     )} / 10</p>
-    <p class="text__muted"><span class="text-secondary">Release date:</span> ${
+    <p class="text__muted"><span class="text-secondary">Release date:</span> ${convertReleaseDate(
       movieDetail.release_date
-    }</p>
+    )}</p>
     <p>
       ${movieDetail.overview}
     </p>
@@ -191,9 +192,9 @@ alt="${showDetail.name}"
     <p><i class="fas fa-star text-primary"></i> ${showDetail.vote_average.toFixed(
       1
     )} / 10</p>
-    <p class="text__muted"><span class="text-secondary">Last air date:</span> ${
+    <p class="text__muted"><span class="text-secondary">Last air date:</span> ${convertReleaseDate(
       showDetail.last_air_date
-    }</p>
+    )}</p>
     <p>
       ${showDetail.overview}
     </p>
@@ -212,12 +213,12 @@ alt="${showDetail.name}"
     <li><span class="text-secondary">Episodes:</span> ${
       showDetail.number_of_episodes
     }</li>
-    <li><span class="text-secondary">First Episode Air Date:</span> ${
+    <li><span class="text-secondary">First Episode Air Date:</span> ${convertReleaseDate(
       showDetail.first_air_date
-    }</li>
-    <li><span class="text-secondary">Last Episode Air Date:</span> ${
+    )}</li>
+    <li><span class="text-secondary">Last Episode Air Date:</span> ${convertReleaseDate(
       showDetail.last_air_date
-    }</li>
+    )}</li>
     <li><span class="text-secondary">Staus:</span> ${showDetail.status}</li>
   </ul>
   <h4 class="text-secondary">Production Companies</h4>

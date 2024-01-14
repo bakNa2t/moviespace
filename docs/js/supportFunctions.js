@@ -47,3 +47,34 @@ export function displayAlert(message, className = "alert-error") {
 
   setTimeout(() => alertElement.remove(), 3000);
 }
+
+// Convert data release date to advanced format
+export function convertReleaseDate(releaseDate) {
+  const data = releaseDate.split("-");
+  switch (data[1]) {
+    case "01":
+      return `${data[0]} Jan ${data[2]}`;
+    case "02":
+      return `${data[0]} Feb ${data[2]}`;
+    case "03":
+      return `${data[0]} Mar ${data[2]}`;
+    case "04":
+      return `${data[0]} Apr ${data[2]}`;
+    case "05":
+      return `${data[0]} May ${data[2]}`;
+    case "06":
+      return `${data[0]} Jun ${data[2]}`;
+    case "07":
+      return `${data[0]} Jul ${data[2]}`;
+    case "08":
+      return `${data[0]} Aug ${data[2]}`;
+    case "09":
+      return `${data[0]} Sep ${data[2]}`;
+    case "10":
+      return `${data[0]} Oct ${data[2]}`;
+    case "11":
+      return `${data[0]} Nov ${data[2]}`;
+    case "12":
+      return `${data[0]} Dec ${data[2]}`;
+  }
+}
