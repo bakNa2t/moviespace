@@ -21,28 +21,53 @@
     object-fit: cover;
     box-shadow: 0 0 5px var(--light-color);
   }
-  p {
-    margin: 20px 0;
-  }
-  .list__group {
-    margin-top: 5px;
-    li {
-      width: fit-content;
-      padding: 2px 6px;
-      border-radius: 10px;
-      background-color: rgba(191, 148, 228, 0.2);
-      &:not(:last-child) {
-        margin-bottom: 5px;
+  .detail__desc {
+    visibility: hidden;
+    opacity: 0;
+    animation: fadeUp 2s ease-in-out forwards;
+
+    @keyframes fadeUp {
+      0% {
+        transform: translateX(300px);
+      }
+      25% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(100px);
+      }
+      75% {
+        transform: translateX(0);
+      }
+      100% {
+        opacity: 1;
+        visibility: visible;
       }
     }
-  }
-  .btn {
-    margin-top: 20px;
-    &:hover {
-      color: var(--primary-color);
-      border-radius: 15px;
-      box-shadow: 0 0 5px var(--secondary-color);
-      border: 1px solid var(--primary-color);
+
+    p {
+      margin: 20px 0;
+    }
+    .list__group {
+      margin-top: 5px;
+      li {
+        width: fit-content;
+        padding: 2px 6px;
+        border-radius: 10px;
+        background-color: rgba(191, 148, 228, 0.2);
+        &:not(:last-child) {
+          margin-bottom: 5px;
+        }
+      }
+    }
+    .btn {
+      margin-top: 20px;
+      &:hover {
+        color: var(--primary-color);
+        border-radius: 15px;
+        box-shadow: 0 0 5px var(--secondary-color);
+        border: 1px solid var(--primary-color);
+      }
     }
   }
 }

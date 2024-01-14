@@ -115,7 +115,7 @@ alt="${movieDetail.title}"
 />`
   }
   </div>
-  <div>
+  <div class="details__desc>
     <h2>${movieDetail.title}</h2>
     <p><i class="fas fa-star text-primary"></i> ${movieDetail.vote_average.toFixed(
       1
@@ -187,7 +187,7 @@ alt="${showDetail.name}"
 />`
   }
   </div>
-  <div>
+  <div class="detail__desc">
     <h2>${showDetail.name}</h2>
     <p><i class="fas fa-star text-primary"></i> ${showDetail.vote_average.toFixed(
       1
