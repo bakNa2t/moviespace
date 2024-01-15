@@ -38,8 +38,32 @@
       a {
         margin-left: 20px;
         color: #fff;
+        transition: all 0.4s ease-in-out;
+        .desc__modal {
+          position: absolute;
+          top: -20px;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 10px;
+          color: #fff;
+          background-color: var(--secondary-color-light2);
+          padding: 1px 4px;
+          border-radius: 8px;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.4s ease-in-out;
+          &:last-child {
+            transform: translateX(-80%);
+          }
+        }
         &:hover {
+          transform: scale(1.1) translateY(-5px);
           color: var(--secondary-color);
+          transition: all 0.4s ease-in-out;
+          .desc__modal {
+            opacity: 1;
+            visibility: visible;
+          }
         }
       }
     }
