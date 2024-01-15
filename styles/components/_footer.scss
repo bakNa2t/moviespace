@@ -57,6 +57,9 @@
           transform: scale(1.1) translateY(-5px);
           color: var(--secondary-color);
           transition: all 0.4s ease-in-out;
+          i {
+            text-shadow: 0 0 3px var(--light-color);
+          }
           .desc__modal {
             opacity: 1;
             visibility: visible;
