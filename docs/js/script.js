@@ -8,6 +8,8 @@ import {
   displayAlert,
   convertReleaseDate,
   addTranslateXClass,
+  addEmptyFlexWhileFetching,
+  removeEmptyFlexWhileFetching,
 } from "./supportFunctions.js";
 import { initSwiper } from "./swiper.js"; //Sliding with swiper
 
@@ -164,8 +166,6 @@ async function displayTVShowDetails() {
   const showId = window.location.search.split("=")[1];
 
   const showDetail = await fetchData(`tv/${showId}`);
-
-  console.log(showDetail);
 
   // Background movie image as overlay
   displayBackgroundImage("tv", showDetail.backdrop_path);
@@ -399,6 +399,7 @@ async function fetchData(endPoint) {
   const API_URL = globalPathName.api.apiUrl;
 
   displaySpinner();
+  addEmptyFlexWhileFetching();
 
   const response = await fetch(
     `${API_URL}${endPoint}?api_key=${API_KEY}&language=en-US`
@@ -406,6 +407,7 @@ async function fetchData(endPoint) {
 
   const data = await response.json();
 
+  removeEmptyFlexWhileFetching();
   hideSpinner();
 
   return data;
@@ -417,6 +419,7 @@ async function searchAPIData() {
   const API_URL = globalPathName.api.apiUrl;
 
   displaySpinner();
+  addEmptyFlexWhileFetching();
 
   const response = await fetch(
     `${API_URL}search/${globalPathName.searchResult.type}?api_key=${API_KEY}&language=en-US&query=${globalPathName.searchResult.term}&page=${globalPathName.searchResult.page}`
@@ -424,6 +427,7 @@ async function searchAPIData() {
 
   const data = await response.json();
 
+  removeEmptyFlexWhileFetching();
   hideSpinner();
 
   return data;

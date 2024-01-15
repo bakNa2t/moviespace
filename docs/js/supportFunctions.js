@@ -87,3 +87,13 @@ export function addTranslateXClass() {
     desc[2].classList.add("translateX");
   }
 }
+
+// Add to empty screen 'display: flex' while fetching data
+export function addEmptyFlexWhileFetching() {
+  document.querySelector("main").classList.add("alert-flex");
+}
+
+// Remove from empty screen 'display: flex' while fetching data
+export function removeEmptyFlexWhileFetching() {
+  document.querySelector("main").classList.remove("alert-flex");
+}
