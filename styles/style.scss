@@ -105,6 +105,11 @@ a {
   margin-top: 40px !important;
 }
 
+// === Translate social links last child modal message when hovering
+.translateX {
+  transform: translateX(-80%);
+}
+
 // === Dark background
 .bg_dark {
   background: var(--primary-color);

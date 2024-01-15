@@ -78,3 +78,12 @@ export function convertReleaseDate(releaseDate) {
       return `${data[0]} Dec ${data[2]}`;
   }
 }
+
+// Add translateX class to last child element in the social links
+export function addTranslateXClass() {
+  const desc = document.querySelectorAll(".desc__modal");
+
+  if (screen.width <= 512) {
+    desc[2].classList.add("translateX");
+  }
+}

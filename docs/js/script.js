@@ -7,6 +7,7 @@ import {
   separeteNumberWithComma,
   displayAlert,
   convertReleaseDate,
+  addTranslateXClass,
 } from "./supportFunctions.js";
 import { initSwiper } from "./swiper.js"; //Sliding with swiper
 
@@ -494,6 +495,7 @@ function init() {
   }
 
   displayNavLinkActive();
+  addTranslateXClass();
 }
 
 document.addEventListener("DOMContentLoaded", init);
