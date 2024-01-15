@@ -52,9 +52,6 @@
           opacity: 0;
           visibility: hidden;
           transition: all 0.4s ease-in-out;
-          &:last-child {
-            transform: translateX(-80%);
-          }
         }
         &:hover {
           transform: scale(1.1) translateY(-5px);

@@ -107,7 +107,7 @@ a {
 
 // === Translate social links last child modal message when hovering
 .translateX {
-  transform: translateX(-80%);
+  transform: translateX(-80%) !important;
 }
 
 // === Dark background
