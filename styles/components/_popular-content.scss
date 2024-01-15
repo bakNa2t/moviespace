@@ -47,13 +47,13 @@
   .card {
     // background: #04376b;
     background: #9678b6;
-    padding: 3px;
-    border-radius: 3px;
+    padding: 2px;
+    border-radius: 4px;
     transition: all 0.4s ease-in-out;
     img {
       width: 100%;
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
     }
     .card-body {
       padding: 10px;
