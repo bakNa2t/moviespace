@@ -52,6 +52,36 @@
         </div>
       </section>
 
+      <!-- Search TV Shows -->
+      <section class="search">
+        <div class="search__container">
+          <div id="alert"></div>
+          <form action="search-result.html" class="search__form">
+            <div class="search__switcher">
+              <input type="radio" id="tv" name="type" value="tv" checked />
+              <label for="tv">TV Shows</label>
+            </div>
+            <div class="search__flex">
+              <div class="input__form">
+                <input
+                  type="text"
+                  id="search__term"
+                  name="search__term"
+                  autocomplete="off"
+                  placeholder
+                />
+                <label for="search__term" class="label__form"
+                  ><em>Enter search term</em></label
+                >
+              </div>
+              <button class="btn" type="submit">
+                <i class="fas fa-search fa-2x"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
       <!-- TV-Showw's content -->
       <section class="popular__container container">
         <h2 class="mg_top">Most watched TV Shows</h2>
