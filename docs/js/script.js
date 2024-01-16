@@ -120,12 +120,13 @@ alt="${movieDetail.title}"
   </div>
   <div class="detail__desc>
     <h2>${movieDetail.title}</h2>
-    <p><i class="fas fa-star text-primary"></i> ${movieDetail.vote_average.toFixed(
-      1
-    )} / 10</p>
-    <p class="text__muted"><span class="text-secondary">Release date:</span> ${convertReleaseDate(
-      movieDetail.release_date
-    )}</p>
+    <p>
+      <i class="fas fa-star text-primary"></i> 
+      ${movieDetail.vote_average.toFixed(1)} / 10</p>
+    <p class="text__muted">
+      <span class="text-secondary">Release date:</span>
+      ${convertReleaseDate(movieDetail.release_date)}
+    </p>
     <p>
       ${movieDetail.overview}
     </p>
