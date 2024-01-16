@@ -460,6 +460,33 @@ async function displayNowWatchingMoviesSlider() {
   });
 }
 
+//A list of TV shows that air in the next 7 days
+async function displayOnTheAirShowsSlider() {
+  const { results } = await fetchData("tv/on_the_air");
+
+  results.forEach((show) => {
+    const elemDiv = document.createElement("div");
+    elemDiv.classList.add("swiper-slide");
+
+    elemDiv.innerHTML = `
+      <a href="tv-details.html?id=${show.id}">
+        <img src="https://image.tmdb.org/t/p/w500${show.poster_path}" alt="${
+      show.name
+    }" />
+      </a>
+      <h4 class="swiper__rating">
+        <i class="fas fa-star text-secondary"> ${show.vote_average.toFixed(
+          1
+        )} / 10</i>
+      </h4>
+      `;
+
+    document.querySelector(".swiper-wrapper").appendChild(elemDiv);
+
+    initSwiper();
+  });
+}
+
 // Display nav link active after click
 function displayNavLinkActive() {
   const navLinks = document.querySelectorAll(".nav__link");
@@ -481,6 +508,7 @@ function init() {
       clickMoveToTheTopBtn();
       break;
     case "/pages/tv-shows.html":
+      displayOnTheAirShowsSlider();
       displayMostWatchedTVShoes();
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
