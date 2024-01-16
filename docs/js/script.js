@@ -118,19 +118,18 @@ alt="${movieDetail.title}"
 />`
   }
   </div>
-  <div class="detail__desc>
+  <div class="detail__desc">
     <h2>${movieDetail.title}</h2>
-    <p>
-      <i class="fas fa-star text-primary"></i> 
-      ${movieDetail.vote_average.toFixed(1)} / 10</p>
-    <p class="text__muted">
-      <span class="text-secondary">Release date:</span>
-      ${convertReleaseDate(movieDetail.release_date)}
-    </p>
+    <p><i class="fas fa-star text-primary"></i> ${movieDetail.vote_average.toFixed(
+      1
+    )} / 10</p>
+    <p class="text__muted"><span class="text-secondary">Release date:</span> ${convertReleaseDate(
+      movieDetail.release_date
+    )}</p>
     <p>
       ${movieDetail.overview}
     </p>
-    <h5>Generes</h5>
+    <h5 class="text-secondary">Generes</h5>
     <ul class="list__group">
       ${movieDetail.genres.map((genre) => `<li>${genre.name}</li>`).join("")}
     </ul>
