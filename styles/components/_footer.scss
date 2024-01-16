@@ -24,6 +24,7 @@
         transition: all 0.4s ease-in-out;
         img {
           width: 70px;
+          border-radius: 5px;
         }
         &:hover {
           filter: grayscale(0%);
