@@ -264,6 +264,7 @@ export function displaySearchResults(results) {
     />`
         }
       </a>
+      <div class="card-vote">${result.vote_average.toFixed(1)}</div>
       <div class="card-body">
         <h5 class="card-title"><a href="${
           globalPathName.searchResult.type
