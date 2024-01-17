@@ -1,4 +1,4 @@
-import globalPathName from "./globalParam";
+import globalPathName from "./globalParam.js";
 import {
   addEmptyFlexWhileFetching,
   removeEmptyFlexWhileFetching,
