@@ -2,6 +2,7 @@ import globalPathName from "./globalParam.js";
 import {
   displaySpinner,
   hideSpinner,
+  displayNavLinkActive,
   displayToTheTopBtn,
   clickMoveToTheTopBtn,
   separeteNumberWithComma,
@@ -484,16 +485,6 @@ async function displayOnTheAirShowsSlider() {
     document.querySelector(".swiper-wrapper").appendChild(elemDiv);
 
     initSwiper();
-  });
-}
-
-// Display nav link active after click
-function displayNavLinkActive() {
-  const navLinks = document.querySelectorAll(".nav__link");
-  navLinks.forEach((link) => {
-    if (link.getAttribute("href") === globalPathName.currentPage) {
-      link.classList.add("active");
-    }
   });
 }
 

@@ -1,3 +1,5 @@
+import globalPathName from "./globalParam.js";
+
 // Display spinner
 export function displaySpinner() {
   document.querySelector(".spinner").classList.add("show");
@@ -6,6 +8,16 @@ export function displaySpinner() {
 // Hide spinner
 export function hideSpinner() {
   document.querySelector(".spinner").classList.remove("show");
+}
+
+// Display nav link active after click
+export function displayNavLinkActive() {
+  const navLinks = document.querySelectorAll(".nav__link");
+  navLinks.forEach((link) => {
+    if (link.getAttribute("href") === globalPathName.currentPage) {
+      link.classList.add("active");
+    }
+  });
 }
 
 // Hide Btn-to-top when scroll
