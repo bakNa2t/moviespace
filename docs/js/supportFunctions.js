@@ -20,6 +20,29 @@ export function displayNavLinkActive() {
   });
 }
 
+// Display backdrop on movie/tv details page
+export function displayBackgroundImage(type, backgroundPath) {
+  const imageDiv = document.createElement("div");
+  imageDiv.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${backgroundPath})`;
+  // imageDiv.classList.add("backdrop");
+  imageDiv.style.backgroundSize = "cover";
+  imageDiv.style.backgroundPosition = "center";
+  imageDiv.style.backgroundRepeat = "no-repeat";
+  imageDiv.style.height = "100vh";
+  imageDiv.style.width = "100vw";
+  imageDiv.style.position = "fixed";
+  imageDiv.style.top = "0";
+  imageDiv.style.left = "0";
+  imageDiv.style.zIndex = "-1";
+  imageDiv.style.opacity = "0.35";
+
+  if (type === "movie") {
+    document.querySelector("#movie__details").appendChild(imageDiv);
+  } else {
+    document.querySelector("#tv__details").appendChild(imageDiv);
+  }
+}
+
 // Hide Btn-to-top when scroll
 export function displayToTheTopBtn() {
   const toTheTopBtn = document.querySelector(".btn__top");
