@@ -32,7 +32,7 @@ export async function displayMostWatchedMovies() {
     />`
         }
       </a>
-      <div class="card-vote">${show.vote_average.toFixed(1)}</div>
+      <div class="card-vote">${movie.vote_average.toFixed(1)}</div>
       <div class="card-body">
         <h5 class="card-title">
           <a href="pages/movie-details.html?id=${movie.id}">${movie.title}</a>
