@@ -1,7 +1,5 @@
 import globalPathName from "./globalParam.js";
 import {
-  displaySpinner,
-  hideSpinner,
   displayNavLinkActive,
   displayToTheTopBtn,
   clickMoveToTheTopBtn,
@@ -9,9 +7,8 @@ import {
   displayAlert,
   convertReleaseDate,
   addTranslateXClass,
-  addEmptyFlexWhileFetching,
-  removeEmptyFlexWhileFetching,
 } from "./supportFunctions.js";
+import { fetchData, searchAPIData } from "./fetchFunctions.js";
 import { initSwiper } from "./swiper.js"; //Sliding with swiper
 
 //Display 20 most watched Movies
@@ -392,46 +389,6 @@ function displayBackgroundImage(type, backgroundPath) {
   } else {
     document.querySelector("#tv__details").appendChild(imageDiv);
   }
-}
-
-// Fetch data from TMDB API with param as endPoint
-async function fetchData(endPoint) {
-  const API_KEY = globalPathName.api.apiKey;
-  const API_URL = globalPathName.api.apiUrl;
-
-  displaySpinner();
-  addEmptyFlexWhileFetching();
-
-  const response = await fetch(
-    `${API_URL}${endPoint}?api_key=${API_KEY}&language=en-US`
-  );
-
-  const data = await response.json();
-
-  removeEmptyFlexWhileFetching();
-  hideSpinner();
-
-  return data;
-}
-
-// Send request to TMDB API with search term and type
-async function searchAPIData() {
-  const API_KEY = globalPathName.api.apiKey;
-  const API_URL = globalPathName.api.apiUrl;
-
-  displaySpinner();
-  addEmptyFlexWhileFetching();
-
-  const response = await fetch(
-    `${API_URL}search/${globalPathName.searchResult.type}?api_key=${API_KEY}&language=en-US&query=${globalPathName.searchResult.term}&page=${globalPathName.searchResult.page}`
-  );
-
-  const data = await response.json();
-
-  removeEmptyFlexWhileFetching();
-  hideSpinner();
-
-  return data;
 }
 
 // Display Slider movies 'What's watching now'
