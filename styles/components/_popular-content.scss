@@ -45,11 +45,28 @@
     }
   }
   .card {
-    // background: #04376b;
+    position: relative;
     background: #9678b6;
     padding: 2px;
     border-radius: 4px;
     transition: all 0.4s ease-in-out;
+    .card-vote {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 30px;
+      width: 30px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary-color-light);
+      background-color: var(--secondary-color);
+      border: 2px solid var(--primary-color);
+      border-radius: 50%;
+      box-shadow: 0 0 4px var(--secondary-color);
+    }
     img {
       width: 100%;
       border-top-left-radius: 2px;
