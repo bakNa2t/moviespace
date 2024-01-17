@@ -6,7 +6,7 @@ import {
   displayAlert,
   addTranslateXClass,
 } from "./supportFunctions.js";
-import { fetchData, searchAPIData } from "./fetchFunctions.js";
+import { searchAPIData } from "./fetchFunctions.js";
 import {
   displayMostWatchedMovies,
   displayMostWatchedTVShoes,
@@ -14,7 +14,10 @@ import {
   displayTVShowDetails,
   displaySearchResults,
 } from "./displayFunctions.js";
-import { initSwiper } from "./swiper.js"; //Sliding with swiper
+import {
+  displayNowWatchingMoviesSlider,
+  displayOnTheAirShowsSlider,
+} from "./swiper.js"; //Sliding with swiper
 
 // Display Searching movie/tv results
 async function searchContent() {
@@ -47,60 +50,6 @@ async function searchContent() {
     displayAlert("Please enter search term");
     document.querySelector("main").classList.add("alert-flex");
   }
-}
-
-// Display Slider movies 'What's watching now'
-async function displayNowWatchingMoviesSlider() {
-  const { results } = await fetchData("movie/now_playing");
-
-  results.forEach((movie) => {
-    const elemDiv = document.createElement("div");
-    elemDiv.classList.add("swiper-slide");
-
-    elemDiv.innerHTML = `
-      <a href="pages/movie-details.html?id=${movie.id}">
-        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${
-      movie.title
-    }" />
-      </a>
-      <h4 class="swiper__rating">
-        <i class="fas fa-star text-secondary"> ${movie.vote_average.toFixed(
-          1
-        )} / 10</i>
-      </h4>
-      `;
-
-    document.querySelector(".swiper-wrapper").appendChild(elemDiv);
-
-    initSwiper();
-  });
-}
-
-//A list of TV shows that air in the next 7 days
-async function displayOnTheAirShowsSlider() {
-  const { results } = await fetchData("tv/on_the_air");
-
-  results.forEach((show) => {
-    const elemDiv = document.createElement("div");
-    elemDiv.classList.add("swiper-slide");
-
-    elemDiv.innerHTML = `
-      <a href="tv-details.html?id=${show.id}">
-        <img src="https://image.tmdb.org/t/p/w500${show.poster_path}" alt="${
-      show.name
-    }" />
-      </a>
-      <h4 class="swiper__rating">
-        <i class="fas fa-star text-secondary"> ${show.vote_average.toFixed(
-          1
-        )} / 10</i>
-      </h4>
-      `;
-
-    document.querySelector(".swiper-wrapper").appendChild(elemDiv);
-
-    initSwiper();
-  });
 }
 
 //Initialize App with routes
