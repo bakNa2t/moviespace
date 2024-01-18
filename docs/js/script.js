@@ -56,7 +56,12 @@ async function searchContent() {
 function init() {
   switch (globalPathName.currentPage) {
     case "/":
-    case "/index.html":
+      displayNowWatchingMoviesSlider();
+      displayMostWatchedMovies();
+      displayToTheTopBtn();
+      clickMoveToTheTopBtn();
+      break;
+    case "/pages/movies.html":
       displayNowWatchingMoviesSlider();
       displayMostWatchedMovies();
       displayToTheTopBtn();
