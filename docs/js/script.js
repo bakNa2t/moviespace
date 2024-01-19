@@ -62,12 +62,14 @@ function init() {
       clickMoveToTheTopBtn();
       break;
     case "/pages/movies.html":
+      displayNavLinkActive();
       displayNowWatchingMoviesSlider();
       displayMostWatchedMovies();
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
       break;
     case "/pages/tv-shows.html":
+      displayNavLinkActive();
       displayOnTheAirShowsSlider();
       displayMostWatchedTVShoes();
       displayToTheTopBtn();
@@ -86,7 +88,6 @@ function init() {
       break;
   }
 
-  displayNavLinkActive();
   addTranslateXClass();
 }
 
