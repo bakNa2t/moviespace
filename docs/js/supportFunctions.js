@@ -12,9 +12,10 @@ export function hideSpinner() {
 
 // Display nav link active after click
 export function displayNavLinkActive() {
+  const pref = "/pages/";
   const navLinks = document.querySelectorAll(".nav__link");
   navLinks.forEach((link) => {
-    if (link.getAttribute("href") === globalPathName.currentPage) {
+    if (pref + link.getAttribute("href") === globalPathName.currentPage) {
       link.classList.add("active");
     }
   });
