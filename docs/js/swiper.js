@@ -1,4 +1,5 @@
 import { fetchData } from "./fetchFunctions.js";
+import globalPathName from "./globalParam.js";
 
 // Init swiper plugin
 function initSwiper() {
@@ -34,7 +35,11 @@ export async function displayNowWatchingMoviesSlider() {
     elemDiv.classList.add("swiper-slide");
 
     elemDiv.innerHTML = `
-      <a href="pages/movie-details.html?id=${movie.id}">
+      <a href= "${
+        globalPathName.currentPage === "/"
+          ? `pages/movie-details.html?id=${movie.id}`
+          : `movie-details.html?id=${movie.id}`
+      }">
         <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${
       movie.title
     }" />
