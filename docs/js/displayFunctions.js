@@ -124,7 +124,11 @@ export async function displayMovieDetails() {
         movieDetail.release_date
       )}</p>
       <p>
-        ${movieDetail.overview}
+        ${
+          movieDetail.overview
+            ? movieDetail.overview
+            : "Sorry, but no description found. We will try to fix this issue as soon as possible. Thank you for your understanding."
+        }
       </p>
       <h5 class="text-secondary">Generes</h5>
       <ul class="list__group">
@@ -194,7 +198,11 @@ export async function displayTVShowDetails() {
         showDetail.last_air_date
       )}</p>
       <p>
-        ${showDetail.overview}
+        ${
+          showDetail.overview
+            ? showDetail.overview
+            : "Sorry, but no description found. We will try to fix this issue as soon as possible. Thank you for your understanding."
+        }
       </p>
       <h5>Generes</h5>
       <ul class="list__group">
