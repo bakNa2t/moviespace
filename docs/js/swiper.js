@@ -68,9 +68,9 @@ export async function displayOnTheAirShowsSlider() {
     elemDiv.innerHTML = `
       <a href="tv-details.html?id=${show.id}">
         ${
-          show.poster_path !== null
-            ? `<img src="https://image.tmdb.org/t/p/w500${show.poster_path}" alt="${show.name}" />`
-            : `<img src="../images/no-image.jpg" alt="${show.name}" />`
+          show.poster_path === null
+            ? `<img src="../images/no-image.jpg" alt="${show.name}" />`
+            : `<img src="https://image.tmdb.org/t/p/w500${show.poster_path}" alt="${show.name}" />`
         }
       </a>
       <h4 class="swiper__rating">
