@@ -1,4 +1,4 @@
-import globalPathName from "./globalParam.js";
+import globalPathName from "./env/globalParam.js";
 import {
   displayNavLinkActive,
   displayToTheTopBtn,

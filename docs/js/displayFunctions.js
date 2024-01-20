@@ -1,4 +1,4 @@
-import globalPathName from "./globalParam.js";
+import globalPathName from "./env/globalParam.js";
 
 import { fetchData, searchAPIData } from "./fetchFunctions.js";
 

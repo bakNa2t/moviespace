@@ -1,5 +1,5 @@
 import { fetchData } from "./fetchFunctions.js";
-import globalPathName from "./globalParam.js";
+import globalPathName from "./env/globalParam.js";
 
 // Init swiper plugin
 function initSwiper() {
