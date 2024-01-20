@@ -17,7 +17,11 @@ export async function displayMostWatchedMovies() {
     const elemDiv = document.createElement("div");
     elemDiv.classList.add("card");
     elemDiv.innerHTML = `
-      <a href="movie-details.html?id=${movie.id}">
+      <a href="${
+        globalPathName.currentPage === "/"
+          ? `pages/movie-details.html?id=${movie.id}`
+          : `movie-details.html?id=${movie.id}`
+      }">
         ${
           movie.poster_path
             ? `<img
