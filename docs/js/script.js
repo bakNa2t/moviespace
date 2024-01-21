@@ -8,6 +8,7 @@ import {
 } from "./supportFunctions.js";
 import { searchAPIData } from "./fetchFunctions.js";
 import {
+  displayTopRatedMovies,
   displayMostWatchedMovies,
   displayMostWatchedTVShoes,
   displayMovieDetails,
@@ -64,7 +65,7 @@ function init() {
     case "/pages/movies.html":
       displayNavLinkActive();
       displayNowWatchingMoviesSlider();
-      displayMostWatchedMovies();
+      displayTopRatedMovies();
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
       break;

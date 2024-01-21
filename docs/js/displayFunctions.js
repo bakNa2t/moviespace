@@ -8,6 +8,49 @@ import {
   convertReleaseDate,
 } from "./supportFunctions.js";
 
+//Display 20 top rated Movies
+export async function displayTopRatedMovies() {
+  const { results } = await fetchData("movie/top_rated");
+  // console.log(results);
+
+  results.forEach((movie) => {
+    const elemDiv = document.createElement("div");
+    elemDiv.classList.add("card");
+    elemDiv.innerHTML = `
+      <a href="${
+        globalPathName.currentPage === "/"
+          ? `pages/movie-details.html?id=${movie.id}`
+          : `movie-details.html?id=${movie.id}`
+      }">
+        ${
+          movie.poster_path
+            ? `<img
+        src="https://image.tmdb.org/t/p/w500${movie.poster_path}"
+        class="card-img-top"
+        alt="${movie.name}"
+      />`
+            : `<img
+      src="images/no-image.jpg"
+      class="card-img-top"
+      alt="${movie.name}"
+    />`
+        }
+      </a>
+      <div class="card-vote">${movie.vote_average.toFixed(1)}</div>
+      <div class="card-body">
+        <h5 class="card-title">
+          <a href="movie-details.html?id=${movie.id}">${movie.title}</a>
+        </h5>
+        <p class="card-text">
+          <small class="text-muted">Release date: <span>${
+            movie.release_date
+          }</span></small>
+        </p>
+      </div>`;
+
+    document.querySelector("#popular__content").appendChild(elemDiv);
+  });
+}
 //Display 20 most watched Movies
 export async function displayMostWatchedMovies() {
   const { results } = await fetchData("movie/popular");
