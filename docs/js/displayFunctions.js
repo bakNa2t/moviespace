@@ -394,15 +394,25 @@ export function displaySearchResults(results) {
 
 //Create pagination block and display it for search results
 function displayPagination() {
-  const elemDiv = document.createElement("div");
-  elemDiv.classList.add("pagination");
-  elemDiv.innerHTML = `
+  const elemDiv_top = document.createElement("div");
+  const elemDiv_bot = document.createElement("div");
+
+  elemDiv_top.classList.add("pagination", "mg-btm20");
+  elemDiv_bot.classList.add("pagination");
+
+  elemDiv_top.innerHTML = `
+    <button class="btn btn-primary" id="prev">Prev</button>
+    <button class="btn btn-primary" id="next">Next</button>
+    <div class="page__counter">Page ${globalPathName.searchResult.page} of ${globalPathName.searchResult.totalPages}</div>
+    `;
+  elemDiv_bot.innerHTML = `
     <button class="btn btn-primary" id="prev">Prev</button>
     <button class="btn btn-primary" id="next">Next</button>
     <div class="page__counter">Page ${globalPathName.searchResult.page} of ${globalPathName.searchResult.totalPages}</div>
     `;
 
-  document.querySelector("#pagination").appendChild(elemDiv);
+  document.querySelector("#pagination__top").appendChild(elemDiv);
+  document.querySelector("#pagination__bottom").appendChild(elemDiv);
 
   //Disable prev button if current page is first page
   if (globalPathName.searchResult.page === 1) {
