@@ -415,13 +415,13 @@ function displayPagination() {
   document.querySelector("#pagination__top").appendChild(elemDivTop);
   document.querySelector("#pagination__bottom").appendChild(elemDivBot);
 
-  //Disable prev button if current page is first page
+  //Disable prev__top and prev__bot buttons if current page is first page
   if (globalPathName.searchResult.page === 1) {
     document.querySelector("#prev__top").disabled = true;
     document.querySelector("#prev__bot").disabled = true;
   }
 
-  //Disable next button if current page is last page
+  //Disable next__top and next__bot button if current page is last page
   if (
     globalPathName.searchResult.page === globalPathName.searchResult.totalPages
   ) {
