@@ -327,7 +327,8 @@ export function displaySearchResults(results) {
   // Clear previous results
   document.querySelector("#search__content").innerHTML = "";
   document.querySelector("#search-results-heading").innerHTML = "";
-  document.querySelector("#pagination").innerHTML = "";
+  document.querySelector("#pagination__top").innerHTML = "";
+  document.querySelector("#pagination__bottom").innerHTML = "";
 
   results.forEach((result) => {
     const elemDiv = document.createElement("div");
