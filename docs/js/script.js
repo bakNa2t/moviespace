@@ -58,14 +58,14 @@ function init() {
   switch (globalPathName.currentPage) {
     case "/":
       displayNowWatchingMoviesSlider();
-      displayMostWatchedMovies();
+      displayTopRatedMovies();
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
       break;
     case "/pages/movies.html":
       displayNavLinkActive();
       displayNowWatchingMoviesSlider();
-      displayTopRatedMovies();
+      displayMostWatchedMovies();
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
       break;

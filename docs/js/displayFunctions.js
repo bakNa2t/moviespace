@@ -13,7 +13,7 @@ export async function displayTopRatedMovies() {
   const { results } = await fetchData("movie/top_rated");
   // console.log(results);
 
-  results.forEach((movie) => {
+  results.slice(0, 12).forEach((movie) => {
     const elemDiv = document.createElement("div");
     elemDiv.classList.add("card");
     elemDiv.innerHTML = `
