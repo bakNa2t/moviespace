@@ -402,13 +402,13 @@ function displayPagination() {
   elemDivBot.classList.add("pagination");
 
   elemDivTop.innerHTML = `
-    <button class="btn btn-primary" id="prev">Prev</button>
-    <button class="btn btn-primary" id="next">Next</button>
+    <button class="btn btn-primary" id="prev__top">Prev</button>
+    <button class="btn btn-primary" id="next__top">Next</button>
     <div class="page__counter">Page ${globalPathName.searchResult.page} of ${globalPathName.searchResult.totalPages}</div>
     `;
   elemDivBot.innerHTML = `
-    <button class="btn btn-primary" id="prev">Prev</button>
-    <button class="btn btn-primary" id="next">Next</button>
+    <button class="btn btn-primary" id="prev__bot">Prev</button>
+    <button class="btn btn-primary" id="next__bot">Next</button>
     <div class="page__counter">Page ${globalPathName.searchResult.page} of ${globalPathName.searchResult.totalPages}</div>
     `;
 
@@ -417,26 +417,44 @@ function displayPagination() {
 
   //Disable prev button if current page is first page
   if (globalPathName.searchResult.page === 1) {
-    document.querySelector("#prev").disabled = true;
+    document.querySelector("#prev__top").disabled = true;
+    document.querySelector("#prev__bot").disabled = true;
   }
 
   //Disable next button if current page is last page
   if (
     globalPathName.searchResult.page === globalPathName.searchResult.totalPages
   ) {
-    document.querySelector("#next").disabled = true;
+    document.querySelector("#next__top").disabled = true;
+    document.querySelector("#next__bot").disabled = true;
   }
 
-  // Add event listeners to next button to change pages
-  document.querySelector("#next").addEventListener("click", async () => {
+  // Add event listeners to "next__top" button to change pages at the top of the search results
+  document.querySelector("#next__top").addEventListener("click", async () => {
     globalPathName.searchResult.page++;
 
     const { results, total_pages } = await searchAPIData();
     displaySearchResults(results);
   });
 
-  // Add event listeners to prev button to change pages
-  document.querySelector("#prev").addEventListener("click", async () => {
+  // Add event listeners to "next__bot" button to change pages at the bottom of the search results
+  document.querySelector("#next__bot").addEventListener("click", async () => {
+    globalPathName.searchResult.page++;
+
+    const { results, total_pages } = await searchAPIData();
+    displaySearchResults(results);
+  });
+
+  // Add event listeners to "prev__top" button to change pages at the top of the search results
+  document.querySelector("#prev__top").addEventListener("click", async () => {
+    globalPathName.searchResult.page--;
+
+    const { results, total_pages } = await searchAPIData();
+    displaySearchResults(results);
+  });
+
+  // Add event listeners to "prev__bot" button to change pages at the bottom of the search results
+  document.querySelector("#prev__bot").addEventListener("click", async () => {
     globalPathName.searchResult.page--;
 
     const { results, total_pages } = await searchAPIData();
