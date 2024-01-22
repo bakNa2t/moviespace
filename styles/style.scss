@@ -138,9 +138,12 @@ a {
 
 // === Pagination
 .pagination {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-top: 20px;
   .page__counter {
-    margin-top: 10px;
+    margin-left: 20px;
   }
 }
 
