@@ -398,7 +398,7 @@ function displayPagination() {
   const elemDivTop = document.createElement("div");
   const elemDivBot = document.createElement("div");
 
-  elemDivTop.classList.add("pagination", "mg-btm20");
+  elemDivTop.classList.add("pagination", "mg_btm20");
   elemDivBot.classList.add("pagination");
 
   elemDivTop.innerHTML = `
