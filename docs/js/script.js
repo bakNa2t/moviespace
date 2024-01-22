@@ -9,6 +9,7 @@ import {
 import { searchAPIData } from "./fetchFunctions.js";
 import {
   displayTopRatedMovies,
+  displayTopRatedTVShoes,
   displayMostWatchedMovies,
   displayMostWatchedTVShoes,
   displayMovieDetails,
@@ -60,6 +61,7 @@ function init() {
     case "/":
       displayNowWatchingMoviesSlider();
       displayTopRatedMovies();
+      displayTopRatedTVShoes();
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
       break;

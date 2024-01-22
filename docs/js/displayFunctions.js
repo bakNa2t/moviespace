@@ -11,7 +11,6 @@ import {
 //Display 12 top rated Movies
 export async function displayTopRatedMovies() {
   const { results } = await fetchData("movie/top_rated");
-  // console.log(results);
 
   results.slice(0, 12).forEach((movie) => {
     const elemDiv = document.createElement("div");
@@ -48,9 +47,49 @@ export async function displayTopRatedMovies() {
         </p>
       </div>`;
 
-    document.querySelector("#popular__content").appendChild(elemDiv);
+    document.querySelector("#top__rated__movies").appendChild(elemDiv);
   });
 }
+
+//Display 12 top rated TVShows
+export async function displayTopRatedTVShoes() {
+  const { results } = await fetchData("tv/top_rated");
+
+  results.slice(0, 12).forEach((show) => {
+    const elemDiv = document.createElement("div");
+    elemDiv.classList.add("card");
+    elemDiv.innerHTML = `
+      <a href="tv-details.html?id=${show.id}">  
+        ${
+          show.poster_path
+            ? `<img
+        src="https://image.tmdb.org/t/p/w500${show.poster_path}"
+        class="card-img-top"
+        alt="${show.name}"
+      />`
+            : `<img
+      src="images/no-image.jpg"
+      class="card-img-top"
+      alt="${show.name}"
+    />`
+        }
+      </a>
+      <div class="card-vote">${show.vote_average.toFixed(1)}</div>
+      <div class="card-body">
+        <h5 class="card-title">
+          <a href="tv-details.html?id=${show.id}">${show.name}</a>
+        </h5>
+        <p class="card-text">
+          <small class="text-muted">Air date: <span>${
+            show.first_air_date
+          }</span></small>
+        </p>
+      </div>`;
+
+    document.querySelector("#top__rated__shows").appendChild(elemDiv);
+  });
+}
+
 //Display 20 most watched(popular) Movies
 export async function displayMostWatchedMovies() {
   const { results } = await fetchData("movie/popular");
