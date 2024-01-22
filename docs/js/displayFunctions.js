@@ -395,25 +395,25 @@ export function displaySearchResults(results) {
 
 //Create pagination block and display it for search results
 function displayPagination() {
-  const elemDiv_top = document.createElement("div");
-  const elemDiv_bot = document.createElement("div");
+  const elemDivTop = document.createElement("div");
+  const elemDivBot = document.createElement("div");
 
-  elemDiv_top.classList.add("pagination", "mg-btm20");
-  elemDiv_bot.classList.add("pagination");
+  elemDivTop.classList.add("pagination", "mg-btm20");
+  elemDivBot.classList.add("pagination");
 
-  elemDiv_top.innerHTML = `
+  elemDivTop.innerHTML = `
     <button class="btn btn-primary" id="prev">Prev</button>
     <button class="btn btn-primary" id="next">Next</button>
     <div class="page__counter">Page ${globalPathName.searchResult.page} of ${globalPathName.searchResult.totalPages}</div>
     `;
-  elemDiv_bot.innerHTML = `
+  elemDivBot.innerHTML = `
     <button class="btn btn-primary" id="prev">Prev</button>
     <button class="btn btn-primary" id="next">Next</button>
     <div class="page__counter">Page ${globalPathName.searchResult.page} of ${globalPathName.searchResult.totalPages}</div>
     `;
 
-  document.querySelector("#pagination__top").appendChild(elemDiv);
-  document.querySelector("#pagination__bottom").appendChild(elemDiv);
+  document.querySelector("#pagination__top").appendChild(elemDivTop);
+  document.querySelector("#pagination__bottom").appendChild(elemDivBot);
 
   //Disable prev button if current page is first page
   if (globalPathName.searchResult.page === 1) {
