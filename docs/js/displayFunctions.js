@@ -8,7 +8,7 @@ import {
   convertReleaseDate,
 } from "./supportFunctions.js";
 
-//Display 20 top rated Movies
+//Display 12 top rated Movies
 export async function displayTopRatedMovies() {
   const { results } = await fetchData("movie/top_rated");
   // console.log(results);
@@ -51,7 +51,7 @@ export async function displayTopRatedMovies() {
     document.querySelector("#popular__content").appendChild(elemDiv);
   });
 }
-//Display 20 most watched Movies
+//Display 20 most watched(popular) Movies
 export async function displayMostWatchedMovies() {
   const { results } = await fetchData("movie/popular");
   // console.log(results);

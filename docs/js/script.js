@@ -17,6 +17,7 @@ import {
 } from "./displayFunctions.js";
 import {
   displayNowWatchingMoviesSlider,
+  displayUpcomingMoviesSlider,
   displayOnTheAirShowsSlider,
 } from "./swiper.js"; //Sliding with swiper
 
@@ -64,7 +65,7 @@ function init() {
       break;
     case "/pages/movies.html":
       displayNavLinkActive();
-      displayNowWatchingMoviesSlider();
+      displayUpcomingMoviesSlider();
       displayMostWatchedMovies();
       displayToTheTopBtn();
       clickMoveToTheTopBtn();

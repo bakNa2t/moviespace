@@ -26,9 +26,40 @@ function initSwiper() {
   });
 }
 
-// Display Slider movies 'What's watching now'
+// Display Slider movies 'What's watching now' (now_playing)
 export async function displayNowWatchingMoviesSlider() {
   const { results } = await fetchData("movie/now_playing");
+
+  results.forEach((movie) => {
+    const elemDiv = document.createElement("div");
+    elemDiv.classList.add("swiper-slide");
+
+    elemDiv.innerHTML = `
+      <a href= "${
+        globalPathName.currentPage === "/"
+          ? `pages/movie-details.html?id=${movie.id}`
+          : `movie-details.html?id=${movie.id}`
+      }">
+        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${
+      movie.title
+    }" />
+      </a>
+      <h4 class="swiper__rating">
+        <i class="fas fa-star text-secondary"> ${movie.vote_average.toFixed(
+          1
+        )} / 10</i>
+      </h4>
+      `;
+
+    document.querySelector(".swiper-wrapper").appendChild(elemDiv);
+
+    initSwiper();
+  });
+}
+
+// Display Slider a list of movies that are being released soon
+export async function displayUpcomingMoviesSlider() {
+  const { results } = await fetchData("movie/upcoming");
 
   results.forEach((movie) => {
     const elemDiv = document.createElement("div");
