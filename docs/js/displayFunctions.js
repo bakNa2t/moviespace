@@ -180,6 +180,9 @@ export async function displayMovieDetails() {
 
   const movieDetail = await fetchData(`movie/${movieId}`);
 
+  //Display movie cast
+  const actors = await displayMovieCast(movieId);
+
   // Background movie image as overlay
   displayBackgroundImage("movie", movieDetail.backdrop_path);
 
@@ -216,7 +219,14 @@ export async function displayMovieDetails() {
             : "Sorry, but no description found. We will try to fix this issue as soon as possible. Thank you for your understanding."
         }
       </p>
-      <h5 class="text-secondary">Generes</h5>
+      <h5 class="text-secondary">Actors:</h5>
+      <p class="list__group">${actors
+        .map(
+          (actor) =>
+            `<sapn class="bg_secondary_light mg_btm4">${actor.name}</sapn> ("<em>${actor.character}</em>")`
+        )
+        .join(", ")}</p>
+      <h5 class="text-secondary">Generes:</h5>
       <ul class="list__group">
         ${movieDetail.genres.map((genre) => `<li>${genre.name}</li>`).join("")}
       </ul>
@@ -320,6 +330,13 @@ export async function displayTVShowDetails() {
   </div>`;
 
   document.querySelector("#tv__details").appendChild(elemDiv);
+}
+
+// Display media cast in the movie/tv details page
+async function displayMovieCast(itemId) {
+  const { cast } = await fetchData(`movie/${itemId}/credits`);
+
+  return cast.slice(0, 10);
 }
 
 // Display search results
