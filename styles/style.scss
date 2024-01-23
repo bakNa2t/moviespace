@@ -125,6 +125,17 @@ a {
 .mg_btm20 {
   margin-bottom: 20px;
 }
+.mg_btm4 {
+  margin-bottom: 4px;
+}
+
+// === For details-content page
+.bg_secondary_light {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 10px;
+  background-color: var(--secondary-color-light2);
+}
 
 // === Translate social links last child modal message when hovering
 .translateX {
