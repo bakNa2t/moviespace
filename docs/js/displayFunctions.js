@@ -112,7 +112,7 @@ export async function displayMostWatchedMovies() {
         alt="${movie.name}"
       />`
             : `<img
-      src="images/no-image.jpg"
+      src="../images/no-image.jpg"
       class="card-img-top"
       alt="${movie.name}"
     />`
@@ -152,7 +152,7 @@ export async function displayMostWatchedTVShoes() {
         alt="${show.name}"
       />`
             : `<img
-      src="images/no-image.jpg"
+      src="../images/no-image.jpg"
       class="card-img-top"
       alt="${show.name}"
     />`
