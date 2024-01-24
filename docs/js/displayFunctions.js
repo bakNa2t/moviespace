@@ -316,7 +316,7 @@ export async function displayTVShowDetails() {
     </div>
   </div>
   <div class="details__bottom">
-    <h2>Movie Info</h2>
+    <h2>TV Show Info</h2>
     <ul>
       <li><span class="text-secondary">Episodes:</span> ${
         showDetail.number_of_episodes
