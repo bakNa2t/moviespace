@@ -16,11 +16,7 @@ export async function displayTopRatedMovies() {
     const elemDiv = document.createElement("div");
     elemDiv.classList.add("card");
     elemDiv.innerHTML = `
-      <a href="${
-        globalPathName.currentPage === "/"
-          ? `pages/movie-details.html?id=${movie.id}`
-          : `movie-details.html?id=${movie.id}`
-      }">
+      <a href="pages/movie-details.html?id=${movie.id}">
         ${
           movie.poster_path
             ? `<img
@@ -38,7 +34,7 @@ export async function displayTopRatedMovies() {
       <div class="card-vote">${movie.vote_average.toFixed(1)}</div>
       <div class="card-body">
         <h5 class="card-title">
-          <a href="movie-details.html?id=${movie.id}">${movie.title}</a>
+          <a href="pages/movie-details.html?id=${movie.id}">${movie.title}</a>
         </h5>
         <p class="card-text">
           <small class="text-muted">Release date: <span>${
