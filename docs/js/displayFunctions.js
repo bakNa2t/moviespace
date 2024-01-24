@@ -177,7 +177,7 @@ export async function displayMovieDetails() {
   const movieDetail = await fetchData(`movie/${movieId}`);
 
   //Display movie cast
-  const actors = await displayMovieCast(movieId);
+  const movieTeam = await displayMovieCast(movieId);
 
   // Background movie image as overlay
   displayBackgroundImage("movie", movieDetail.backdrop_path);
@@ -216,7 +216,7 @@ export async function displayMovieDetails() {
         }
       </p>
       <h5 class="text-secondary">Cast:</h5>
-      <p class="list__group">${actors
+      <p class="list__group">${movieTeam.cast
         .map(
           (actor) =>
             `<sapn class="bg_secondary_light mg_btm4">${actor.name}</sapn> ("<em>${actor.character}</em>")`
@@ -340,9 +340,14 @@ export async function displayTVShowDetails() {
 
 // Display media cast in the movie details page
 async function displayMovieCast(itemId) {
-  const { cast } = await fetchData(`movie/${itemId}/credits`);
+  const { cast, crew } = await fetchData(`movie/${itemId}/credits`);
 
-  return cast.slice(0, 10);
+  const teamList = {
+    cast: cast.slice(0, 10),
+    crew: crew.slice(0, 10),
+  };
+
+  return teamList;
 }
 
 // Display media cast in the tv-show details page
