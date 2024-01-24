@@ -55,7 +55,7 @@ export async function displayTopRatedTVShoes() {
     const elemDiv = document.createElement("div");
     elemDiv.classList.add("card");
     elemDiv.innerHTML = `
-      <a href="tv-details.html?id=${show.id}">  
+      <a href="pages/tv-details.html?id=${show.id}">  
         ${
           show.poster_path
             ? `<img
@@ -73,7 +73,7 @@ export async function displayTopRatedTVShoes() {
       <div class="card-vote">${show.vote_average.toFixed(1)}</div>
       <div class="card-body">
         <h5 class="card-title">
-          <a href="tv-details.html?id=${show.id}">${show.name}</a>
+          <a href="pages/tv-details.html?id=${show.id}">${show.name}</a>
         </h5>
         <p class="card-text">
           <small class="text-muted">Air date: <span>${
