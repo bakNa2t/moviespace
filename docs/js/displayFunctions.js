@@ -222,6 +222,14 @@ export async function displayMovieDetails() {
             `<sapn class="bg_secondary_light mg_btm4">${actor.name}</sapn> ("<em>${actor.character}</em>")`
         )
         .join(", ")}</p>
+      <h5 class="text-secondary">Director:</h5>
+      <p class="list__group">${movieTeam.crew
+        .map((crew) => {
+          if (crew.job === "Director") {
+            return `<sapn class="bg_secondary_light">${crew.name}</sapn>`;
+          }
+        })
+        .join("")}</p>
       <h5 class="text-secondary">Generes:</h5>
       <ul class="list__group">
         ${movieDetail.genres.map((genre) => `<li>${genre.name}</li>`).join("")}
