@@ -233,7 +233,7 @@ export async function displayMovieDetails() {
       </ul>
       <a href="${
         movieDetail.homepage
-      }" target="_blank" class="btn">Visit Movie Homepage</a>
+      }" target="_blank" class="btn btn__pulse">Visit Movie Homepage</a>
     </div>
   </div>
   <div class="details__bottom">
@@ -322,7 +322,7 @@ export async function displayTVShowDetails() {
       </ul>
       <a href="${
         showDetail.homepage
-      }" target="_blank" class="btn">Visit Movie Homepage</a>
+      }" target="_blank" class="btn btn__pulse">Visit Movie Homepage</a>
     </div>
   </div>
   <div class="details__bottom">
