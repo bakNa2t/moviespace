@@ -222,7 +222,7 @@ export async function displayMovieDetails() {
             `<sapn class="bg_secondary_light mg_btm4">${actor.name}</sapn> ("<em>${actor.character}</em>")`
         )
         .join(", ")}</p>
-      <h5 class="text-secondary">Director:</h5>
+      <h5 class="text-secondary">Directed by:</h5>
       <p class="list__group">${movieTeam.crew
         .filter((crew) => crew.job === "Director")
         .map((crew) => `<sapn class="bg_secondary_light">${crew.name}</sapn>`)
@@ -354,7 +354,7 @@ async function displayMovieCast(itemId) {
 
   const teamList = {
     cast: cast.slice(0, 10),
-    crew: crew.slice(0, 10),
+    crew: crew,
   };
 
   return teamList;
