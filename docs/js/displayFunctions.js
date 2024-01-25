@@ -215,7 +215,7 @@ export async function displayMovieDetails() {
             : "Sorry, but no description found. We will try to fix this issue as soon as possible. Thank you for your understanding."
         }
       </p>
-      <h5 class="text-secondary">Cast:</h5>
+      <h5 class="text-secondary">Starring:</h5>
       <p class="list__group">${movieTeam.cast
         .map(
           (actor) =>
@@ -224,12 +224,9 @@ export async function displayMovieDetails() {
         .join(", ")}</p>
       <h5 class="text-secondary">Director:</h5>
       <p class="list__group">${movieTeam.crew
-        .map((crew) => {
-          if (crew.job === "Director") {
-            return `<sapn class="bg_secondary_light">${crew.name}</sapn>`;
-          }
-        })
-        .join("")}</p>
+        .filter((crew) => crew.job === "Director")
+        .map((crew) => `<sapn class="bg_secondary_light">${crew.name}</sapn>`)
+        .join(", ")}</p>
       <h5 class="text-secondary">Generes:</h5>
       <ul class="list__group">
         ${movieDetail.genres.map((genre) => `<li>${genre.name}</li>`).join("")}
