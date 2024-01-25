@@ -266,7 +266,7 @@ export async function displayTVShowDetails() {
   const showDetail = await fetchData(`tv/${showId}`);
 
   //Display TVShow cast
-  const actors = await displayTVShowCast(showId);
+  const showTeam = await displayTVShowCast(showId);
 
   // Background movie image as overlay
   displayBackgroundImage("tv", showDetail.backdrop_path);
@@ -304,12 +304,17 @@ export async function displayTVShowDetails() {
             : "Sorry, but no description found. We will try to fix this issue as soon as possible. Thank you for your understanding."
         }
       </p>
-      <h5 class="text-secondary">Cast:</h5>
-      <p class="list__group">${actors
+      <h5 class="text-secondary">Starring:</h5>
+      <p class="list__group">${showTeam.cast
         .map(
           (actor) =>
             `<sapn class="bg_secondary_light mg_btm4">${actor.name}</sapn> ("<em>${actor.character}</em>")`
         )
+        .join(", ")}</p>
+      <h5 class="text-secondary">Creators:</h5>
+      <p class="list__group">${showTeam.crew
+        .filter((crew) => crew.job === "Executive Producer")
+        .map((crew) => `<sapn class="bg_secondary_light">${crew.name}</sapn>`)
         .join(", ")}</p>
       <h5>Generes</h5>
       <ul class="list__group">
@@ -357,9 +362,14 @@ async function displayMovieCast(itemId) {
 
 // Display media cast in the tv-show details page
 async function displayTVShowCast(itemId) {
-  const { cast } = await fetchData(`tv/${itemId}/credits`);
+  const { cast, crew } = await fetchData(`tv/${itemId}/credits`);
 
-  return cast.slice(0, 10);
+  const teamList = {
+    cast: cast.slice(0, 10),
+    crew: crew,
+  };
+
+  return teamList;
 }
 
 // Display search results
