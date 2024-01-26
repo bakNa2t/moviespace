@@ -374,8 +374,8 @@ async function displayTVShowCast(itemId) {
 
 // Display search results
 export function displaySearchResults(results) {
-  const pgnUp = document.querySelector("#pagination__up");
-  const pgnDown = document.querySelector("#pagination__down");
+  const pgnUp = document.querySelector("#pagination__top");
+  const pgnDown = document.querySelector("#pagination__bottom");
 
   // Clear previous results
   document.querySelector("#search__content").innerHTML = "";
