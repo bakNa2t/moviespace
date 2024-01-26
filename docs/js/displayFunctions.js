@@ -374,6 +374,9 @@ async function displayTVShowCast(itemId) {
 
 // Display search results
 export function displaySearchResults(results) {
+  const pgnUp = document.querySelector("#pagination__up");
+  const pgnDown = document.querySelector("#pagination__down");
+
   // Clear previous results
   document.querySelector("#search__content").innerHTML = "";
   document.querySelector("#search-results-heading").innerHTML = "";
@@ -439,6 +442,12 @@ export function displaySearchResults(results) {
 
     document.querySelector("#search__content").appendChild(elemDiv);
   });
+
+  // Hide pagination block if there is only one page and one result
+  if (results.length < 2) {
+    pgnUp.classList.add("d_none");
+    pgnDown.classList.add("d_none");
+  }
 
   displayPagination();
 }
