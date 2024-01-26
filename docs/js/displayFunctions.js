@@ -376,6 +376,7 @@ async function displayTVShowCast(itemId) {
 export function displaySearchResults(results) {
   const pgnUp = document.querySelector("#pagination__top");
   const pgnDown = document.querySelector("#pagination__bottom");
+  const card = document.querySelectorAll(".card");
 
   // Clear previous results
   document.querySelector("#search__content").innerHTML = "";
@@ -447,6 +448,7 @@ export function displaySearchResults(results) {
   if (results.length < 2) {
     pgnUp.classList.add("d_none");
     pgnDown.classList.add("d_none");
+    card.classList.add("grid_elm_center");
   }
 
   displayPagination();

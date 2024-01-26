@@ -151,6 +151,11 @@ a {
   display: none;
 }
 
+.grid_elm_center {
+  place-self: center;
+  width: 280px;
+}
+
 .mg_top {
   margin-top: 40px !important;
 }
