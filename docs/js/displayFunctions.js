@@ -349,6 +349,9 @@ export async function displayTVShowDetails() {
   </div>`;
 
   document.querySelector("#tv__details").appendChild(elemDiv);
+  document.querySelector(
+    "title"
+  ).innerHTML = `MovieSpace | ${showDetail.name} - TV Show Details`;
 }
 
 // Display media cast in the movie details page
