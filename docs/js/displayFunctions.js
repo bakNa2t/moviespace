@@ -297,9 +297,9 @@ export async function displayTVShowDetails() {
       <p><i class="fas fa-star text-primary"></i> ${showDetail.vote_average.toFixed(
         1
       )} / 10</p>
-      <p class="text__muted"><span class="text-secondary">Last air date:</span> ${convertReleaseDate(
-        showDetail.last_air_date
-      )}</p>
+      <p class="text__muted"><span class="text-secondary">Origin country:</span> ${
+        showDetail.origin_country
+      }</p>
       <p>
         ${
           showDetail.overview
@@ -333,6 +333,9 @@ export async function displayTVShowDetails() {
     <ul>
       <li><span class="text-secondary">Episodes:</span> ${
         showDetail.number_of_episodes
+      }</li>
+      <li><span class="text-secondary">Number of seasons:</span> ${
+        showDetail.number_of_seasons
       }</li>
       <li><span class="text-secondary">First Episode Air Date:</span> ${convertReleaseDate(
         showDetail.first_air_date
