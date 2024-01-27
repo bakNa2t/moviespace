@@ -257,6 +257,9 @@ export async function displayMovieDetails() {
   </div>`;
 
   document.querySelector("#movie__details").appendChild(elemDiv);
+  document.querySelector(
+    "title"
+  ).innerHTML = `MovieSpace | ${movieDetail.title} - Movie Details`;
 }
 
 // Display TVShow details
