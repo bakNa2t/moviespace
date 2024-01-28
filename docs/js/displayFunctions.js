@@ -452,11 +452,15 @@ export function displaySearchResults(results) {
     document.querySelector("#search__content").appendChild(elemDiv);
   });
 
-  // Hide pagination block if there is only one page and one result
-  if (results.length < 2) {
+  // Hide pagination block if there is less than 20 results and one page
+  if (results.length < 20) {
+    // Hide pagination block if there is only one page and one result
+    if (results.length < 2) {
+      document.querySelector(".card").classList.add("grid_elm_center");
+    }
+
     pgnUp.classList.add("d_none");
     pgnDown.classList.add("d_none");
-    document.querySelector(".card").classList.add("grid_elm_center");
   }
 
   displayPagination();
