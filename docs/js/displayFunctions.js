@@ -456,7 +456,7 @@ export function displaySearchResults(results) {
   // Hide pagination block if there is less than 20 results and one page
   if (results.length < 20) {
     // Hide pagination block if there is only one page and one result
-    if (results.length < 2) {
+    if (results.length < 2 && screen.width > 768) {
       document.querySelector(".card").classList.add("grid_elm_center");
     } else if (results.length < 4 && screen.width > 768) {
       resultGrid.classList.add("grid_pdg_h");
