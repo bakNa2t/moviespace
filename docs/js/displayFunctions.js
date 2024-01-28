@@ -458,7 +458,7 @@ export function displaySearchResults(results) {
     // Hide pagination block if there is only one page and one result
     if (results.length < 2) {
       document.querySelector(".card").classList.add("grid_elm_center");
-    } else if (results.length < 4) {
+    } else if (results.length < 4 && screen.width > 768) {
       resultGrid.classList.add("grid_pdg_h");
     }
 
