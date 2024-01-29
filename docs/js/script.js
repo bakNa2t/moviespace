@@ -69,6 +69,7 @@ function init() {
       break;
     case "/pages/movies.html":
       displayNavLinkActive();
+      displayLabelCheckedDefault();
       displayUpcomingMoviesSlider();
       displayMostWatchedMovies();
       displayToTheTopBtn();
@@ -76,6 +77,7 @@ function init() {
       break;
     case "/pages/tv-shows.html":
       displayNavLinkActive();
+      displayLabelCheckedDefault();
       displayOnTheAirShowsSlider();
       displayMostWatchedTVShoes();
       displayToTheTopBtn();
@@ -89,6 +91,7 @@ function init() {
       break;
     case "/pages/search-result.html":
       searchContent();
+      displayLabelCheckedDefault();
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
       break;
