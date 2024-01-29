@@ -133,3 +133,12 @@ export function addEmptyFlexWhileFetching() {
 export function removeEmptyFlexWhileFetching() {
   document.querySelector("main").classList.remove("alert-flex");
 }
+
+// Display active search label if input is checked
+export function displayLabelChecked() {
+  const searchInputs = document.querySelectorAll("input[type=radio]");
+
+  searchInputs[0].checked
+    ? document.querySelector("label").classList.add("txt_sdw")
+    : document.querySelector("label").classList.remove("txt_sdw");
+}

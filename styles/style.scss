@@ -169,6 +169,10 @@ a {
 .mg_btm4 {
   margin-bottom: 4px;
 }
+.txt_sdw {
+  color: var(--secondary-color);
+  text-shadow: 0 0 3px var(--secondary-color), 0 0 6px var(--light-color);
+}
 
 // === For details-content page
 .bg_secondary_light {
