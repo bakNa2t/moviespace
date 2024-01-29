@@ -52,6 +52,9 @@
     }
     .list__group {
       margin-top: 5px;
+      em {
+        color: var(--white-color-light4);
+      }
       li {
         width: fit-content;
         padding: 2px 6px;
