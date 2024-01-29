@@ -1,6 +1,7 @@
 import globalPathName from "./env/globalParam.js";
 import {
   displayNavLinkActive,
+  displayLabelChecked,
   displayToTheTopBtn,
   clickMoveToTheTopBtn,
   displayAlert,
@@ -60,6 +61,7 @@ function init() {
   switch (globalPathName.currentPage) {
     case "/":
       displayNowWatchingMoviesSlider();
+      displayLabelChecked();
       displayTopRatedMovies();
       displayTopRatedTVShoes();
       displayToTheTopBtn();
