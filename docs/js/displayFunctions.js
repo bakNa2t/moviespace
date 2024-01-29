@@ -252,7 +252,10 @@ export async function displayMovieDetails() {
     </ul>
     <h4 class="text-secondary">Production Companies:</h4>
     <div class="list__group">${movieDetail.production_companies
-      .map((company) => `<span>${company.name}</span>`)
+      .map(
+        (company) =>
+          `<span class="bg_secondary_light mg_btm4">${company.name}</span>`
+      )
       .join(", ")}</div>
   </div>`;
 
@@ -347,7 +350,10 @@ export async function displayTVShowDetails() {
     </ul>
     <h4 class="text-secondary">Production Companies</h4>
     <div class="list__group">${showDetail.production_companies
-      .map((company) => `<span>${company.name}</span>`)
+      .map(
+        (company) =>
+          `<span class="bg_secondary_light mg_btm4">${company.name}</span>`
+      )
       .join(", ")}</div>
   </div>`;
 
