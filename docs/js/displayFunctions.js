@@ -219,7 +219,7 @@ export async function displayMovieDetails() {
       <p class="list__group">${movieTeam.cast
         .map(
           (actor) =>
-            `<span class="bg_secondary_light mg_btm4">${actor.name}</span> <>("${actor.character}")</em>`
+            `<span class="bg_secondary_light mg_btm4">${actor.name}</span> <em>("${actor.character}")</em>`
         )
         .join(", ")}</p>
       <h5 class="text-secondary">Directed by:</h5>
@@ -314,7 +314,7 @@ export async function displayTVShowDetails() {
       <p class="list__group">${showTeam.cast
         .map(
           (actor) =>
-            `<span class="bg_secondary_light mg_btm4">${actor.name}</span> <>("${actor.character}"</em>)`
+            `<span class="bg_secondary_light mg_btm4">${actor.name}</span> <em>("${actor.character}"</em>)`
         )
         .join(", ")}</p>
       <h5 class="text-secondary">Creators:</h5>
