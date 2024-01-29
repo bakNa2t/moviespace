@@ -135,10 +135,37 @@ export function removeEmptyFlexWhileFetching() {
 }
 
 // Display active search label if input is checked
-export function displayLabelChecked() {
+export function displayLabelCheckedDefault() {
   const searchInputs = document.querySelectorAll("input[type=radio]");
 
   searchInputs[0].checked
     ? document.querySelector("label").classList.add("txt_sdw")
     : document.querySelector("label").classList.remove("txt_sdw");
+
+  document.addEventListener("click", () => {
+    displayLabelCheckedClicked(searchInputs);
+  });
+}
+
+// Display active search label if label is clicked
+function displayLabelCheckedClicked(obj) {
+  const labels = document.querySelectorAll("label");
+
+  if (obj[0].checked) {
+    labels.forEach((label) => {
+      if (label.getAttribute("for") === "movie") {
+        label.classList.add("txt_sdw");
+      } else if (label.getAttribute("for") === "tv") {
+        label.classList.remove("txt_sdw");
+      }
+    });
+  } else if (obj[1].checked) {
+    labels.forEach((label) => {
+      if (label.getAttribute("for") === "movie") {
+        label.classList.remove("txt_sdw");
+      } else if (label.getAttribute("for") === "tv") {
+        label.classList.add("txt_sdw");
+      }
+    });
+  }
 }
