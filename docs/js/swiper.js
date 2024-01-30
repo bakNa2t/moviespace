@@ -116,3 +116,28 @@ export async function displayOnTheAirShowsSlider() {
     initSwiper();
   });
 }
+
+// A list of movie posters from a certain movie
+export async function displayDetailsMoviesPosters() {
+  const itemId = window.location.search.split("=")[1];
+
+  const { backdrops } = await fetchData(`movie/${itemId}/images`);
+
+  // console.log(backdrops.length);
+
+  if (backdrops.length > 0) {
+    backdrops.forEach((backdrop) => {
+      const elemDiv = document.createElement("div");
+
+      elemDiv.classList.add("swiper-slide");
+
+      elemDiv.innerHTML = `<img src="https://image.tmdb.org/t/p/w500${backdrop.file_path}" alt="${backdrop.file_path}" />`;
+
+      document.querySelector(".swiper-wrapper").appendChild(elemDiv);
+
+      initSwiperForDetails();
+    });
+  } else {
+    document.querySelector(".details__images").style.display = "none";
+  }
+}
