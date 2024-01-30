@@ -147,22 +147,23 @@ a {
   grid-gap: 20px;
 }
 
+// === Modificators
 .d_none {
   display: none;
 }
-
 .grid_elm_center {
   place-self: center;
   width: 280px;
 }
-
-.grid_pdg_h {
+.grid_pdg_h_80 {
   padding: 0 80px;
+}
+.grid_pdg_h_295 {
+  padding: 0 295px;
 }
 .mg_top {
   margin-top: 40px !important;
 }
-
 .mg_btm20 {
   margin-bottom: 20px;
 }
