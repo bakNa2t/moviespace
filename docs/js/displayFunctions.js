@@ -8,7 +8,7 @@ import {
   convertReleaseDate,
 } from "./supportFunctions.js";
 
-//Display 12 top rated Movies
+//Display 12 top rated Movies on the main page
 export async function displayTopRatedMovies() {
   const { results } = await fetchData("movie/top_rated");
 
@@ -47,7 +47,7 @@ export async function displayTopRatedMovies() {
   });
 }
 
-//Display 12 top rated TVShows
+//Display 12 top rated TVShows on the main page
 export async function displayTopRatedTVShoes() {
   const { results } = await fetchData("tv/top_rated");
 
@@ -86,7 +86,7 @@ export async function displayTopRatedTVShoes() {
   });
 }
 
-//Display 20 most watched(popular) Movies
+//Display 20 most watched(popular) Movies on the movie page
 export async function displayMostWatchedMovies() {
   const { results } = await fetchData("movie/popular");
   // console.log(results);
@@ -130,7 +130,7 @@ export async function displayMostWatchedMovies() {
   });
 }
 
-//Display 20 most watched TVShows
+//Display 20 most watched(popular) TVShows on the tv page
 export async function displayMostWatchedTVShoes() {
   const { results } = await fetchData("tv/popular");
   // console.log(results);
@@ -202,9 +202,11 @@ export async function displayMovieDetails() {
     </div>
     <div class="detail__desc">
       <h2>${movieDetail.title}</h2>
-      <p><i class="fas fa-star text-primary"></i> ${movieDetail.vote_average.toFixed(
-        1
-      )} / 10</p>
+      <p><i class="fas fa-star text-primary"></i> ${
+        movieDetail.vote_average > 0
+          ? `${movieDetail.vote_average.toFixed(1)} / 10`
+          : movieDetail.vote_average
+      }</p>
       <p class="text__muted"><span class="text-secondary">Release date:</span> ${convertReleaseDate(
         movieDetail.release_date
       )}</p>
@@ -297,9 +299,11 @@ export async function displayTVShowDetails() {
     </div>
     <div class="detail__desc">
       <h2>${showDetail.name}</h2>
-      <p><i class="fas fa-star text-primary"></i> ${showDetail.vote_average.toFixed(
-        1
-      )} / 10</p>
+      <p><i class="fas fa-star text-primary"></i> ${
+        showDetail.vote_average > 0
+          ? `${showDetail.vote_average.toFixed(1)} / 10`
+          : showDetail.vote_average
+      }</p>
       <p class="text__muted"><span class="text-secondary">Origin country:</span> ${
         showDetail.origin_country
       }</p>
@@ -428,7 +432,11 @@ export function displaySearchResults(results) {
     />`
         }
       </a>
-      <div class="card-vote">${result.vote_average.toFixed(1)}</div>
+      <div class="card-vote">${
+        result.vote_average > 0
+          ? result.vote_average.toFixed(1)
+          : result.vote_average
+      }</div>
       <div class="card-body">
         <h5 class="card-title"><a href="${
           globalPathName.searchResult.type
