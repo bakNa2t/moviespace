@@ -24,7 +24,12 @@ export function displayNavLinkActive() {
 // Display backdrop on movie/tv details page
 export function displayBackgroundImage(type, backgroundPath) {
   const imageDiv = document.createElement("div");
-  imageDiv.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${backgroundPath})`;
+  const urlBackgroundImg = `https://image.tmdb.org/t/p/original/${backgroundPath}`;
+
+  imageDiv.style.backgroundImage =
+    urlBackgroundImg !== "https://image.tmdb.org/t/p/original/null"
+      ? `url(https://image.tmdb.org/t/p/original/${backgroundPath})`
+      : `url(../images/movie-show-default-bg.jpg)`;
   // imageDiv.classList.add("backdrop");
   imageDiv.style.backgroundSize = "cover";
   imageDiv.style.backgroundPosition = "center";
