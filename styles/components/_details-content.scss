@@ -1,12 +1,12 @@
 .back {
   .btn {
-    transition: all 0.4s;
+    transition: all 0.4s ease;
     &:hover {
       transform: translateY(-3px);
       color: var(--primary-color);
-      box-shadow: 0 10px 20px var(--third-color-light8);
+      box-shadow: 0 10px 20px var(--white-color-light4);
       border: 1px solid var(--text-color);
-      transition: all 0.4s;
+      transition: all 0.4s ease;
     }
   }
 }
@@ -67,13 +67,13 @@
     }
     .btn {
       margin-top: 20px;
-      transition: all 0.4s;
+      transition: all 0.4s ease;
       &:hover {
         transform: translateY(-3px);
         color: var(--primary-color);
-        box-shadow: 0 10px 20px var(--third-color-light8);
+        box-shadow: 0 10px 20px var(--white-color-light4);
         border: 1px solid var(--text-color);
-        transition: all 0.4s;
+        transition: all 0.4s ease;
       }
     }
   }
