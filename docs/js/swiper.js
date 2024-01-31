@@ -149,23 +149,23 @@ export async function displayOnTheAirShowsSlider() {
 export async function displayDetailsMoviesPosters() {
   const itemId = window.location.search.split("=")[1];
 
-  const { backdrops } = await fetchData(`movie/${itemId}/images`);
+  const { posters } = await fetchData(`movie/${itemId}/images`);
 
-  // console.log(backdrops.length);
+  // console.log(posters.length);
 
-  if (backdrops.length > 0) {
-    backdrops.forEach((backdrop) => {
+  if (posters.length > 0) {
+    posters.forEach((poster) => {
       const elemDiv = document.createElement("div");
 
       elemDiv.classList.add("swiper-slide");
 
-      elemDiv.innerHTML = `<img src="https://image.tmdb.org/t/p/w500${backdrop.file_path}" alt="${backdrop.file_path}" />`;
+      elemDiv.innerHTML = `<img src="https://image.tmdb.org/t/p/w500${poster.file_path}" alt="${poster.file_path}" />`;
 
       document.querySelector(".swiper-wrapper").appendChild(elemDiv);
 
       initSwiperPoster();
     });
   } else {
-    document.querySelector(".details__images").style.display = "none";
+    document.querySelector(".details__posters").style.display = "none";
   }
 }

@@ -21,6 +21,7 @@ import {
   displayNowWatchingMoviesSlider,
   displayUpcomingMoviesSlider,
   displayOnTheAirShowsSlider,
+  displayDetailsMoviesPosters,
 } from "./swiper.js"; //Sliding with swiper
 
 // Display Searching movie/tv results
@@ -85,6 +86,7 @@ function init() {
       break;
     case "/pages/movie-details.html":
       displayMovieDetails();
+      displayDetailsMoviesPosters();
       break;
     case "/pages/tv-details.html":
       displayTVShowDetails();
