@@ -151,7 +151,8 @@ export async function displayDetailsMoviesPosters() {
 
   const { posters } = await fetchData(`movie/${itemId}/images`);
 
-  // console.log(posters.length);
+  console.log(posters);
+  console.log(posters.length);
 
   if (posters.length > 0) {
     posters.forEach((poster) => {
