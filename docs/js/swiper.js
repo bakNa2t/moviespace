@@ -1,7 +1,7 @@
 import { fetchData } from "./fetchFunctions.js";
 import globalPathName from "./env/globalParam.js";
 
-// Init swiper plugin
+// Init swiper plugin for movies/tv-shows slider on current page
 function initSwiper() {
   const swiper = new Swiper(".swiper", {
     slidesPerView: 1,
@@ -21,6 +21,34 @@ function initSwiper() {
       },
       1200: {
         slidesPerView: 5,
+      },
+    },
+  });
+}
+
+// Init swiper plugin for movies/tv-shows poster slider on details pages
+function initSwiperPoster() {
+  const swiper = new Swiper(".swiper", {
+    slidesPerView: 1,
+    spaceBetween: 25,
+    freeMode: true,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      500: {
+        slidesPerView: 1,
+      },
+      700: {
+        slidesPerView: 2,
+      },
+      1200: {
+        slidesPerView: 3,
+      },
+      1400: {
+        slidesPerView: 4,
       },
     },
   });
@@ -135,7 +163,7 @@ export async function displayDetailsMoviesPosters() {
 
       document.querySelector(".swiper-wrapper").appendChild(elemDiv);
 
-      initSwiperForDetails();
+      initSwiperPoster();
     });
   } else {
     document.querySelector(".details__images").style.display = "none";
