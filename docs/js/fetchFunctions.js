@@ -14,9 +14,7 @@ export async function fetchData(endPoint) {
   displaySpinner();
   addEmptyFlexWhileFetching();
 
-  const response = await fetch(
-    `${API_URL}${endPoint}?api_key=${API_KEY}&language=en-US`
-  );
+  const response = await fetch(`${API_URL}${endPoint}?api_key=${API_KEY}`);
 
   const data = await response.json();
 
