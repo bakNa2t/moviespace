@@ -6,6 +6,8 @@ import {
   displayBackgroundImage,
   separeteNumberWithComma,
   convertReleaseDate,
+  hideDetailsPosters,
+  showDetailsPosters,
 } from "./supportFunctions.js";
 
 //Display 12 top rated Movies on the main page
@@ -174,6 +176,8 @@ export async function displayMostWatchedTVShoes() {
 export async function displayMovieDetails() {
   const movieId = window.location.search.split("=")[1];
 
+  hideDetailsPosters();
+
   const movieDetail = await fetchData(`movie/${movieId}`);
 
   //Display movie cast
@@ -260,6 +264,8 @@ export async function displayMovieDetails() {
       )
       .join(", ")}</div>
   </div>`;
+
+  showDetailsPosters();
 
   document.querySelector("#movie__details").appendChild(elemDiv);
   document.querySelector(
