@@ -149,18 +149,18 @@ export async function displayOnTheAirShowsSlider() {
 export async function displayDetailsMoviesPosters() {
   const itemId = window.location.search.split("=")[1];
 
-  const { posters } = await fetchData(`movie/${itemId}/images`);
+  const { backdrops } = await fetchData(`movie/${itemId}/images`);
 
-  console.log(posters);
-  console.log(posters.length);
+  console.log(backdrops);
+  console.log(backdrops.length);
 
-  if (posters.length > 0) {
-    posters.forEach((poster) => {
+  if (backdrops.length > 0) {
+    backdrops.forEach((poster) => {
       const elemDiv = document.createElement("div");
 
       elemDiv.classList.add("swiper-slide");
 
-      elemDiv.innerHTML = `<img src="https://image.tmdb.org/t/p/w500${poster.file_path}" alt="${poster.file_path}" />`;
+      elemDiv.innerHTML = `<img src="https://image.tmdb.org/t/p/w500${poster.file_path}" alt="${itemId} ${poster.file_path}" />`;
 
       document.querySelector(".swiper-wrapper").appendChild(elemDiv);
 
