@@ -1,7 +1,10 @@
 import globalPathName from "./env/globalParam.js";
 
 import { fetchData, searchAPIData } from "./fetchFunctions.js";
-
+import {
+  displayDetailsMoviesPosters,
+  displayDetailsTVShowPosters,
+} from "./swiper.js";
 import {
   displayBackgroundImage,
   separeteNumberWithComma,
@@ -179,7 +182,6 @@ export async function displayMovieDetails() {
   hideDetailsPosters();
 
   const movieDetail = await fetchData(`movie/${movieId}`);
-
   //Display movie cast
   const movieTeam = await displayMovieCast(movieId);
 
@@ -265,9 +267,11 @@ export async function displayMovieDetails() {
       .join(", ")}</div>
   </div>`;
 
-  showDetailsPosters();
-
   document.querySelector("#movie__details").appendChild(elemDiv);
+
+  showDetailsPosters();
+  displayDetailsMoviesPosters();
+
   document.querySelector(
     "title"
   ).innerHTML = `MovieSpace | ${movieDetail.title} - Movie Details`;
@@ -368,6 +372,9 @@ export async function displayTVShowDetails() {
   </div>`;
 
   document.querySelector("#tv__details").appendChild(elemDiv);
+
+  displayDetailsTVShowPosters();
+
   document.querySelector(
     "title"
   ).innerHTML = `MovieSpace | ${showDetail.name} - TV Show Details`;

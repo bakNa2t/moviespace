@@ -21,8 +21,6 @@ import {
   displayNowWatchingMoviesSlider,
   displayUpcomingMoviesSlider,
   displayOnTheAirShowsSlider,
-  displayDetailsMoviesPosters,
-  displayDetailsTVShowPosters,
 } from "./swiper.js"; //Sliding with swiper
 
 // Display Searching movie/tv results
