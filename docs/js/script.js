@@ -85,11 +85,9 @@ function init() {
       break;
     case "/pages/movie-details.html":
       displayMovieDetails();
-      displayDetailsMoviesPosters();
       break;
     case "/pages/tv-details.html":
       displayTVShowDetails();
-      displayDetailsTVShowPosters();
       break;
     case "/pages/search-result.html":
       searchContent();
