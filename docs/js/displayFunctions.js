@@ -315,7 +315,9 @@ export async function displayTVShowDetails() {
         showDetail.vote_average > 0
           ? `${showDetail.vote_average.toFixed(1)} / 10`
           : showDetail.vote_average
-      }</p>
+      } <span class="font_12">(
+        <em class="text-secondary"> ${showDetail.vote_count}</em>
+         votes )</span></p>
       <p class="text__muted"><span class="text-secondary">Origin country:</span> ${
         showDetail.origin_country
       }</p>
