@@ -215,9 +215,11 @@ export async function displayMovieDetails() {
         <em class="text-secondary"> ${movieDetail.vote_count}</em>
          votes )</span>
       </p>
-      <p class="text__muted"><span class="text-secondary">Release date:</span> ${convertReleaseDate(
+      <p class="text__muted"><span class="text-secondary">Release date:</span> ${
         movieDetail.release_date
-      )}</p>
+          ? convertReleaseDate(movieDetail.release_date)
+          : "N/A"
+      }</p>
       <p>
         ${
           movieDetail.overview
