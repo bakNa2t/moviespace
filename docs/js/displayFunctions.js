@@ -211,7 +211,10 @@ export async function displayMovieDetails() {
         movieDetail.vote_average > 0
           ? `${movieDetail.vote_average.toFixed(1)} / 10`
           : movieDetail.vote_average
-      }</p>
+      } <span class="font_12">(
+        <em class="text-secondary"> ${movieDetail.vote_count}</em>
+         votes )</span>
+      </p>
       <p class="text__muted"><span class="text-secondary">Release date:</span> ${convertReleaseDate(
         movieDetail.release_date
       )}</p>
