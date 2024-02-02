@@ -211,9 +211,11 @@ export async function displayMovieDetails() {
         movieDetail.vote_average > 0
           ? `${movieDetail.vote_average.toFixed(1)} / 10`
           : movieDetail.vote_average
-      } <span class="font_12">(
-        <em class="text-secondary"> ${movieDetail.vote_count}</em>
-         votes )</span>
+      } ${
+    movieDetail.vote_count
+      ? `<span class="font_12">(<em class="text-secondary"> ${movieDetail.vote_count}</em> votes)</span>`
+      : `<span class="font_12">(<em>no votes</em>)</span>`
+  }
       </p>
       <p class="text__muted"><span class="text-secondary">Release date:</span> ${
         movieDetail.release_date
