@@ -220,7 +220,7 @@ export async function displayMovieDetails() {
       <p class="text__muted"><span class="text-secondary">Release date:</span> ${
         movieDetail.release_date
           ? convertReleaseDate(movieDetail.release_date)
-          : "N/A"
+          : `<span class="bg_secondary_light">N/A</span>`
       }</p>
       <p>
         ${

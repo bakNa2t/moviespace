@@ -151,9 +151,6 @@ export async function displayDetailsMoviesPosters() {
 
   const { backdrops } = await fetchData(`movie/${itemId}/images`);
 
-  console.log(backdrops);
-  console.log(backdrops.length);
-
   if (backdrops.length > 0) {
     backdrops.forEach((poster) => {
       const elemDiv = document.createElement("div");
