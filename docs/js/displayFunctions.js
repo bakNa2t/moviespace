@@ -199,7 +199,7 @@ export async function displayMovieDetails() {
     alt="${movieDetail.title}"
   />`
         : `<img
-  src="images/no-image.jpg"
+  src="../images/no-image.jpg"
   class="card-img-top"
   alt="${movieDetail.title}"
   />`
@@ -238,7 +238,9 @@ export async function displayMovieDetails() {
                   `<span class="bg_secondary_light mg_btm4">${
                     actor.name
                   }</span> <em>("${
-                    actor.character.length > 0 ? actor.character : "N/A"
+                    actor.character.length > 0 && actor.character !== ""
+                      ? actor.character
+                      : "N/A"
                   }")</em>`
               )
               .join(", ")
