@@ -230,12 +230,20 @@ export async function displayMovieDetails() {
         }
       </p>
       <h5 class="text-secondary">Starring:</h5>
-      <p class="list__group">${movieTeam.cast
-        .map(
-          (actor) =>
-            `<span class="bg_secondary_light mg_btm4">${actor.name}</span> <em>("${actor.character}")</em>`
-        )
-        .join(", ")}</p>
+      <p class="list__group">${
+        movieTeam.cast.length > 0
+          ? movieTeam.cast
+              .map(
+                (actor) =>
+                  `<span class="bg_secondary_light mg_btm4">${
+                    actor.name
+                  }</span> <em>("${
+                    actor.character.length > 0 ? actor.character : "N/A"
+                  }")</em>`
+              )
+              .join(", ")
+          : `<span class="bg_secondary_light">N/A</span>`
+      }</p>
       <h5 class="text-secondary">Directed by:</h5>
       <p class="list__group">${movieTeam.crew
         .filter((crew) => crew.job === "Director")
