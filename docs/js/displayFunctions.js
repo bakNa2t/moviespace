@@ -257,7 +257,13 @@ export async function displayMovieDetails() {
       }</p>
       <h5 class="text-secondary">Generes:</h5>
       <ul class="list__group">
-        ${movieDetail.genres.map((genre) => `<li>${genre.name}</li>`).join("")}
+        ${
+          movieDetail.genres.length > 0
+            ? movieDetail.genres
+                .map((genre) => `<li>${genre.name}</li>`)
+                .join("")
+            : `<li>N/A</li>`
+        }
       </ul>
       <a href="${
         movieDetail.homepage
