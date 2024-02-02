@@ -245,10 +245,16 @@ export async function displayMovieDetails() {
           : `<span class="bg_secondary_light">N/A</span>`
       }</p>
       <h5 class="text-secondary">Directed by:</h5>
-      <p class="list__group">${movieTeam.crew
-        .filter((crew) => crew.job === "Director")
-        .map((crew) => `<sapn class="bg_secondary_light">${crew.name}</sapn>`)
-        .join(", ")}</p>
+      <p class="list__group">${
+        movieTeam.crew.length > 0
+          ? movieTeam.crew
+              .filter((crew) => crew.job === "Director")
+              .map(
+                (crew) => `<sapn class="bg_secondary_light">${crew.name}</sapn>`
+              )
+              .join(", ")
+          : `<span class="bg_secondary_light">N/A</span>`
+      }</p>
       <h5 class="text-secondary">Generes:</h5>
       <ul class="list__group">
         ${movieDetail.genres.map((genre) => `<li>${genre.name}</li>`).join("")}
