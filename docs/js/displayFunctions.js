@@ -513,7 +513,7 @@ export function displaySearchResults(results) {
           }: <span>${
       globalPathName.searchResult.type === "movie"
         ? `${result.release_date ? result.release_date : "N/A"}`
-        : `${result.first_air_date} ? ${result.last_air_date} : N/A"}`
+        : `${result.first_air_date ? result.first_air_date : "N/A"}`
     }</span></small>
         </p>
       </div>`;
