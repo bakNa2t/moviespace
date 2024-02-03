@@ -287,10 +287,10 @@ export async function displayMovieDetails() {
       <li><span class="text-secondary">Staus:</span> ${movieDetail.status}</li>
     </ul>
     <h4 class="text-secondary">Production Countries:</h4>
-    <div class="list__group">${movieDetail.production_countries
+    <div class="list__group mg_btm15">${movieDetail.production_countries
       .map(
         (country) =>
-          `<span class="bg_secondary_light mg_btm15">${country.name}</span>`
+          `<span class="bg_secondary_light mg_btm4">${country.name}</span>`
       )
       .join(", ")}</div>
     <h4 class="text-secondary">Production Companies:</h4>
@@ -400,10 +400,10 @@ export async function displayTVShowDetails() {
       <li><span class="text-secondary">Staus:</span> ${showDetail.status}</li>
     </ul>
     <h4 class="text-secondary">Production Countries:</h4>
-    <div class="list__group">${showDetail.production_countries
+    <div class="list__group mg_btm15">${showDetail.production_countries
       .map(
         (country) =>
-          `<span class="bg_secondary_light mg_btm15">${country.name}</span>`
+          `<span class="bg_secondary_light mg_btm4">${country.name}</span>`
       )
       .join(", ")}</div>
     <h4 class="text-secondary">Production Companies</h4>
