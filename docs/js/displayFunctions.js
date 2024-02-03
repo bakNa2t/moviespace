@@ -286,6 +286,13 @@ export async function displayMovieDetails() {
       } minutes</li>
       <li><span class="text-secondary">Staus:</span> ${movieDetail.status}</li>
     </ul>
+    <h4 class="text-secondary">Production Countries:</h4>
+    <div class="list__group">${movieDetail.production_countries
+      .map(
+        (country) =>
+          `<span class="bg_secondary_light mg_btm15">${country.name}</span>`
+      )
+      .join(", ")}</div>
     <h4 class="text-secondary">Production Companies:</h4>
     <div class="list__group">${movieDetail.production_companies
       .map(
