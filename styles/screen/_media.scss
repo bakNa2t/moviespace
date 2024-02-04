@@ -132,6 +132,19 @@
       }
     }
   }
+  .current__content {
+    padding: 30px;
+    h2 {
+      margin: 0 auto 20px;
+    }
+  }
+  .popular__container {
+    h2 {
+      margin-top: 0 !important;
+      font-size: 24px;
+      margin: 0 auto 30px;
+    }
+  }
   .footer__main {
     .footer__container {
       .footer__logo {
