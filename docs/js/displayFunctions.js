@@ -383,7 +383,7 @@ export async function displayTVShowDetails() {
       <h5 class="text-secondary">Creators:</h5>
       <p class="list__group">${showTeam.crew
         .filter((crew) => crew.job === "Executive Producer")
-        .map((crew) => `<sapn class="bg_secondary_light">${crew.name}</sapn>`)
+        .map((crew) => `<span class="bg_secondary_light">${crew.name}</span>`)
         .join(", ")}</p>
       <h5>Generes</h5>
       <ul class="list__group">
