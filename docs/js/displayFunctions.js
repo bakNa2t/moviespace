@@ -299,7 +299,7 @@ export async function displayMovieDetails() {
                 `<span class="bg_secondary_light mg_btm4">${country.name}</span>`
             )
             .join(", ")
-        : `<span class="bg_secondary_light mg_btm15">N/A</span>`
+        : `<span class="bg_secondary_light mg_btm4">N/A</span>`
     }</div>
     <h4 class="text-secondary">Production Companies:</h4>
     <div class="list__group">${
@@ -310,7 +310,7 @@ export async function displayMovieDetails() {
                 `<span class="bg_secondary_light mg_btm4">${company.name}</span>`
             )
             .join(", ")
-        : `<span class="bg_secondary_light mg_btm15">N/A</span>`
+        : `<span class="bg_secondary_light mg_btm4">N/A</span>`
     }</div>
   </div>`;
 
@@ -386,13 +386,17 @@ export async function displayTVShowDetails() {
         )
         .join(", ")}</p>
       <h5 class="text-secondary">Creators:</h5>
-      <p class="list__group">${showTeam.crew
-        .filter((crew) => crew.job === "Executive Producer")
-        .map(
-          (crew) =>
-            `<span class="bg_secondary_light mg_btm4">${crew.name}</span>`
-        )
-        .join(", ")}</p>
+      <p class="list__group">${
+        showTeam.crew.length > 0
+          ? `${showTeam.crew
+              .filter((crew) => crew.job === "Executive Producer")
+              .map(
+                (crew) =>
+                  `<span class="bg_secondary_light mg_btm4">${crew.name}</span>`
+              )
+              .join(", ")}`
+          : `N/A`
+      }</p>
       <h5>Generes</h5>
       <ul class="list__group">
         ${showDetail.genres.map((genre) => `<li>${genre.name}</li>`).join("")}
@@ -428,7 +432,7 @@ export async function displayTVShowDetails() {
                 `<span class="bg_secondary_light mg_btm4">${country.name}</span>`
             )
             .join(", ")
-        : `<span class="bg_secondary_light mg_btm15">N/A</span>`
+        : `<span class="bg_secondary_light mg_btm4">N/A</span>`
     }</div>
     <h4 class="text-secondary">Production Companies</h4>
     <div class="list__group">${
@@ -439,7 +443,7 @@ export async function displayTVShowDetails() {
                 `<span class="bg_secondary_light mg_btm4">${company.name}</span>`
             )
             .join(", ")
-        : `<span class="bg_secondary_light mg_btm15">N/A</span>`
+        : `<span class="bg_secondary_light mg_btm4">N/A</span>`
     }</div>
   </div>`;
 
