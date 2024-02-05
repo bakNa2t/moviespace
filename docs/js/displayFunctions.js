@@ -360,12 +360,13 @@ export async function displayTVShowDetails() {
         showDetail.vote_average > 0
           ? `${showDetail.vote_average.toFixed(1)} / 10`
           : showDetail.vote_average
-      } <span class="font_12">(
-        <em class="text-secondary"> ${showDetail.vote_count}</em>
-         votes )</span></p>
-      <p class="text__muted"><span class="text-secondary">Origin country:</span> ${
-        showDetail.origin_country
-      }</p>
+      } 
+        ${
+          showDetail.vote_count
+            ? `<span class="font_12">(<em class="text-secondary">${showDetail.vote_count}</em> votes)</span>`
+            : `<span class="font_12">(<em>no votes</em>)</span>`
+        }
+      </p>
       <p>
         ${
           showDetail.overview
@@ -377,7 +378,11 @@ export async function displayTVShowDetails() {
       <p class="list__group">${showTeam.cast
         .map(
           (actor) =>
-            `<span class="bg_secondary_light mg_btm4">${actor.name}</span> <em>("${actor.character}"</em>)`
+            `<span class="bg_secondary_light mg_btm4">${
+              actor.name
+            }</span> <em>("${
+              actor.character !== "" ? actor.character : "N/A"
+            }")</em>`
         )
         .join(", ")}</p>
       <h5 class="text-secondary">Creators:</h5>
