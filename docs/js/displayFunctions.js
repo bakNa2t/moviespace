@@ -518,9 +518,25 @@ export function displaySearchResults(results) {
         </p>
       </div>`;
 
-    document.querySelector(
-      "#search-results-heading"
-    ).innerHTML = `<div><span>${results.length}</span> of <span>${globalPathName.searchResult.totalResults}</span> Results for <span><em>"${globalPathName.searchResult.term}"</em></span></div>`;
+    document.querySelector("#search-results-heading").innerHTML = `<div><span>${
+      results.length
+    }</span> of <span>${
+      globalPathName.searchResult.totalResults
+    }</span> Results for <span><em>"${
+      globalPathName.searchResult.term
+    }"</em></span>${
+      results.length > 1
+        ? `${
+            globalPathName.searchResult.type === "movie"
+              ? "&nbsp; in Movies"
+              : "&nbsp; in TV Shows"
+          }`
+        : `${
+            globalPathName.searchResult.type === "movie"
+              ? "&nbsp; in Movie"
+              : "&nbsp; in TV Show"
+          }`
+    }</div>`;
 
     document.querySelector("#search__content").appendChild(elemDiv);
   });
