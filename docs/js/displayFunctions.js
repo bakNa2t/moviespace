@@ -291,7 +291,7 @@ export async function displayMovieDetails() {
       <li><span class="text-secondary">Staus:</span> ${movieDetail.status}</li>
     </ul>
     <h4 class="text-secondary">Production Countries:</h4>
-    <div class="list__group mg_btm15">${
+    <div class="list__group mg_btm4">${
       movieDetail.production_countries.length > 0
         ? movieDetail.production_countries
             .map(
@@ -399,7 +399,11 @@ export async function displayTVShowDetails() {
       }</p>
       <h5>Generes</h5>
       <ul class="list__group">
-        ${showDetail.genres.map((genre) => `<li>${genre.name}</li>`).join("")}
+      ${
+        showDetail.genres.length > 0
+          ? showDetail.genres.map((genre) => `<li>${genre.name}</li>`).join("")
+          : `<li>N/A</li>`
+      }
       </ul>
       <a href="${
         showDetail.homepage
@@ -424,7 +428,7 @@ export async function displayTVShowDetails() {
       <li><span class="text-secondary">Staus:</span> ${showDetail.status}</li>
     </ul>
     <h4 class="text-secondary">Production Countries:</h4>
-    <div class="list__group mg_btm15">${
+    <div class="list__group mg_btm4">${
       showDetail.production_countries.length > 0
         ? showDetail.production_countries
             .map(
