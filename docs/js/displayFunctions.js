@@ -287,7 +287,7 @@ export async function displayMovieDetails() {
       }</li>
       <li><span class="text-secondary">Runtime:</span> ${
         movieDetail.runtime > 0 ? `${movieDetail.runtime} minutes` : "N/A"
-      } minutes</li>
+      }</li>
       <li><span class="text-secondary">Staus:</span> ${movieDetail.status}</li>
     </ul>
     <h4 class="text-secondary">Production Countries:</h4>
