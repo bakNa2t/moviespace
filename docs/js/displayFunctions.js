@@ -298,12 +298,16 @@ export async function displayMovieDetails() {
         : `<span class="bg_secondary_light mg_btm15">N/A</span>`
     }</div>
     <h4 class="text-secondary">Production Companies:</h4>
-    <div class="list__group">${movieDetail.production_companies
-      .map(
-        (company) =>
-          `<span class="bg_secondary_light mg_btm4">${company.name}</span>`
-      )
-      .join(", ")}</div>
+    <div class="list__group">${
+      movieDetail.production_companies.length > 0
+        ? movieDetail.production_companies
+            .map(
+              (company) =>
+                `<span class="bg_secondary_light mg_btm4">${company.name}</span>`
+            )
+            .join(", ")
+        : `<span class="bg_secondary_light mg_btm15">N/A</span>`
+    }</div>
   </div>`;
 
   document.querySelector("#movie__details").appendChild(elemDiv);
@@ -404,12 +408,16 @@ export async function displayTVShowDetails() {
       <li><span class="text-secondary">Staus:</span> ${showDetail.status}</li>
     </ul>
     <h4 class="text-secondary">Production Countries:</h4>
-    <div class="list__group mg_btm15">${showDetail.production_countries
-      .map(
-        (country) =>
-          `<span class="bg_secondary_light mg_btm4">${country.name}</span>`
-      )
-      .join(", ")}</div>
+    <div class="list__group mg_btm15">${
+      showDetail.production_countries.length > 0
+        ? showDetail.production_countries
+            .map(
+              (country) =>
+                `<span class="bg_secondary_light mg_btm4">${country.name}</span>`
+            )
+            .join(", ")
+        : `<span class="bg_secondary_light mg_btm15">N/A</span>`
+    }</div>
     <h4 class="text-secondary">Production Companies</h4>
     <div class="list__group">${
       showDetail.production_companies.length > 0
