@@ -275,14 +275,18 @@ export async function displayMovieDetails() {
   <div class="details__bottom">
     <h2>Movie Info</h2>
     <ul>
-      <li><span class="text-secondary">Budget:</span> $${separeteNumberWithComma(
-        movieDetail.budget
-      )}</li>
-      <li><span class="text-secondary">Revenue:</span> $${separeteNumberWithComma(
-        movieDetail.revenue
-      )}</li>
+      <li><span class="text-secondary">Budget:</span> ${
+        movieDetail.budget > 0
+          ? `$${separeteNumberWithComma(movieDetail.budget)}`
+          : `N/A`
+      }</li>
+      <li><span class="text-secondary">Revenue:</span> ${
+        movieDetail.revenue > 0
+          ? `$${separeteNumberWithComma(movieDetail.revenue)}`
+          : `N/A`
+      }</li>
       <li><span class="text-secondary">Runtime:</span> ${
-        movieDetail.runtime
+        movieDetail.runtime > 0 ? `${movieDetail.runtime} minutes` : "N/A"
       } minutes</li>
       <li><span class="text-secondary">Staus:</span> ${movieDetail.status}</li>
     </ul>
