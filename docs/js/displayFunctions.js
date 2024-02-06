@@ -397,7 +397,7 @@ export async function displayTVShowDetails() {
               .join(", ")}`
           : `<span class="bg_secondary_light">N/A</span>`
       }</p>
-      <h5 class="text-secondary">Generes</h5>
+      <h5 class="text-secondary">Genres</h5>
       <ul class="list__group">
       ${
         showDetail.genres.length > 0
@@ -419,9 +419,11 @@ export async function displayTVShowDetails() {
       <li><span class="text-secondary">Number of seasons:</span> ${
         showDetail.number_of_seasons
       }</li>
-      <li><span class="text-secondary">First Episode Air Date:</span> ${convertReleaseDate(
+      <li><span class="text-secondary">First Episode Air Date:</span> ${
         showDetail.first_air_date
-      )}</li>
+          ? `${convertReleaseDate(showDetail.first_air_date)}`
+          : "N/A"
+      }</li>
       <li><span class="text-secondary">Last Episode Air Date:</span> ${
         showDetail.last_air_date
           ? `${convertReleaseDate(showDetail.last_air_date)}`
