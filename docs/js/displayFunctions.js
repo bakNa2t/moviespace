@@ -395,9 +395,9 @@ export async function displayTVShowDetails() {
                   `<span class="bg_secondary_light mg_btm4">${crew.name}</span>`
               )
               .join(", ")}`
-          : `N/A`
+          : `<span class="bg_secondary_light">N/A</span>`
       }</p>
-      <h5>Generes</h5>
+      <h5 class="text-secondary">Generes</h5>
       <ul class="list__group">
       ${
         showDetail.genres.length > 0
