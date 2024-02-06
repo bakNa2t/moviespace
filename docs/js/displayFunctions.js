@@ -413,11 +413,13 @@ export async function displayTVShowDetails() {
   <div class="details__bottom">
     <h2>TV Show Info</h2>
     <ul>
-      <li><span class="text-secondary">Episodes:</span> ${
+      <li><span class="text-secondary">Episodes:</span>${
         showDetail.number_of_episodes
+          ? `${showDetail.number_of_episodes}`
+          : "N/A"
       }</li>
       <li><span class="text-secondary">Number of seasons:</span> ${
-        showDetail.number_of_seasons
+        showDetail.number_of_seasons ? `${showDetail.number_of_seasons}` : "N/A"
       }</li>
       <li><span class="text-secondary">First Episode Air Date:</span> ${
         showDetail.first_air_date
