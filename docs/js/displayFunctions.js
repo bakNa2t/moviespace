@@ -433,7 +433,9 @@ export async function displayTVShowDetails() {
           ? `${convertReleaseDate(showDetail.last_air_date)}`
           : "N/A"
       }</li>
-      <li><span class="text-secondary">Staus:</span> ${showDetail.status}</li>
+      <li><span class="text-secondary">Staus:</span> ${
+        showDetail.status ? showDetail.status : "N/A"
+      }</li>
     </ul>
     <h4 class="text-secondary">Production Countries:</h4>
     <div class="list__group mg_btm4">${
