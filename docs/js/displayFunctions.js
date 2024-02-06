@@ -422,9 +422,11 @@ export async function displayTVShowDetails() {
       <li><span class="text-secondary">First Episode Air Date:</span> ${convertReleaseDate(
         showDetail.first_air_date
       )}</li>
-      <li><span class="text-secondary">Last Episode Air Date:</span> ${convertReleaseDate(
+      <li><span class="text-secondary">Last Episode Air Date:</span> ${
         showDetail.last_air_date
-      )}</li>
+          ? `${convertReleaseDate(showDetail.last_air_date)}`
+          : "N/A"
+      }</li>
       <li><span class="text-secondary">Staus:</span> ${showDetail.status}</li>
     </ul>
     <h4 class="text-secondary">Production Countries:</h4>
