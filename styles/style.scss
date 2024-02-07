@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+
+// Imported componets styles
 @import "./abstracts/mixins";
 @import "./abstracts/colors";
-@import "./components/spinner";
 @import "./components/header";
 @import "./components/current-content";
 @import "./components/search";
@@ -11,6 +12,8 @@
 @import "./components/details-content";
 @import "./components/details-posters";
 @import "./components/footer";
+@import "./components/spinner";
+@import "./components/modal-error-msg";
 
 *,
 *::after,

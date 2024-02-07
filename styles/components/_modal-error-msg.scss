@@ -1,0 +1,41 @@
+.error__msg {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  margin: auto;
+  z-index: 1000;
+
+  h2 {
+    text-align: center;
+    padding: 0 50px;
+    text-transform: uppercase;
+    margin-bottom: -140px;
+    color: var(--secondary-color);
+    text-shadow: 0 0 3px var(--light-color);
+  }
+
+  /* Transparent Overlay */
+  &::before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(rgba(20, 20, 20, 0.1), rgba(0, 0, 0, 0.1));
+    background: -webkit-radial-gradient(
+      rgba(20, 20, 20, 0.1),
+      rgba(0, 0, 0, 0.1)
+    );
+  }
+}
+
+.display_flex {
+  display: flex;
+}
