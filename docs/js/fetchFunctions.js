@@ -4,6 +4,7 @@ import {
   removeEmptyFlexWhileFetching,
   displaySpinner,
   hideSpinner,
+  displayErrorFetchMessage,
 } from "./supportFunctions.js";
 
 // Fetch data from TMDB API with param as endPoint
@@ -11,17 +12,21 @@ export async function fetchData(endPoint) {
   const API_KEY = globalPathName.api.apiKey;
   const API_URL = globalPathName.api.apiUrl;
 
-  displaySpinner();
-  addEmptyFlexWhileFetching();
+  try {
+    displaySpinner();
+    addEmptyFlexWhileFetching();
 
-  const response = await fetch(`${API_URL}${endPoint}?api_key=${API_KEY}`);
+    const response = await fetch(`${API_URL}${endPoint}?api_key=${API_KEY}`);
 
-  const data = await response.json();
+    const data = await response.json();
 
-  removeEmptyFlexWhileFetching();
-  hideSpinner();
+    removeEmptyFlexWhileFetching();
+    hideSpinner();
 
-  return data;
+    return data;
+  } catch (error) {
+    displayErrorFetchMessage();
+  }
 }
 
 // Send request to TMDB API with search term and type
