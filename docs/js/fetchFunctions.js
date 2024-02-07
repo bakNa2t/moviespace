@@ -25,6 +25,7 @@ export async function fetchData(endPoint) {
 
     return data;
   } catch (error) {
+    displaySpinner();
     displayErrorFetchMessage();
   }
 }
