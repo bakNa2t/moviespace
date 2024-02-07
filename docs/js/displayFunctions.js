@@ -6,6 +6,8 @@ import {
   displayDetailsTVShowPosters,
 } from "./swiper.js";
 import {
+  displaySpinner,
+  hideSpinner,
   displayBackgroundImage,
   separeteNumberWithComma,
   convertReleaseDate,
@@ -328,9 +330,11 @@ export async function displayMovieDetails() {
 
 // Display TVShow details
 export async function displayTVShowDetails() {
+  const showId = window.location.search.split("=")[1];
+
+  displaySpinner();
   hideDetailsPosters();
 
-  const showId = window.location.search.split("=")[1];
   const showDetail = await fetchData(`tv/${showId}`);
   //Display TVShow cast
   const showTeam = await displayTVShowCast(showId);
@@ -463,6 +467,7 @@ export async function displayTVShowDetails() {
 
   document.querySelector("#tv__details").appendChild(elemDiv);
 
+  hideSpinner();
   showDetailsPosters();
   displayDetailsTVShowPosters();
 
