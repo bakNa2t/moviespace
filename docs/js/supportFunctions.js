@@ -10,6 +10,11 @@ export function hideSpinner() {
   document.querySelector(".spinner").classList.remove("show");
 }
 
+// Display message while cannot fetching data
+export function displayErrorFetchMessage() {
+  document.querySelector(".error__msg").classList.add("display_flex");
+}
+
 // Display nav link active after click
 export function displayNavLinkActive() {
   const pref = "/pages/";
