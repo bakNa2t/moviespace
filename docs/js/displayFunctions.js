@@ -179,9 +179,11 @@ export async function displayMostWatchedTVShoes() {
 
 // Display Movies details
 export async function displayMovieDetails() {
-  hideDetailsPosters();
-
   const movieId = window.location.search.split("=")[1];
+
+  hideDetailsPosters();
+  displaySpinner();
+
   const movieDetail = await fetchData(`movie/${movieId}`);
   //Display movie cast
   const movieTeam = await displayMovieCast(movieId);
@@ -320,6 +322,7 @@ export async function displayMovieDetails() {
 
   document.querySelector("#movie__details").appendChild(elemDiv);
 
+  hideSpinner();
   showDetailsPosters();
   displayDetailsMoviesPosters();
 
