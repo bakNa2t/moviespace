@@ -193,6 +193,8 @@ export function showDetailsPosters() {
 // Display sorted content for search results by release date descending
 export function sortByReleaseDate(data) {
   return data.sort(
-    (a, b) => new Date(b.release_date) - new Date(a.release_date)
+    globalPathName.searchResult.type === "movie"
+      ? (a, b) => new Date(b.release_date) - new Date(a.release_date)
+      : (a, b) => new Date(b.first_air_date) - new Date(a.first_air_date)
   );
 }
