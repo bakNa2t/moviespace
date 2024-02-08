@@ -189,3 +189,10 @@ export function hideDetailsPosters() {
 export function showDetailsPosters() {
   document.querySelector(".details__posters").classList.remove("d_none");
 }
+
+// Display sorted content for search results by release date descending
+export function sortByReleaseDate(movies) {
+  return movies.sort(
+    (a, b) => new Date(b.release_date) - new Date(a.release_date)
+  );
+}
