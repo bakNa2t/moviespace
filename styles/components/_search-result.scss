@@ -9,3 +9,16 @@
     color: var(--secondary-color);
   }
 }
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  .btn_sort {
+    font-size: 18px;
+    padding: 0.3rem 0.8rem;
+    &:hover {
+      font-weight: bolder;
+    }
+  }
+}
