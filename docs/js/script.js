@@ -6,7 +6,8 @@ import {
   clickMoveToTheTopBtn,
   displayAlert,
   addTranslateXClass,
-  sortByReleaseDate,
+  sortByReleaseDateDesc,
+  sortByReleaseDateAsc,
 } from "./supportFunctions.js";
 import { searchAPIData } from "./fetchFunctions.js";
 import {
@@ -55,7 +56,17 @@ async function searchContent() {
       .querySelector("#sort__results__desc")
       .addEventListener("click", () => {
         //Invoke a function to sort the results
-        const sortedResults = sortByReleaseDate(results);
+        const sortedResults = sortByReleaseDateDesc(results);
+        //Display sorted results
+        displaySearchResults(sortedResults);
+      });
+
+    //Display sorted content for search results by release date ascending is clicked on btn
+    document
+      .querySelector("#sort__results__asc")
+      .addEventListener("click", () => {
+        //Invoke a function to sort the results
+        const sortedResults = sortByReleaseDateAsc(results);
         //Display sorted results
         displaySearchResults(sortedResults);
       });
