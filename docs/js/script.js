@@ -51,12 +51,14 @@ async function searchContent() {
     displaySearchResults(results);
 
     //Display sorted content for search results by release date descending is clicked on btn
-    document.querySelector("#sort__results").addEventListener("click", () => {
-      //Invoke a function to sort the results
-      const sortedResults = sortByReleaseDate(results);
-      //Display sorted results
-      displaySearchResults(sortedResults);
-    });
+    document
+      .querySelector("#sort__results__desc")
+      .addEventListener("click", () => {
+        //Invoke a function to sort the results
+        const sortedResults = sortByReleaseDate(results);
+        //Display sorted results
+        displaySearchResults(sortedResults);
+      });
 
     document.querySelector("#search__term").value = "";
   } else {
