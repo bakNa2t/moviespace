@@ -17,8 +17,16 @@
   .wrapper__sort__btn {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     gap: 10px;
+
+    .btn__sort__heading {
+      font-size: 13px;
+      span {
+        color: var(--secondary-color);
+        text-shadow: 0 0 2px var(--light-color);
+      }
+    }
 
     .btn_sort {
       position: relative;
