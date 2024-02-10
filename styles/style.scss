@@ -184,7 +184,19 @@ a {
 .font_12 {
   font-size: 12px;
 }
+.opacity_up {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease-in-out;
+  animation: showContent 2s ease-in-out forwards;
 
+  @keyframes showContent {
+    to {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
 // === For details-content page
 .bg_secondary_light {
   display: inline-block;
