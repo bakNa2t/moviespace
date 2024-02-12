@@ -508,6 +508,8 @@ export function displaySearchResults(results) {
   const pgnUp = document.querySelector("#pagination__top");
   const pgnDown = document.querySelector("#pagination__bottom");
   const resultGrid = document.querySelector("#search__content");
+  const wrapper = document.querySelector(".wrapper");
+  const sortNav = document.querySelector(".wrapper__sort__btn");
 
   // Clear previous results
   document.querySelector("#search__content").innerHTML = "";
@@ -604,12 +606,13 @@ export function displaySearchResults(results) {
       resultGrid.classList.add("grid_pdg_h_295");
     } else if (results.length < 4 && screen.width > 768) {
       resultGrid.classList.add("grid_pdg_h_80");
-      document.querySelector(".wrapper").style.justifyContent = "end";
-      document.querySelector(".wrapper__sort__btn").style.marginBottom = "10px";
     }
 
     pgnUp.classList.add("d_none");
     pgnDown.classList.add("d_none");
+
+    wrapper.style.justifyContent = "end";
+    wrapper.style.marginBottom = "20px";
   }
 
   displayPagination();
