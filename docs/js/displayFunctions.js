@@ -597,6 +597,9 @@ export function displaySearchResults(results) {
     document.querySelector("#search__content").appendChild(elemDiv);
   });
 
+  //Display sort nav
+  sortNav.classList.add("d_flex");
+
   // Hide pagination block if there is less than 20 results and one page
   if (results.length < 20) {
     // Hide pagination block if there is only one page and one result

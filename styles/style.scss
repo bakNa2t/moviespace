@@ -155,6 +155,9 @@ a {
 .d_none {
   display: none !important;
 }
+.d_flex {
+  display: flex;
+}
 .grid_elm_center {
   place-self: center;
   width: 280px;
