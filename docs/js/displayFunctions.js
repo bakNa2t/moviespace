@@ -605,7 +605,7 @@ export function displaySearchResults(results) {
     } else if (results.length < 4 && screen.width > 768) {
       resultGrid.classList.add("grid_pdg_h_80");
       document.querySelector(".wrapper").style.justifyContent = "end";
-      document.querySelector(".wrapper__sort").style.marginBottom = "10px";
+      document.querySelector(".wrapper__sort__btn").style.marginBottom = "10px";
     }
 
     pgnUp.classList.add("d_none");
