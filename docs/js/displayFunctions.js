@@ -605,12 +605,13 @@ export function displaySearchResults(results) {
     // Hide pagination block if there is only one page and one result
     if (results.length < 2 && screen.width > 768) {
       document.querySelector(".card").classList.add("grid_elm_center");
-      sortNav.classList.remove("d_flex");
     } else if (results.length < 3 && screen.width > 768) {
       resultGrid.classList.add("grid_pdg_h_295");
-      sortNav.classList.remove("d_flex");
     } else if (results.length < 4 && screen.width > 768) {
       resultGrid.classList.add("grid_pdg_h_80");
+    }
+
+    if (results.length < 5) {
       sortNav.classList.remove("d_flex");
     }
 
