@@ -396,6 +396,17 @@ export async function displayTVShowDetails() {
         .join(", ")}</p>
       <h5 class="text-secondary">Creators:</h5>
       <p class="list__group">${
+        showDetail.created_by.length > 0
+          ? showDetail.created_by
+              .map(
+                (creator) =>
+                  `<span class="bg_secondary_light mg_btm4">${creator.name}</span>`
+              )
+              .join(", ")
+          : `<span class="bg_secondary_light">N/A</span>`
+      }</p>
+      <h5 class="text-secondary">Executive Producers:</h5>
+      <p class="list__group">${
         showTeam.crew.length > 0
           ? `${showTeam.crew
               .filter((crew) => crew.job === "Executive Producer")
