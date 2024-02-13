@@ -48,11 +48,11 @@
     }
   }
   // search result page
-  .heading {
-    font-size: 20px;
-    margin: 0 auto 30px;
-  }
   .popular__container {
+    .heading {
+      margin: 0 auto 10px;
+      font-size: 20px;
+    }
     h2 {
       font-size: 26px;
     }
@@ -75,7 +75,7 @@
         }
         .btn_sort {
           font-size: 14px;
-          padding: 0.2px 0.6px;
+          padding: 0.2rem 0.6rem;
         }
       }
     }
