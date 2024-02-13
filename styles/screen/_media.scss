@@ -68,8 +68,15 @@
           margin-bottom: 10px;
         }
       }
-      .wrapper__sort {
+      .wrapper__sort__btn {
         justify-content: flex-end;
+        .btn__sort__heading {
+          font-size: 12px;
+        }
+        .btn__sort {
+          font-size: 14px;
+          padding: 0.2px 0.6px;
+        }
       }
     }
   }
