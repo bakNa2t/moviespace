@@ -161,13 +161,6 @@
       margin: 0 auto 20px;
     }
   }
-  .popular__container {
-    h2 {
-      margin-top: 0 !important;
-      font-size: 23px;
-      margin: 0 auto 30px;
-    }
-  }
   .footer__main {
     .footer__container {
       .footer__logo {
@@ -182,6 +175,7 @@
       }
       .social__links {
         font-size: 20px;
+        margin-right: 12px;
         a {
           margin-left: 10px;
         }
