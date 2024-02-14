@@ -530,6 +530,9 @@ export function displaySearchResults(results) {
   document.querySelector("#pagination__top").innerHTML = "";
   document.querySelector("#pagination__bottom").innerHTML = "";
 
+  // Add class "opacity_up" to search results
+  addOpacityToSearchContent();
+
   results.forEach((result) => {
     const elemDiv = document.createElement("div");
     elemDiv.classList.add("card");
@@ -610,7 +613,7 @@ export function displaySearchResults(results) {
     document.querySelector("#search__content").appendChild(elemDiv);
   });
 
-  //Display sort nav
+  //Display sort nav btns
   sortNav.classList.add("d_flex");
 
   // Hide pagination block if there is less than 20 results and one page
@@ -636,6 +639,11 @@ export function displaySearchResults(results) {
     wrapper.style.justifyContent = "end";
     wrapper.style.marginBottom = "20px";
   }
+
+  setTimeout(() => {
+    //Remove class "opacity_up" to search results
+    removeOpacityToSearchContent();
+  }, 1000);
 
   displayPagination();
 }
