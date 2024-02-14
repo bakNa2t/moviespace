@@ -181,8 +181,8 @@ function displayLabelCheckedClicked(obj) {
 }
 
 // Show details posters after loading
-export function showDetailsPosters() {
-  document.querySelector(".details__posters").classList.remove("d_none");
+export function removeSelector(selector) {
+  document.querySelector(selector).classList.remove("d_none");
 }
 
 // Display sorted content for search results by release date descending

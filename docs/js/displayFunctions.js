@@ -11,7 +11,7 @@ import {
   displayBackgroundImage,
   separeteNumberWithComma,
   convertReleaseDate,
-  showDetailsPosters,
+  removeSelector,
   addOpacityToSearchContent,
   removeOpacityToSearchContent,
 } from "./supportFunctions.js";
@@ -325,7 +325,7 @@ export async function displayMovieDetails() {
   document.querySelector("#movie__details").appendChild(elemDiv);
 
   hideSpinner();
-  showDetailsPosters();
+  removeSelector(".details__posters");
   displayDetailsMoviesPosters();
 
   document.querySelector(
@@ -485,7 +485,7 @@ export async function displayTVShowDetails() {
   document.querySelector("#tv__details").appendChild(elemDiv);
 
   hideSpinner();
-  showDetailsPosters();
+  removeSelector(".details__posters");
   displayDetailsTVShowPosters();
 
   document.querySelector(
