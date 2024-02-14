@@ -207,3 +207,13 @@ export function sortByReleaseDateAsc(results) {
       : (a, b) => new Date(a.first_air_date) - new Date(b.first_air_date)
   );
 }
+
+//Add class "opacity_up" to search results
+export function addOpacityToSearchContent() {
+  document.querySelector("#search__content").classList.add("opacity_up");
+}
+
+//Remove class "opacity_up" to search results
+export function removeOpacityToSearchContent() {
+  document.querySelector("#search__content").classList.remove("opacity_up");
+}
