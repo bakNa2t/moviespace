@@ -431,7 +431,9 @@ export async function displayTVShowDetails() {
       </ul>
       <a href="${
         showDetail.homepage
-      }" target="_blank" class="btn btn__pulse">Visit Movie Homepage</a>
+          ? `${showDetail.homepage}" target="_blank" class="btn btn__pulse`
+          : `#" target="_self" class="btn btn__pulse d_none`
+      }">Visit TV Show Homepage</a>
     </div>
   </div>
   <div class="details__bottom">
