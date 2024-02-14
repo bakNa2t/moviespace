@@ -180,11 +180,6 @@ function displayLabelCheckedClicked(obj) {
   }
 }
 
-// Hide details posters before loading
-export function hideDetailsPosters() {
-  document.querySelector(".details__posters").classList.add("d_none");
-}
-
 // Show details posters after loading
 export function showDetailsPosters() {
   document.querySelector(".details__posters").classList.remove("d_none");

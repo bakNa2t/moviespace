@@ -11,7 +11,6 @@ import {
   displayBackgroundImage,
   separeteNumberWithComma,
   convertReleaseDate,
-  hideDetailsPosters,
   showDetailsPosters,
   addOpacityToSearchContent,
   removeOpacityToSearchContent,
@@ -183,7 +182,6 @@ export async function displayMostWatchedTVShoes() {
 export async function displayMovieDetails() {
   const movieId = window.location.search.split("=")[1];
 
-  hideDetailsPosters();
   displaySpinner();
 
   const movieDetail = await fetchData(`movie/${movieId}`);
@@ -340,7 +338,6 @@ export async function displayTVShowDetails() {
   const showId = window.location.search.split("=")[1];
 
   displaySpinner();
-  hideDetailsPosters();
 
   const showDetail = await fetchData(`tv/${showId}`);
   //Display TVShow cast
