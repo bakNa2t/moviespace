@@ -13,6 +13,8 @@ import {
   convertReleaseDate,
   hideDetailsPosters,
   showDetailsPosters,
+  addOpacityToSearchContent,
+  removeOpacityToSearchContent,
 } from "./supportFunctions.js";
 
 //Display 12 top rated Movies on the main page
