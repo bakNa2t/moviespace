@@ -643,7 +643,7 @@ export function displaySearchResults(results) {
   setTimeout(() => {
     //Remove class "opacity_up" to search results
     removeOpacityToSearchContent();
-  }, 1000);
+  }, 2000);
 
   displayPagination();
 }
