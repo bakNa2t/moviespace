@@ -487,6 +487,7 @@ export async function displayTVShowDetails() {
 
   hideSpinner();
   removeSelector(".details__posters");
+  removeSelector(".back");
   displayDetailsTVShowPosters();
 
   document.querySelector(
