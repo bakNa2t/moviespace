@@ -326,6 +326,7 @@ export async function displayMovieDetails() {
 
   hideSpinner();
   removeSelector(".details__posters");
+  removeSelector(".back");
   displayDetailsMoviesPosters();
 
   document.querySelector(
