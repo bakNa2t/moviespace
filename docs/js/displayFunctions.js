@@ -509,30 +509,6 @@ async function displayMovieShowMembers(term, itemId) {
   return teamList;
 }
 
-// Display media cast in the movie details page
-// async function displayMovieCast(itemId) {
-//   const { cast, crew } = await fetchData(`movie/${itemId}/credits`);
-
-//   const teamList = {
-//     cast: cast.slice(0, 10),
-//     crew: crew,
-//   };
-
-//   return teamList;
-// }
-
-// Display media cast in the tv-show details page
-// async function displayTVShowCast(itemId) {
-//   const { cast, crew } = await fetchData(`tv/${itemId}/credits`);
-
-//   const teamList = {
-//     cast: cast.slice(0, 10),
-//     crew: crew,
-//   };
-
-//   return teamList;
-// }
-
 // Display search results
 export function displaySearchResults(results) {
   const pgnUp = document.querySelector("#pagination__top");

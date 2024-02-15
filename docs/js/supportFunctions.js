@@ -195,8 +195,8 @@ export function sortByReleaseDateDesc(data) {
 }
 
 // Display sorted content for search results by release date ascending
-export function sortByReleaseDateAsc(results) {
-  return results.sort(
+export function sortByReleaseDateAsc(data) {
+  return data.sort(
     globalPathName.searchResult.type === "movie"
       ? (a, b) => new Date(a.release_date) - new Date(b.release_date)
       : (a, b) => new Date(a.first_air_date) - new Date(b.first_air_date)
