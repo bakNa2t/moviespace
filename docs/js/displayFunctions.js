@@ -185,8 +185,9 @@ export async function displayMovieDetails() {
   displaySpinner();
 
   const movieDetail = await fetchData(`movie/${movieId}`);
-  //Display movie cast
-  const movieTeam = await displayMovieCast(movieId);
+
+  //Display movie cast and crew
+  const movieTeam = await displayMovieShowMembers("movie", movieId);
 
   // Background movie image as overlay
   displayBackgroundImage("movie", movieDetail.backdrop_path);
@@ -341,8 +342,9 @@ export async function displayTVShowDetails() {
   displaySpinner();
 
   const showDetail = await fetchData(`tv/${showId}`);
-  //Display TVShow cast
-  const showTeam = await displayTVShowCast(showId);
+
+  //Display TVShow cast and crew
+  const showTeam = await displayMovieShowMembers("tv", showId);
 
   // Background movie image as overlay
   displayBackgroundImage("tv", showDetail.backdrop_path);
@@ -495,9 +497,9 @@ export async function displayTVShowDetails() {
   ).innerHTML = `MovieSpace | ${showDetail.name} - TV Show Details`;
 }
 
-// Display media cast in the movie details page
-async function displayMovieCast(itemId) {
-  const { cast, crew } = await fetchData(`movie/${itemId}/credits`);
+// Display media cast and crew in the person details page
+async function displayMovieShowMembers(term, itemId) {
+  const { cast, crew } = await fetchData(`${term}/${itemId}/credits`);
 
   const teamList = {
     cast: cast.slice(0, 10),
@@ -506,18 +508,30 @@ async function displayMovieCast(itemId) {
 
   return teamList;
 }
+
+// Display media cast in the movie details page
+// async function displayMovieCast(itemId) {
+//   const { cast, crew } = await fetchData(`movie/${itemId}/credits`);
+
+//   const teamList = {
+//     cast: cast.slice(0, 10),
+//     crew: crew,
+//   };
+
+//   return teamList;
+// }
 
 // Display media cast in the tv-show details page
-async function displayTVShowCast(itemId) {
-  const { cast, crew } = await fetchData(`tv/${itemId}/credits`);
+// async function displayTVShowCast(itemId) {
+//   const { cast, crew } = await fetchData(`tv/${itemId}/credits`);
 
-  const teamList = {
-    cast: cast.slice(0, 10),
-    crew: crew,
-  };
+//   const teamList = {
+//     cast: cast.slice(0, 10),
+//     crew: crew,
+//   };
 
-  return teamList;
-}
+//   return teamList;
+// }
 
 // Display search results
 export function displaySearchResults(results) {
