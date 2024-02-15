@@ -31,21 +31,12 @@ export function displayBackgroundImage(type, backgroundPath) {
   const imageDiv = document.createElement("div");
   const urlBackgroundImg = `https://image.tmdb.org/t/p/original/${backgroundPath}`;
 
+  imageDiv.classList.add("backdrop__img");
+
   imageDiv.style.backgroundImage =
     urlBackgroundImg !== "https://image.tmdb.org/t/p/original/null"
       ? `url(https://image.tmdb.org/t/p/original/${backgroundPath})`
       : `url(../images/movie-show-default-bg.jpg)`;
-  // imageDiv.classList.add("backdrop");
-  imageDiv.style.backgroundSize = "cover";
-  imageDiv.style.backgroundPosition = "center";
-  imageDiv.style.backgroundRepeat = "no-repeat";
-  imageDiv.style.height = "100vh";
-  imageDiv.style.width = "100vw";
-  imageDiv.style.position = "fixed";
-  imageDiv.style.top = "0";
-  imageDiv.style.left = "0";
-  imageDiv.style.zIndex = "-1";
-  imageDiv.style.opacity = "0.35";
 
   if (type === "movie") {
     document.querySelector("#movie__details").appendChild(imageDiv);
