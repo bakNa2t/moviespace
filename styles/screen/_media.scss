@@ -3,6 +3,12 @@
     .header__container {
       padding: 0 20px;
       .header__logo {
+        a {
+          font-size: 23px;
+          span {
+            font-size: 30px;
+          }
+        }
         &:hover {
           letter-spacing: 3px;
         }
