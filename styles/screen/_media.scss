@@ -30,22 +30,27 @@
     }
   }
   .search {
-    padding: 40px 20px;
+    padding: 40px 50px;
     margin-bottom: 0;
     .search__container {
       .search__form {
         .search__switcher {
           width: fit-content;
-          margin: 0 auto;
+          label {
+            font-size: 13px;
+          }
         }
         .search__flex {
-          margin-top: 15px;
+          margin-top: 10px;
           .input__form {
             width: 80%;
           }
         }
       }
     }
+  }
+  .container {
+    padding: 0 50px;
   }
   // search result page
   .popular__container {
