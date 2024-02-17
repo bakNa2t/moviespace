@@ -8,6 +8,7 @@ import {
   addTranslateXClass,
   sortByReleaseDateDesc,
   sortByReleaseDateAsc,
+  displayLogoBtnBack,
 } from "./supportFunctions.js";
 import { searchAPIData } from "./fetchFunctions.js";
 import {
@@ -88,6 +89,7 @@ function init() {
       displayTopRatedTVShoes();
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
+      displayLogoBtnBack();
       break;
     case "/pages/movies.html":
       displayNavLinkActive();
