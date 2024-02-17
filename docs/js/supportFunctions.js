@@ -70,6 +70,19 @@ export function clickMoveToTheTopBtn() {
   moveUp.addEventListener("click", moveToTheTopBtn);
 }
 
+// Show Logo Back Btn when scroll
+export function displayLogoBtnBack() {
+  const logoBtnBack = document.querySelector(".logo__btn__back");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      logoBtnBack.style.opacity = 1;
+    } else {
+      logoBtnBack.style.opacity = 0;
+    }
+  });
+}
+
 // Separete big numbers with comma
 export function separeteNumberWithComma(number) {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
