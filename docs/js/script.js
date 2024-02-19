@@ -98,6 +98,7 @@ function init() {
       displayMostWatchedMovies();
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
+      displayLogoBtnBack();
       break;
     case "/pages/tv-shows.html":
       displayNavLinkActive();
@@ -106,18 +107,22 @@ function init() {
       displayMostWatchedTVShoes();
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
+      displayLogoBtnBack();
       break;
     case "/pages/movie-details.html":
       displayMovieDetails();
+      displayLogoBtnBack();
       break;
     case "/pages/tv-details.html":
       displayTVShowDetails();
+      displayLogoBtnBack();
       break;
     case "/pages/search-result.html":
       searchContent();
       displayLabelCheckedDefault();
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
+      displayLogoBtnBack();
       break;
   }
 
