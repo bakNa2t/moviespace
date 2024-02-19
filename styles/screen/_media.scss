@@ -10,6 +10,16 @@
   }
   .container {
     padding: 0 60px;
+    .content__details {
+      .details__top {
+        div {
+          img {
+            width: 300px;
+            margin-right: 30px;
+          }
+        }
+      }
+    }
   }
   .footer__main {
     .footer__container {
