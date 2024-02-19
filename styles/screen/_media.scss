@@ -1,3 +1,22 @@
+@media screen and (max-width: 768px) {
+  .header__main {
+    .header__container {
+      padding: 0 60px;
+    }
+  }
+  .search {
+    padding: 60px 140px;
+    margin-bottom: 0;
+  }
+  .container {
+    padding: 0 60px;
+  }
+  .footer__main {
+    .footer__container {
+      padding: 0 60px;
+    }
+  }
+}
 @media screen and (max-width: 512px) {
   .header__main {
     .header__container {
