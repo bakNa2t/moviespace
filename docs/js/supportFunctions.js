@@ -153,8 +153,8 @@ export function displayLabelCheckedDefault() {
   const searchInputs = document.querySelectorAll("input[type=radio]");
 
   searchInputs[0].checked
-    ? document.querySelector("label").classList.add("txt_sdw")
-    : document.querySelector("label").classList.remove("txt_sdw");
+    ? document.querySelector(".label__search").classList.add("txt_sdw")
+    : document.querySelector(".label__search").classList.remove("txt_sdw");
 
   document.addEventListener("click", () => {
     displayLabelCheckedClicked(searchInputs);
@@ -163,7 +163,7 @@ export function displayLabelCheckedDefault() {
 
 // Display active search label if label is clicked
 function displayLabelCheckedClicked(obj) {
-  const labels = document.querySelectorAll("label");
+  const labels = document.querySelectorAll(".label__search");
 
   if (obj[0].checked) {
     labels.forEach((label) => {
