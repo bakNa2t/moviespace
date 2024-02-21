@@ -37,46 +37,112 @@
         transition: all 0.4s linear;
       }
     }
-    nav {
-      ul {
-        display: flex;
-        li {
-          margin-left: 20px;
-          a {
-            position: relative;
-            font-size: 22px;
-            padding-bottom: 3px;
+
+    #menu__toggle {
+      display: none;
+      &:checked {
+        + {
+          .menu__btn__container {
+            .menu__btn {
+              &::before {
+                margin-top: 0px;
+                transform: rotate(405deg);
+              }
+              background: rgba(255, 255, 255, 0);
+              &::after {
+                margin-top: 0px;
+                transform: rotate(-405deg);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .menu__btn__container {
+      display: none;
+      height: 100%;
+      width: 30px;
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .menu__btn {
+      display: block;
+      background-color: #fff;
+      position: absolute;
+      top: 50%;
+      height: 4px;
+      width: 30px;
+      transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      border-radius: 2px;
+      &::before {
+        display: block;
+        background-color: #fff;
+        position: absolute;
+        height: 4px;
+        width: 30px;
+        transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+        border-radius: 2px;
+        content: "";
+        margin-top: -8px;
+      }
+      &::after {
+        display: block;
+        background-color: #fff;
+        position: absolute;
+        height: 4px;
+        width: 30px;
+        transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+        border-radius: 2px;
+        content: "";
+        margin-top: 8px;
+      }
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: row;
+      z-index: 10;
+      li {
+        margin: 0 1rem;
+        overflow: hidden;
+        a {
+          position: relative;
+          font-size: 22px;
+          padding-bottom: 3px;
+          transition: all 0.4s ease-in-out;
+          span {
+            font-size: 30px;
+            margin-right: 3px;
+            font-family: "Permanent Marker", cursive;
+            color: var(--secondary-color);
+            text-shadow: 0 0 4px var(--secondary-color);
+            -webkit-text-stroke: 0.025rem var(--light-color);
+            -moz-text-stroke: 0.025rem var(--light-color);
+            -ms-text-stroke: 0.025rem var(--light-color);
+            -o-text-stroke: 0.025rem var(--light-color);
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            background-color: var(--secondary-color);
+            height: 2px;
+            width: 0;
+            left: 0;
+            bottom: -2px;
             transition: all 0.4s ease-in-out;
-            span {
-              font-size: 30px;
-              margin-right: 3px;
-              font-family: "Permanent Marker", cursive;
-              color: var(--secondary-color);
-              text-shadow: 0 0 4px var(--secondary-color);
-              -webkit-text-stroke: 0.025rem var(--light-color);
-              -moz-text-stroke: 0.025rem var(--light-color);
-              -ms-text-stroke: 0.025rem var(--light-color);
-              -o-text-stroke: 0.025rem var(--light-color);
-            }
-            &::after {
-              content: "";
-              position: absolute;
-              background-color: var(--secondary-color);
-              height: 2px;
-              width: 0;
-              left: 0;
-              bottom: -2px;
-              transition: all 0.4s ease-in-out;
-            }
-            &:hover::after {
-              width: 100%;
-              transition: all 0.4s ease-in-out;
-            }
-            &:hover:not(.active) {
-              color: var(--secondary-color);
-              text-shadow: 0 0 6px var(--primary-color);
-              transition: all 0.4s ease-in-out;
-            }
+          }
+          &:hover::after {
+            width: 100%;
+            transition: all 0.4s ease-in-out;
+          }
+          &:hover:not(.active) {
+            color: var(--secondary-color);
+            text-shadow: 0 0 6px var(--primary-color);
+            transition: all 0.4s ease-in-out;
           }
         }
       }

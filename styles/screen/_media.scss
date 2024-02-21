@@ -30,6 +30,7 @@
 @media screen and (max-width: 512px) {
   .header__main {
     .header__container {
+      position: relative;
       padding: 0 20px;
       .header__logo {
         a {
@@ -42,14 +43,53 @@
           letter-spacing: 3px;
         }
       }
-      nav {
-        ul {
-          li {
-            margin-left: 10px;
-            a {
-              font-size: 18px;
-              span {
-                font-size: 26px;
+      .menu__btn__container {
+        display: flex;
+      }
+
+      .menu {
+        position: absolute;
+        top: 0;
+        margin-top: 50px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        > li {
+          display: flex;
+          justify-content: center;
+          margin: 0;
+          padding: 1.5rem 0;
+          width: 100%;
+          color: #fff;
+          background-color: rgba(34, 34, 34, 0.8);
+          &:not(:last-child) {
+            border-bottom: 2px solid #444;
+          }
+        }
+      }
+
+      #menu__toggle {
+        ~ {
+          .menu {
+            li {
+              height: 0;
+              margin: 0;
+              padding: 0;
+              border: 0;
+              transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+            }
+          }
+        }
+        &:checked {
+          ~ {
+            .menu {
+              li {
+                border: 1px solid var(--secondary-color);
+                height: 60px;
+                padding: 0.5rem;
+                transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
               }
             }
           }
