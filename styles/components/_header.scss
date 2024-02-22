@@ -47,11 +47,13 @@
               &::before {
                 margin-top: 0px;
                 transform: rotate(405deg);
+                box-shadow: 0 0 5px 1px var(--secondary-color);
               }
               background: rgba(255, 255, 255, 0);
               &::after {
                 margin-top: 0px;
                 transform: rotate(-405deg);
+                box-shadow: 0 0 5px 1px var(--secondary-color);
               }
             }
           }
