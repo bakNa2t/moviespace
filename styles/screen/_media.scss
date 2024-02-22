@@ -87,9 +87,12 @@
             .menu {
               li {
                 border: 1px solid var(--secondary-color);
-                height: 60px;
-                padding: 0.5rem;
+                height: 70px;
+                padding: 12px 0;
                 transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+                a {
+                  padding-bottom: 1px;
+                }
               }
             }
           }
