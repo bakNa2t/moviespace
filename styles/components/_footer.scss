@@ -74,7 +74,9 @@
     margin: 5px auto 0;
     width: fit-content;
     font-size: 10px;
+    color: var(--secondary-color-light4);
     a {
+      display: inline-block;
       font-size: 10px;
       font-weight: 800;
       text-decoration: none;
