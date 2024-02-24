@@ -318,5 +318,18 @@ a {
   }
 }
 
+// === Show Logo Back Btn when scroll
+.show__elem {
+  visibility: visible;
+  display: flex !important;
+  animation: opacity 2s ease-in-out forwards;
+
+  @keyframes opacity {
+    to {
+      opacity: 1;
+    }
+  }
+}
+
 // === link media queries
 @import "./screen/media";
