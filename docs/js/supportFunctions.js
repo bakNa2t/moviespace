@@ -76,11 +76,9 @@ export function displayLogoBtnBack() {
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 300) {
-      logoBtnBack.style.visibility = "visible";
-      logoBtnBack.style.opacity = 1;
+      document.querySelector(".logo__btn__back").classList.add("show__elem");
     } else {
-      logoBtnBack.style.visibility = "hidden";
-      logoBtnBack.style.opacity = 0;
+      document.querySelector(".logo__btn__back").classList.remove("show__elem");
     }
   });
 }

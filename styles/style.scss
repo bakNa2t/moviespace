@@ -321,8 +321,7 @@ a {
 // === Show Logo Back Btn when scroll
 .show__elem {
   visibility: visible;
-  display: flex !important;
-  animation: opacity 2s ease-in-out forwards;
+  animation: opacity 1.5s ease-in-out forwards;
 
   @keyframes opacity {
     to {
