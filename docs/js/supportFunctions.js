@@ -76,9 +76,9 @@ export function displayLogoBtnBack() {
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 300) {
-      document.querySelector(".logo__btn__back").classList.add("show__elem");
+      logoBtnBack.classList.add("show__elem");
     } else {
-      document.querySelector(".logo__btn__back").classList.remove("show__elem");
+      logoBtnBack.classList.remove("show__elem");
     }
   });
 }
