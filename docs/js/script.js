@@ -9,6 +9,7 @@ import {
   sortByReleaseDateDesc,
   sortByReleaseDateAsc,
   displayLogoBtnBack,
+  displayFullYearInFooter,
 } from "./supportFunctions.js";
 import { searchAPIData } from "./fetchFunctions.js";
 import {
@@ -90,6 +91,7 @@ function init() {
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
       displayLogoBtnBack();
+      displayFullYearInFooter();
       break;
     case "/pages/movies.html":
       displayNavLinkActive();
@@ -99,6 +101,7 @@ function init() {
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
       displayLogoBtnBack();
+      displayFullYearInFooter();
       break;
     case "/pages/tv-shows.html":
       displayNavLinkActive();
@@ -108,14 +111,17 @@ function init() {
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
       displayLogoBtnBack();
+      displayFullYearInFooter();
       break;
     case "/pages/movie-details.html":
       displayMovieDetails();
       displayLogoBtnBack();
+      displayFullYearInFooter();
       break;
     case "/pages/tv-details.html":
       displayTVShowDetails();
       displayLogoBtnBack();
+      displayFullYearInFooter();
       break;
     case "/pages/search-result.html":
       searchContent();
@@ -123,6 +129,7 @@ function init() {
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
       displayLogoBtnBack();
+      displayFullYearInFooter();
       break;
   }
 
