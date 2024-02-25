@@ -219,6 +219,6 @@ export function removeOpacityToSearchContent() {
 
 // Add full year to footer copyright
 export function displayFullYearInFooter() {
-  const yearDate = new Date.getFullYear();
+  const yearDate = new Date().getFullYear();
   document.querySelector(".footer__year").innerHTML = yearDate;
 }
