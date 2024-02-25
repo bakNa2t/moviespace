@@ -75,6 +75,10 @@
     width: fit-content;
     font-size: 10px;
     color: var(--secondary-color-light4);
+    .footer__year {
+      color: var(--secondary-color);
+      text-shadow: 0 0 3px var(--text-color);
+    }
     a {
       display: inline-block;
       font-size: 10px;
