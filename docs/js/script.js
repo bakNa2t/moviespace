@@ -9,7 +9,6 @@ import {
   sortByReleaseDateDesc,
   sortByReleaseDateAsc,
   displayLogoBtnBack,
-  displayFullYearInFooter,
 } from "./supportFunctions.js";
 import { searchAPIData } from "./fetchFunctions.js";
 import {
@@ -20,6 +19,7 @@ import {
   displayMovieDetails,
   displayTVShowDetails,
   displaySearchResults,
+  displayCopyrightInFooter,
 } from "./displayFunctions.js";
 import {
   displayNowWatchingMoviesSlider,
@@ -88,48 +88,48 @@ function init() {
       displayLabelCheckedDefault();
       displayTopRatedMovies();
       displayTopRatedTVShoes();
+      displayCopyrightInFooter();
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
       displayLogoBtnBack();
-      displayFullYearInFooter();
       break;
     case "/pages/movies.html":
       displayNavLinkActive();
       displayLabelCheckedDefault();
       displayUpcomingMoviesSlider();
       displayMostWatchedMovies();
+      displayCopyrightInFooter();
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
       displayLogoBtnBack();
-      displayFullYearInFooter();
       break;
     case "/pages/tv-shows.html":
       displayNavLinkActive();
       displayLabelCheckedDefault();
       displayOnTheAirShowsSlider();
       displayMostWatchedTVShoes();
+      displayCopyrightInFooter();
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
       displayLogoBtnBack();
-      displayFullYearInFooter();
       break;
     case "/pages/movie-details.html":
       displayMovieDetails();
+      displayCopyrightInFooter();
       displayLogoBtnBack();
-      displayFullYearInFooter();
       break;
     case "/pages/tv-details.html":
       displayTVShowDetails();
+      displayCopyrightInFooter();
       displayLogoBtnBack();
-      displayFullYearInFooter();
       break;
     case "/pages/search-result.html":
       searchContent();
+      displayCopyrightInFooter();
       displayLabelCheckedDefault();
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
       displayLogoBtnBack();
-      displayFullYearInFooter();
       break;
   }
 
