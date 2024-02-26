@@ -5,7 +5,7 @@ import globalPathName from "./env/globalParam.js";
 function initSwiper() {
   const swiper = new Swiper(".swiper", {
     slidesPerView: 1,
-    spaceBetween: 30,
+    spaceBetween: 25,
     freeMode: true,
     loop: true,
     autoplay: {
@@ -15,12 +15,17 @@ function initSwiper() {
     breakpoints: {
       500: {
         slidesPerView: 2,
+        spaceBetween: 20,
       },
       700: {
         slidesPerView: 3,
+        spaceBetween: 20,
       },
       1200: {
         slidesPerView: 5,
+      },
+      1900: {
+        slidesPerView: 7,
       },
     },
   });
