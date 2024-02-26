@@ -1,3 +1,23 @@
+@media screen and (min-width: 1900px) {
+  // .header__main {
+  //   .header__container {
+  //     max-width: 1600px;
+  //   }
+  // }
+  .current__content {
+    .swiper {
+      max-width: 1600px;
+    }
+  }
+  // .details__posters {
+  //   max-width: 1600px;
+  // }
+  // .footer__main {
+  //   .footer__container {
+  //     max-width: 1600px;
+  //   }
+  // }
+}
 @media screen and (max-width: 768px) {
   .header__main {
     .header__container {
