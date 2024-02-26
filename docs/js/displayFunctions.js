@@ -709,3 +709,16 @@ function displayPagination() {
     displaySearchResults(results);
   });
 }
+
+// Dispaly copyright and full year in footer
+export function displayCopyrightInFooter() {
+  const footer = document.querySelector(".footer__main");
+  const yearDate = new Date().getFullYear();
+
+  const elemDiv = document.createElement("div");
+
+  elemDiv.classList.add("footer__copy");
+  elemDiv.innerHTML = `Copyright &copy; <span class="footer__year">${yearDate}</span>. Designed by <a href="https://github.com/bakna2t" target="_blank">_&#216;k</a>`;
+
+  footer.appendChild(elemDiv);
+}
