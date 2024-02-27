@@ -492,7 +492,7 @@ export async function displayTVShowDetails() {
   hideSpinner();
   removeSelector(".details__posters");
   removeSelector(".back");
-  displayDetailsContentPosters("tv", itemId);
+  displayDetailsContentPosters("tv", showId);
 
   document.querySelector(
     "title"
