@@ -521,6 +521,7 @@ export function displaySearchResults(results) {
   const resultGrid = document.querySelector("#search__content");
   const wrapper = document.querySelector(".wrapper");
   const sortNav = document.querySelector(".wrapper__sort__btn");
+  const dateHeading = document.querySelector("#date__heading");
 
   // Clear previous results
   document.querySelector("#search__content").innerHTML = "";
@@ -610,6 +611,10 @@ export function displaySearchResults(results) {
 
     document.querySelector("#search__content").appendChild(elemDiv);
   });
+
+  //Display date heading "Release" or "Air Date" depending on type of search
+  dateHeading.innerHTML =
+    globalPathName.searchResult.type === "movie" ? "Release" : "Air Date";
 
   //Display sort nav btns
   sortNav.classList.add("d_flex");
