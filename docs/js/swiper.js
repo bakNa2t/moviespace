@@ -151,33 +151,8 @@ export async function displayOnTheAirShowsSlider() {
 }
 
 // A list of movie posters from a certain movie
-export async function displayDetailsMoviesPosters() {
-  const itemId = window.location.search.split("=")[1];
-
-  const { backdrops } = await fetchData(`movie/${itemId}/images`);
-
-  if (backdrops.length > 0) {
-    backdrops.forEach((poster) => {
-      const elemDiv = document.createElement("div");
-
-      elemDiv.classList.add("swiper-slide");
-
-      elemDiv.innerHTML = `<img src="https://image.tmdb.org/t/p/w500${poster.file_path}" alt="${itemId} ${poster.file_path}" />`;
-
-      document.querySelector(".swiper-wrapper").appendChild(elemDiv);
-
-      initSwiperPoster();
-    });
-  } else {
-    document.querySelector(".details__posters").style.display = "none";
-  }
-}
-
-// A list of movie posters from a certain tv show
-export async function displayDetailsTVShowPosters() {
-  const itemId = window.location.search.split("=")[1];
-
-  const { backdrops } = await fetchData(`tv/${itemId}/images`);
+export async function displayDetailsContentPosters(term, itemId) {
+  const { backdrops } = await fetchData(`${term}/${itemId}/images`);
 
   if (backdrops.length > 0) {
     backdrops.forEach((poster) => {
