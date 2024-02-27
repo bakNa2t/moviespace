@@ -1,10 +1,7 @@
 import globalPathName from "./env/globalParam.js";
 
 import { fetchData, searchAPIData } from "./fetchFunctions.js";
-import {
-  displayDetailsMoviesPosters,
-  displayDetailsTVShowPosters,
-} from "./swiper.js";
+import { displayDetailsContentPosters } from "./swiper.js";
 import {
   displaySpinner,
   hideSpinner,
@@ -328,7 +325,7 @@ export async function displayMovieDetails() {
   hideSpinner();
   removeSelector(".details__posters");
   removeSelector(".back");
-  displayDetailsMoviesPosters();
+  displayDetailsContentPosters("movie", movieId);
 
   document.querySelector(
     "title"
@@ -495,7 +492,7 @@ export async function displayTVShowDetails() {
   hideSpinner();
   removeSelector(".details__posters");
   removeSelector(".back");
-  displayDetailsTVShowPosters();
+  displayDetailsContentPosters("tv", itemId);
 
   document.querySelector(
     "title"
