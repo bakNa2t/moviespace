@@ -412,13 +412,18 @@ export async function displayTVShowDetails() {
       <h5 class="text-secondary">Executive Producers:</h5>
       <p class="list__group">${
         showTeam.crew.length > 0
-          ? `${showTeam.crew
-              .filter((crew) => crew.job === "Executive Producer")
-              .map(
-                (crew) =>
-                  `<span class="bg_secondary_light mg_btm4">${crew.name}</span>`
-              )
-              .join(", ")}`
+          ? `${
+              showTeam.crew.filter((crew) => crew.job === "Executive Producer")
+                .length > 0
+                ? showTeam.crew
+                    .filter((crew) => crew.job === "Executive Producer")
+                    .map(
+                      (crew) =>
+                        `<span class="bg_secondary_light mg_btm4">${crew.name}</span>`
+                    )
+                    .join(", ")
+                : `<span class="bg_secondary_light">N/A</span>`
+            }`
           : `<span class="bg_secondary_light">N/A</span>`
       }</p>
       <h5 class="text-secondary">Genres</h5>
