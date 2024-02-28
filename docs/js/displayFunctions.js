@@ -271,8 +271,8 @@ export async function displayMovieDetails() {
       </ul>
       <a href="${
         movieDetail.homepage
-          ? `${movieDetail.homepage}" target="_blank" class="btn btn__pulse`
-          : `#" target="_self" class="btn btn__pulse d_none`
+          ? `${movieDetail.homepage}" target="_blank" class="btn btn_pulse`
+          : `#" target="_self" class="btn btn_pulse d_none`
       }">Visit Movie Homepage</a>
     </div>
   </div>
@@ -433,8 +433,8 @@ export async function displayTVShowDetails() {
       </ul>
       <a href="${
         showDetail.homepage
-          ? `${showDetail.homepage}" target="_blank" class="btn btn__pulse`
-          : `#" target="_self" class="btn btn__pulse d_none`
+          ? `${showDetail.homepage}" target="_blank" class="btn btn_pulse`
+          : `#" target="_self" class="btn btn_pulse d_none`
       }">Visit TV Show Homepage</a>
     </div>
   </div>
