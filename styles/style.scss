@@ -75,7 +75,7 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-.btn__pulse {
+.btn_pulse {
   position: relative;
   &:hover {
     &::before {
@@ -104,7 +104,7 @@ a {
   }
 }
 
-.btn__animated {
+.btn_animated {
   animation: moveInBottom 2s ease-out 0.75s;
   animation-fill-mode: backwards;
 
