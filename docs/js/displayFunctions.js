@@ -690,6 +690,26 @@ function displayPagination() {
 
     const { results, total_pages } = await searchAPIData();
     displaySearchResults(results);
+
+    //Display sorted content for search results by release date descending is clicked on btn
+    document
+      .querySelector("#sort__results__desc")
+      .addEventListener("click", () => {
+        //Invoke a function to sort the results
+        const sortedResults = sortByReleaseDateDesc(results);
+        //Display sorted results
+        displaySearchResults(sortedResults);
+      });
+
+    //Display sorted content for search results by release date ascending is clicked on btn
+    document
+      .querySelector("#sort__results__asc")
+      .addEventListener("click", () => {
+        //Invoke a function to sort the results
+        const sortedResults = sortByReleaseDateAsc(results);
+        //Display sorted results
+        displaySearchResults(sortedResults);
+      });
   });
 
   // Add event listeners to "next__bot" button to change pages at the bottom of the search results
@@ -698,6 +718,26 @@ function displayPagination() {
 
     const { results, total_pages } = await searchAPIData();
     displaySearchResults(results);
+
+    //Display sorted content for search results by release date descending is clicked on btn
+    document
+      .querySelector("#sort__results__desc")
+      .addEventListener("click", () => {
+        //Invoke a function to sort the results
+        const sortedResults = sortByReleaseDateDesc(results);
+        //Display sorted results
+        displaySearchResults(sortedResults);
+      });
+
+    //Display sorted content for search results by release date ascending is clicked on btn
+    document
+      .querySelector("#sort__results__asc")
+      .addEventListener("click", () => {
+        //Invoke a function to sort the results
+        const sortedResults = sortByReleaseDateAsc(results);
+        //Display sorted results
+        displaySearchResults(sortedResults);
+      });
   });
 
   // Add event listeners to "prev__top" button to change pages at the top of the search results
@@ -706,6 +746,26 @@ function displayPagination() {
 
     const { results, total_pages } = await searchAPIData();
     displaySearchResults(results);
+
+    //Display sorted content for search results by release date descending is clicked on btn
+    document
+      .querySelector("#sort__results__desc")
+      .addEventListener("click", () => {
+        //Invoke a function to sort the results
+        const sortedResults = sortByReleaseDateDesc(results);
+        //Display sorted results
+        displaySearchResults(sortedResults);
+      });
+
+    //Display sorted content for search results by release date ascending is clicked on btn
+    document
+      .querySelector("#sort__results__asc")
+      .addEventListener("click", () => {
+        //Invoke a function to sort the results
+        const sortedResults = sortByReleaseDateAsc(results);
+        //Display sorted results
+        displaySearchResults(sortedResults);
+      });
   });
 
   // Add event listeners to "prev__bot" button to change pages at the bottom of the search results
@@ -714,6 +774,26 @@ function displayPagination() {
 
     const { results, total_pages } = await searchAPIData();
     displaySearchResults(results);
+
+    //Display sorted content for search results by release date descending is clicked on btn
+    document
+      .querySelector("#sort__results__desc")
+      .addEventListener("click", () => {
+        //Invoke a function to sort the results
+        const sortedResults = sortByReleaseDateDesc(results);
+        //Display sorted results
+        displaySearchResults(sortedResults);
+      });
+
+    //Display sorted content for search results by release date ascending is clicked on btn
+    document
+      .querySelector("#sort__results__asc")
+      .addEventListener("click", () => {
+        //Invoke a function to sort the results
+        const sortedResults = sortByReleaseDateAsc(results);
+        //Display sorted results
+        displaySearchResults(sortedResults);
+      });
   });
 }
 
