@@ -89,7 +89,7 @@ export function separeteNumberWithComma(number) {
 }
 
 // Display Alert message of empty search or not found
-export function displayAlert(message, className = "alert-error") {
+export function displayAlert(message, className = "alert_error") {
   const alertElement = document.createElement("div");
   alertElement.classList.add("alert", className);
   alertElement.appendChild(document.createTextNode(message));
