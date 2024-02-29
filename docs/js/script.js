@@ -32,6 +32,10 @@ async function searchContent() {
   const queryStr = window.location.search;
   const urlParametrs = new URLSearchParams(queryStr);
 
+  // Get desc/asc btn
+  const btnDesc = document.querySelector("#sort__results__desc");
+  const btnAsc = document.querySelector("#sort__results__asc");
+
   globalPathName.searchResult.type = urlParametrs.get("type");
   globalPathName.searchResult.term = urlParametrs.get("search__term");
 
@@ -87,6 +91,10 @@ async function searchContent() {
       const sortedResults = sortByReleaseDateDesc(results);
       //Display sorted results
       displaySearchResults(sortedResults);
+
+      // Add btn_sort_active class to sort btn
+      btnDesc.classList.add("btn_sort_active");
+      btnAsc.classList.remove("btn_sort_active");
     });
 
   //Display sorted content for search results by release date ascending is clicked on btn
@@ -97,6 +105,10 @@ async function searchContent() {
       const sortedResults = sortByReleaseDateAsc(results);
       //Display sorted results
       displaySearchResults(sortedResults);
+
+      // Add btn_sort_active class to sort btn
+      btnAsc.classList.add("btn_sort_active");
+      btnDesc.classList.remove("btn_sort_active");
     });
 }
 
