@@ -83,6 +83,8 @@ async function searchContent() {
     document.querySelector("main").classList.add("alert-flex");
   }
 
+  displaySearchResults(results);
+
   //Display sorted content for search results by release date descending is clicked on btn
   document
     .querySelector("#sort__results__desc")
