@@ -78,6 +78,26 @@ async function searchContent() {
     displayAlert("Please enter search term");
     document.querySelector("main").classList.add("alert-flex");
   }
+
+  //Display sorted content for search results by release date descending is clicked on btn
+  document
+    .querySelector("#sort__results__desc")
+    .addEventListener("click", () => {
+      //Invoke a function to sort the results
+      const sortedResults = sortByReleaseDateDesc(results);
+      //Display sorted results
+      displaySearchResults(sortedResults);
+    });
+
+  //Display sorted content for search results by release date ascending is clicked on btn
+  document
+    .querySelector("#sort__results__asc")
+    .addEventListener("click", () => {
+      //Invoke a function to sort the results
+      const sortedResults = sortByReleaseDateAsc(results);
+      //Display sorted results
+      displaySearchResults(sortedResults);
+    });
 }
 
 //Initialize App with routes
