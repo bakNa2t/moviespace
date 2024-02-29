@@ -216,3 +216,12 @@ export function addOpacityToSearchContent() {
 export function removeOpacityToSearchContent() {
   document.querySelector("#search__content").classList.remove("opacity_up");
 }
+
+export function removeBtnSortActive() {
+  const desc = document.querySelector("#sort__results__desc");
+  const asc = document.querySelector("#sort__results__asc");
+
+  desc.classList.contains("btn_sort_active")
+    ? desc.classList.remove("btn_sort_active")
+    : asc.classList.remove("btn_sort_active");
+}

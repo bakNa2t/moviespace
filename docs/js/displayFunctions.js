@@ -13,6 +13,7 @@ import {
   removeOpacityToSearchContent,
   sortByReleaseDateDesc,
   sortByReleaseDateAsc,
+  removeBtnSortActive,
 } from "./supportFunctions.js";
 
 //Display 12 top rated Movies on the main page
@@ -690,6 +691,8 @@ function displayPagination() {
   document.querySelector("#next__top").addEventListener("click", async () => {
     globalPathName.searchResult.page++;
 
+    removeBtnSortActive();
+
     const { results, total_pages } = await searchAPIData();
     displaySearchResults(results);
 
@@ -717,6 +720,8 @@ function displayPagination() {
   // Add event listeners to "next__bot" button to change pages at the bottom of the search results
   document.querySelector("#next__bot").addEventListener("click", async () => {
     globalPathName.searchResult.page++;
+
+    removeBtnSortActive();
 
     const { results, total_pages } = await searchAPIData();
     displaySearchResults(results);
@@ -746,6 +751,8 @@ function displayPagination() {
   document.querySelector("#prev__top").addEventListener("click", async () => {
     globalPathName.searchResult.page--;
 
+    removeBtnSortActive();
+
     const { results, total_pages } = await searchAPIData();
     displaySearchResults(results);
 
@@ -773,6 +780,8 @@ function displayPagination() {
   // Add event listeners to "prev__bot" button to change pages at the bottom of the search results
   document.querySelector("#prev__bot").addEventListener("click", async () => {
     globalPathName.searchResult.page--;
+
+    removeBtnSortActive();
 
     const { results, total_pages } = await searchAPIData();
     displaySearchResults(results);
