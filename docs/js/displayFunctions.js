@@ -11,6 +11,8 @@ import {
   removeSelector,
   addOpacityToSearchContent,
   removeOpacityToSearchContent,
+  sortByReleaseDateDesc,
+  sortByReleaseDateAsc,
 } from "./supportFunctions.js";
 
 //Display 12 top rated Movies on the main page
