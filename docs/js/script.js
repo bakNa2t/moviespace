@@ -65,6 +65,10 @@ async function searchContent() {
         const sortedResults = sortByReleaseDateDesc(results);
         //Display sorted results
         displaySearchResults(sortedResults);
+
+        // Add btn_sort_active class to sort btn
+        btnDesc.classList.add("btn_sort_active");
+        btnAsc.classList.remove("btn_sort_active");
       });
 
     //Display sorted content for search results by release date ascending is clicked on btn
@@ -75,6 +79,10 @@ async function searchContent() {
         const sortedResults = sortByReleaseDateAsc(results);
         //Display sorted results
         displaySearchResults(sortedResults);
+
+        // Add btn_sort_active class to sort btn
+        btnAsc.classList.add("btn_sort_active");
+        btnDesc.classList.remove("btn_sort_active");
       });
 
     document.querySelector("#search__term").value = "";
@@ -82,36 +90,6 @@ async function searchContent() {
     displayAlert("Please enter search term");
     document.querySelector("main").classList.add("alert-flex");
   }
-
-  displaySearchResults(results);
-
-  //Display sorted content for search results by release date descending is clicked on btn
-  document
-    .querySelector("#sort__results__desc")
-    .addEventListener("click", () => {
-      //Invoke a function to sort the results
-      const sortedResults = sortByReleaseDateDesc(results);
-      //Display sorted results
-      displaySearchResults(sortedResults);
-
-      // Add btn_sort_active class to sort btn
-      btnDesc.classList.add("btn_sort_active");
-      btnAsc.classList.remove("btn_sort_active");
-    });
-
-  //Display sorted content for search results by release date ascending is clicked on btn
-  document
-    .querySelector("#sort__results__asc")
-    .addEventListener("click", () => {
-      //Invoke a function to sort the results
-      const sortedResults = sortByReleaseDateAsc(results);
-      //Display sorted results
-      displaySearchResults(sortedResults);
-
-      // Add btn_sort_active class to sort btn
-      btnAsc.classList.add("btn_sort_active");
-      btnDesc.classList.remove("btn_sort_active");
-    });
 }
 
 //Initialize App with routes
