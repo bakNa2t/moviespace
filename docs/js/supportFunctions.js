@@ -225,3 +225,12 @@ export function removeBtnSortActive() {
     ? desc.classList.remove("btn_sort_active")
     : asc.classList.remove("btn_sort_active");
 }
+
+// Toggle dark/light mode
+export function toggleThemeMode() {
+  const toggleIcon = document.querySelector(".theme-toggle");
+  toggleIcon.addEventListener("click", () => {
+    // document.body.classList.toggle("light");
+    toggleIcon.classList.toggle("theme-toggle--toggled");
+  });
+}
