@@ -338,5 +338,13 @@ a {
   }
 }
 
+// === Toggle theme btn
+.theme-toggle {
+  position: fixed;
+  top: 5px;
+  right: 10px;
+  z-index: 99;
+}
+
 // === link media queries
 @import "./screen/media";

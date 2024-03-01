@@ -24,9 +24,42 @@
       href="images/icon/favicon.ico"
       type="image/x-icon"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/around.min.css"
+    />
     <script src="js/script.js" type="module"></script>
   </head>
   <body>
+    <!-- Toggle theme button using "toggle-theme" package -->
+    <div class="theme-toggle" title="Toggle theme">
+      <span class="theme-toggle-sr">Toggle theme</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        width="20px"
+        height="20px"
+        fill="var(--secondary-color)"
+        class="theme-toggle__around"
+        viewBox="0 0 32 32"
+      >
+        <clipPath id="theme-toggle__around__cutout">
+          <path d="M0 0h42v30a1 1 0 00-16 13H0Z" />
+        </clipPath>
+        <g clip-path="url(#theme-toggle__around__cutout)">
+          <circle cx="16" cy="16" r="8.4" />
+          <g>
+            <circle cx="16" cy="3.3" r="2.3" />
+            <circle cx="27" cy="9.7" r="2.3" />
+            <circle cx="27" cy="22.3" r="2.3" />
+            <circle cx="16" cy="28.7" r="2.3" />
+            <circle cx="5" cy="22.3" r="2.3" />
+            <circle cx="5" cy="9.7" r="2.3" />
+          </g>
+        </g>
+      </svg>
+    </div>
+
     <main>
       <!-- Header content -->
       <header class="header__main">
