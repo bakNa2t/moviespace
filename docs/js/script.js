@@ -9,6 +9,7 @@ import {
   sortByReleaseDateDesc,
   sortByReleaseDateAsc,
   displayLogoBtnBack,
+  toggleThemeMode,
 } from "./supportFunctions.js";
 import { searchAPIData } from "./fetchFunctions.js";
 import {
@@ -145,6 +146,8 @@ function init() {
       break;
   }
 
+  // Functions for all pages
+  toggleThemeMode();
   addTranslateXClass();
 }
 
