@@ -344,6 +344,12 @@ a {
   top: 5px;
   right: 10px;
   z-index: 99;
+  opacity: 0.4;
+  transition: all 0.6s ease-in-out;
+  &:hover {
+    opacity: 1;
+    transform: scale(1.15);
+  }
 }
 
 // === link media queries
