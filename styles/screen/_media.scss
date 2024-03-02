@@ -19,6 +19,11 @@
   // }
 }
 @media screen and (max-width: 768px) {
+  .theme-toggle {
+    left: 6px;
+    top: 6px;
+    width: fit-content;
+  }
   .header__main {
     .header__container {
       padding: 0 60px;
@@ -56,9 +61,6 @@
 }
 @media screen and (max-width: 512px) {
   .theme-toggle {
-    left: 6px;
-    top: 6px;
-    width: fit-content;
     svg {
       width: 20px;
       height: 20px;
