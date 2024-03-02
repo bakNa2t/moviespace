@@ -101,7 +101,6 @@ function init() {
       displayLabelCheckedDefault();
       displayTopRatedMovies();
       displayTopRatedTVShoes();
-      displayCopyrightInFooter();
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
       displayLogoBtnBack();
@@ -111,42 +110,34 @@ function init() {
       displayLabelCheckedDefault();
       displayUpcomingMoviesSlider();
       displayMostWatchedMovies();
-      displayCopyrightInFooter();
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
-      displayLogoBtnBack();
       break;
     case "/pages/tv-shows.html":
       displayNavLinkActive();
       displayLabelCheckedDefault();
       displayOnTheAirShowsSlider();
       displayMostWatchedTVShoes();
-      displayCopyrightInFooter();
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
-      displayLogoBtnBack();
       break;
     case "/pages/movie-details.html":
       displayMovieDetails();
-      displayCopyrightInFooter();
-      displayLogoBtnBack();
       break;
     case "/pages/tv-details.html":
       displayTVShowDetails();
-      displayCopyrightInFooter();
-      displayLogoBtnBack();
       break;
     case "/pages/search-result.html":
       searchContent();
-      displayCopyrightInFooter();
       displayLabelCheckedDefault();
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
-      displayLogoBtnBack();
       break;
   }
 
   // Functions for all pages
+  displayCopyrightInFooter();
+  displayLogoBtnBack();
   toggleThemeMode();
   addTranslateXClass();
 }
