@@ -816,7 +816,7 @@ export function displayCopyrightInFooter() {
   const elemDiv = document.createElement("div");
 
   elemDiv.classList.add("footer__copy");
-  elemDiv.innerHTML = `MovieSpace powered by <a href="https://github.com/bakna2t" target="_blank">_&#216;k </a>&copy; Copyright <span class="footer__year">${yearDate}</span>. All Rights Reserved.`;
+  elemDiv.innerHTML = `MovieSpace powered by <a href="https://github.com/bakna2t" target="_blank">_&#216;k </a> &copy; Copyright <span class="footer__year">${yearDate}</span>. All Rights Reserved.`;
 
   footer.appendChild(elemDiv);
 }
