@@ -232,7 +232,7 @@ export function toggleThemeMode() {
   toggleIcon.addEventListener("click", () => {
     // document.body.classList.toggle("light");
     toggleClass(toggleIcon, "theme-toggle--toggled");
-    document.body.contains("bg_dark")
+    document.body.classList.contains("bg_dark")
       ? ""
       : toggleClass(document.body, "bg_light");
     toggleClass(document.querySelector(".header__main"), "bg_light_cmp");
