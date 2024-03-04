@@ -231,7 +231,7 @@ export function toggleThemeMode() {
   const toggleIcon = document.querySelector(".theme-toggle");
   toggleIcon.addEventListener("click", () => {
     // document.body.classList.toggle("light");
-    toggleIcon.classList.toggle("theme-toggle--toggled");
+    toggleClass(toggleIcon, "theme-toggle--toggled");
   });
 }
 
