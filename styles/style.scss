@@ -215,17 +215,22 @@ a {
   border-radius: 10px;
   background-color: var(--secondary-color-light2);
 }
-
 // === Translate social links last child modal message when hovering
 .translateX {
   transform: translateX(-80%) !important;
 }
-
-// === Dark background
+// === Dark background for deatails-content page
 .bg_dark {
   background: var(--primary-color);
 }
-
+// === Light background for pages except details-content
+.bg_light {
+  @include backgroundImgLight;
+}
+// === Light background for header and footer components
+.bg_light_cmp {
+  @include backgroundComponentLight;
+}
 // === Pagination
 .pagination {
   display: flex;
