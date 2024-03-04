@@ -234,3 +234,14 @@ export function toggleThemeMode() {
     toggleIcon.classList.toggle("theme-toggle--toggled");
   });
 }
+
+// Toggle class element
+function toggleClass(elem, cls) {
+  if (Array.isArray(cls)) {
+    cls.map((cl) => {
+      elem.classList.toggle(cl);
+    });
+  } else {
+    elem.classList.toggle(cls);
+  }
+}
