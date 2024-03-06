@@ -186,8 +186,12 @@ export async function displayMovieDetails() {
 
   const movieDetail = await fetchData(`movie/${movieId}`);
 
-  //Display movie cast and crew
-  const movieTeam = await displayMovieShowMembers("movie", movieId);
+  //Get movie cast and crew
+  const movieTeam = await getMovieShowMembers("movie", movieId);
+
+  //Get movie trailer
+  const movieTrailer = await getVideoContent("movie", movieId);
+  console.log(movieTrailer);
 
   // Background movie image as overlay
   displayBackgroundImage("movie", movieDetail.backdrop_path);
@@ -344,7 +348,7 @@ export async function displayTVShowDetails() {
   const showDetail = await fetchData(`tv/${showId}`);
 
   //Display TVShow cast and crew
-  const showTeam = await displayMovieShowMembers("tv", showId);
+  const showTeam = await getMovieShowMembers("tv", showId);
 
   // Background movie image as overlay
   displayBackgroundImage("tv", showDetail.backdrop_path);
@@ -500,18 +504,6 @@ export async function displayTVShowDetails() {
   document.querySelector(
     "title"
   ).innerHTML = `MovieSpace | ${showDetail.name} - TV Show Details`;
-}
-
-// Display media cast and crew in the person details page
-async function displayMovieShowMembers(term, itemId) {
-  const { cast, crew } = await fetchData(`${term}/${itemId}/credits`);
-
-  const teamList = {
-    cast: cast.slice(0, 10),
-    crew: crew,
-  };
-
-  return teamList;
 }
 
 // Display search results
@@ -819,4 +811,27 @@ export function displayCopyrightInFooter() {
   elemDiv.innerHTML = `MovieSpace powered by <a href="https://github.com/bakna2t" target="_blank">_&#216;k </a> &copy; Copyright <span class="footer__year">${yearDate}</span>. All Rights Reserved.`;
 
   footer.appendChild(elemDiv);
+}
+
+// Get media cast and crew in the person details page
+async function getMovieShowMembers(term, itemId) {
+  const { cast, crew } = await fetchData(`${term}/${itemId}/credits`);
+
+  const teamList = {
+    cast: cast.slice(0, 10),
+    crew: crew,
+  };
+
+  return teamList;
+}
+
+//Get movie/tw-show trailer from TMDB
+async function getVideoContent(term, itemId) {
+  const { results } = await fetchData(`${term}/${itemId}/videos`);
+
+  const videoKey = results
+    .filter((result) => result.name === "Official Trailer")
+    .map((result) => result.key);
+
+  return videoKey;
 }
