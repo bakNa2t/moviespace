@@ -260,6 +260,12 @@
     height: 25px;
     font-size: 10px;
   }
+  .modal__msg {
+    h2 {
+      padding: 0 40px;
+      margin-bottom: -170px;
+    }
+  }
 }
 @media screen and (max-width: 400px) {
   .header__main {
