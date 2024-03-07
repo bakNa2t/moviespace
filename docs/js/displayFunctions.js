@@ -275,16 +275,18 @@ export async function displayMovieDetails() {
             : `<li>N/A</li>`
         }
       </ul>
-      <a href="${
-        movieDetail.homepage
-          ? `${movieDetail.homepage}" target="_blank" class="btn btn_pulse`
-          : `#" target="_self" class="btn btn_pulse d_none`
-      }">Visit Movie Homepage</a>
-      <a href="${
-        trailerUrl
-          ? `https://www.youtube.com/watch?v=${trailerUrl}" target="_blank" class="btn btn_pulse`
-          : `#" target="_self" class="btn btn_pulse d_none`
-      }">Trailer</a>
+      <div class="btn__group">
+        <a href="${
+          movieDetail.homepage
+            ? `${movieDetail.homepage}" target="_blank" class="btn btn_pulse`
+            : `#" target="_self" class="btn btn_pulse d_none`
+        }">Visit Movie Homepage</a>
+        <a href="${
+          trailerUrl
+            ? `https://www.youtube.com/watch?v=${trailerUrl}" target="_blank" class="btn btn_pulse`
+            : `#" target="_self" class="btn btn_pulse d_none`
+        }">Trailer</a>
+      </div>
     </div>
   </div>
   <div class="details__bottom">
