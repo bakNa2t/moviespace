@@ -141,7 +141,6 @@ export async function displayMostWatchedMovies() {
 //Display 20 most watched(popular) TVShows on the tv page
 export async function displayMostWatchedTVShoes() {
   const { results } = await fetchData("tv/popular");
-  // console.log(results);
 
   results.forEach((show) => {
     const elemDiv = document.createElement("div");
@@ -186,10 +185,10 @@ export async function displayMovieDetails() {
 
   const movieDetail = await fetchData(`movie/${movieId}`);
 
-  //Get movie cast and crew
+  //Retrieve movie cast and crew
   const movieTeam = await getMovieShowMembers("movie", movieId);
 
-  //Get movie trailer
+  //Retrieve movie trailer key
   const trailerUrl = await getMovieVideo("movie", movieId);
 
   // Background movie image as overlay
@@ -353,8 +352,11 @@ export async function displayTVShowDetails() {
 
   const showDetail = await fetchData(`tv/${showId}`);
 
-  //Display TVShow cast and crew
+  //Retrieve TVShow cast and crew
   const showTeam = await getMovieShowMembers("tv", showId);
+
+  //Retrieve movie trailer key
+  const trailerUrl = await getTvShowVideo("tv", movieId);
 
   // Background movie image as overlay
   displayBackgroundImage("tv", showDetail.backdrop_path);
@@ -444,11 +446,18 @@ export async function displayTVShowDetails() {
           : `<li>N/A</li>`
       }
       </ul>
+      <div class="btn__group">
       <a href="${
         showDetail.homepage
           ? `${showDetail.homepage}" target="_blank" class="btn btn_pulse`
           : `#" target="_self" class="btn btn_pulse d_none`
       }">Visit TV Show Homepage</a>
+      <a href="${
+        trailerUrl.length > 0
+          ? `https://www.youtube.com/watch?v=${trailerUrl}" target="_blank" class="btn btn_pulse`
+          : `#" target="_self" class="btn btn_pulse d_none`
+      }">Trailer</a>
+      </div>
     </div>
   </div>
   <div class="details__bottom">
@@ -831,12 +840,23 @@ async function getMovieShowMembers(term, itemId) {
   return teamList;
 }
 
-//Get movie/tw-show trailer from TMDB
+//Get movie trailer from TMDB
 async function getMovieVideo(term, itemId) {
   const { results } = await fetchData(`${term}/${itemId}/videos`);
 
   const videoKey = results
     .filter((result) => result.name === "Official Trailer")
+    .map((result) => result.key);
+
+  return videoKey;
+}
+
+//Get tv-show trailer from TMDB
+async function getTvShowVideo(term, itemId) {
+  const { results } = await fetchData(`${term}/${itemId}/videos`);
+
+  const videoKey = results
+    .filter((result) => result.type === "Trailer")
     .map((result) => result.key);
 
   return videoKey;
