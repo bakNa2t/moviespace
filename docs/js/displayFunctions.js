@@ -190,7 +190,7 @@ export async function displayMovieDetails() {
   const movieTeam = await getMovieShowMembers("movie", movieId);
 
   //Get movie trailer
-  const trailerUrl = await getVideoContent("movie", movieId);
+  const trailerUrl = await getMovieVideo("movie", movieId);
 
   // Background movie image as overlay
   displayBackgroundImage("movie", movieDetail.backdrop_path);
@@ -832,7 +832,7 @@ async function getMovieShowMembers(term, itemId) {
 }
 
 //Get movie/tw-show trailer from TMDB
-async function getVideoContent(term, itemId) {
+async function getMovieVideo(term, itemId) {
   const { results } = await fetchData(`${term}/${itemId}/videos`);
 
   const videoKey = results
