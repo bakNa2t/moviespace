@@ -282,7 +282,7 @@ export async function displayMovieDetails() {
             : `#" target="_self" class="btn btn_pulse d_none`
         }">Visit Movie Homepage</a>
         <a href="${
-          trailerUrl
+          trailerUrl.length > 0
             ? `https://www.youtube.com/watch?v=${trailerUrl}" target="_blank" class="btn btn_pulse`
             : `#" target="_self" class="btn btn_pulse d_none`
         }">Trailer</a>
