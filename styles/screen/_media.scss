@@ -222,6 +222,12 @@
           margin-right: 0 !important;
         }
       }
+      .detail__desc {
+        .btn__group {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
     }
     .details__bottom {
       .list__group {
