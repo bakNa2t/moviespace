@@ -191,7 +191,6 @@ export async function displayMovieDetails() {
 
   //Get movie trailer
   const trailerUrl = await getVideoContent("movie", movieId);
-  console.log(movieTrailer);
 
   // Background movie image as overlay
   displayBackgroundImage("movie", movieDetail.backdrop_path);
