@@ -190,7 +190,7 @@ export async function displayMovieDetails() {
   const movieTeam = await getMovieShowMembers("movie", movieId);
 
   //Get movie trailer
-  const movieTrailer = await getVideoContent("movie", movieId);
+  const trailerUrl = await getVideoContent("movie", movieId);
   console.log(movieTrailer);
 
   // Background movie image as overlay
@@ -281,6 +281,11 @@ export async function displayMovieDetails() {
           ? `${movieDetail.homepage}" target="_blank" class="btn btn_pulse`
           : `#" target="_self" class="btn btn_pulse d_none`
       }">Visit Movie Homepage</a>
+      <a href="${
+        trailerUrl
+          ? `https://www.youtube.com/watch?v=${trailerUrl}" target="_blank" class="btn btn_pulse`
+          : `#" target="_self" class="btn btn_pulse d_none`
+      }">Trailer</a>
     </div>
   </div>
   <div class="details__bottom">
