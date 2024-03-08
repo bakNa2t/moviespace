@@ -355,8 +355,8 @@ export async function displayTVShowDetails() {
   //Retrieve TVShow cast and crew
   const showTeam = await getMovieShowMembers("tv", showId);
 
-  //Retrieve movie trailer key
-  const trailerUrl = await getTvShowVideo("tv", movieId);
+  //Retrieve Tv Show trailer key
+  const trailerUrl = await getTvShowVideo("tv", showId);
 
   // Background movie image as overlay
   displayBackgroundImage("tv", showDetail.backdrop_path);
