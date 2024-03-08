@@ -250,3 +250,13 @@ function toggleClass(elem, cls) {
     elem.classList.toggle(cls);
   }
 }
+
+// Display popup trailer for details page
+export function displayPopup() {
+  document.querySelector("#popup__trailer").classList.add("d_flex");
+}
+
+// Hide popup trailer for details page
+export function hidePopup() {
+  document.querySelector("#popup__trailer").classList.remove("d_flex");
+}
