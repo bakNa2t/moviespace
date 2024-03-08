@@ -220,7 +220,7 @@ export async function displayMovieDetails() {
           : movieDetail.vote_average
       } ${
     movieDetail.vote_count
-      ? `<span class="font_12">(<em class="text-secondary"> ${movieDetail.vote_count}</em> votes)</span>`
+      ? `<span class="font_12">(<em class="text-secondary">${movieDetail.vote_count}</em> votes)</span>`
       : `<span class="font_12">(<em>no votes</em>)</span>`
   }
       </p>
@@ -388,7 +388,7 @@ export async function displayTVShowDetails() {
       } 
         ${
           showDetail.vote_count
-            ? `<span class="font_12">(<em class="text-secondary">${showDetail.vote_count}</em> votes)</span>`
+            ? `<span class="font_12">(<em class="text-secondary">${showDetail.vote_count}</em>votes)</span>`
             : `<span class="font_12">(<em>no votes</em>)</span>`
         }
       </p>
