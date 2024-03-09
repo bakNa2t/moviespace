@@ -828,6 +828,22 @@ export function displayCopyrightInFooter() {
   footer.appendChild(elemDiv);
 }
 
+// Display popup trailer window
+export async function displayPopupTrailer() {
+  const id = window.location.search.split("=")[1];
+
+  const key = await displayMovieVideo("movie", id);
+
+  const popupWindow = document.querySelector("#popup__trailer");
+
+  popupWindow.innerHTML = `
+  <span class="close">&times;</span>
+      <div class="popup__content">
+          <iframe id="iframe__trailer" width="560" height="315" src="https://www.youtube.com/embed/${key}" frameborder="0" allowfullscreen></iframe>
+      </div>
+  `;
+}
+
 // Get media cast and crew in the person details page
 async function getMovieShowMembers(term, itemId) {
   const { cast, crew } = await fetchData(`${term}/${itemId}/credits`);
