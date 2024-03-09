@@ -14,6 +14,8 @@ import {
   sortByReleaseDateDesc,
   sortByReleaseDateAsc,
   removeBtnSortActive,
+  displayPopup,
+  hidePopup,
 } from "./supportFunctions.js";
 
 //Display 12 top rated Movies on the main page
@@ -280,11 +282,11 @@ export async function displayMovieDetails() {
             ? `${movieDetail.homepage}" target="_blank" class="btn btn_pulse`
             : `#" target="_self" class="btn btn_pulse d_none`
         }">Visit Movie Homepage</a>
-        <a href="${
+        ${
           trailerUrl.length > 0
-            ? `https://www.youtube.com/watch?v=${trailerUrl}" target="_blank" class="btn btn_pulse`
-            : `#" target="_self" class="btn btn_pulse d_none`
-        }">Trailer</a>
+            ? `<div id="btn__trailer" class="btn btn_pulse">Trailer</div>`
+            : ""
+        }
       </div>
     </div>
   </div>
@@ -338,6 +340,11 @@ export async function displayMovieDetails() {
   removeSelector(".details__posters");
   removeSelector(".back");
   displayDetailsContentPosters("movie", movieId);
+
+  document
+    .querySelector("#btn__trailer")
+    .addEventListener("click", displayPopup);
+  document.querySelector(".close").addEventListener("click", hidePopup);
 
   document.querySelector(
     "title"
