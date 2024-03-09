@@ -839,7 +839,7 @@ export function displayCopyrightInFooter() {
 export async function displayPopupTrailer() {
   const id = window.location.search.split("=")[1];
 
-  const key = await displayMovieVideo("movie", id);
+  const key = await getMovieVideo("movie", id);
 
   const popupWindow = document.querySelector("#popup__trailer");
 
