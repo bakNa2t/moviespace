@@ -459,11 +459,11 @@ export async function displayTVShowDetails() {
           ? `${showDetail.homepage}" target="_blank" class="btn btn_pulse`
           : `#" target="_self" class="btn btn_pulse d_none`
       }">Visit TV Show Homepage</a>
-      <a href="${
+      ${
         trailerUrl.length > 0
-          ? `https://www.youtube.com/watch?v=${trailerUrl}" target="_blank" class="btn btn_pulse`
-          : `#" target="_self" class="btn btn_pulse d_none`
-      }">Trailer</a>
+          ? `<div id="btn__trailer" class="btn btn_pulse">Trailer</div>`
+          : ""
+      }
       </div>
     </div>
   </div>
