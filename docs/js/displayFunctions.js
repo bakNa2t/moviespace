@@ -523,6 +523,11 @@ export async function displayTVShowDetails() {
   removeSelector(".back");
   displayDetailsContentPosters("tv", showId);
 
+  document
+    .querySelector("#btn__trailer")
+    .addEventListener("click", displayPopup);
+  document.querySelector(".close").addEventListener("click", hidePopup);
+
   document.querySelector(
     "title"
   ).innerHTML = `MovieSpace | ${showDetail.name} - TV Show Details`;

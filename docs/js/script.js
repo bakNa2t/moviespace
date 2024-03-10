@@ -128,6 +128,7 @@ function init() {
       break;
     case "/pages/tv-details.html":
       displayTVShowDetails();
+      displayPopupTrailer("tv");
       break;
     case "/pages/search-result.html":
       searchContent();
