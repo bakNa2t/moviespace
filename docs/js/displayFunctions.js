@@ -836,10 +836,10 @@ export function displayCopyrightInFooter() {
 }
 
 // Display popup trailer window
-export async function displayPopupTrailer() {
+export async function displayPopupTrailer(type) {
   const id = window.location.search.split("=")[1];
 
-  const key = await getMovieVideo("movie", id);
+  const key = await getMovieVideo(type, id);
 
   const popupWindow = document.querySelector("#popup__trailer");
 

@@ -124,7 +124,7 @@ function init() {
       break;
     case "/pages/movie-details.html":
       displayMovieDetails();
-      displayPopupTrailer();
+      displayPopupTrailer("movie");
       break;
     case "/pages/tv-details.html":
       displayTVShowDetails();
