@@ -129,7 +129,7 @@ function init() {
       break;
     case "/pages/tv-details.html":
       displayTVShowDetails();
-      displayPopupTvShowTrailer;
+      displayPopupTvShowTrailer();
       break;
     case "/pages/search-result.html":
       searchContent();
