@@ -63,6 +63,11 @@
 
       p {
         margin: 10px 0;
+        span {
+          em {
+            margin-right: 3px;
+          }
+        }
       }
       .list__group {
         margin-top: 5px;
