@@ -840,11 +840,11 @@ export function displayCopyrightInFooter() {
   footer.appendChild(elemDiv);
 }
 
-// Display popup trailer window
-export async function displayPopupTrailer(type) {
+// Display popup movie trailer window
+export async function displayPopupMovieTrailer() {
   const id = window.location.search.split("=")[1];
 
-  const key = await getMovieVideo(type, id);
+  const key = await getMovieVideo("movie", id);
 
   const popupWindow = document.querySelector("#popup__trailer");
 
@@ -852,6 +852,22 @@ export async function displayPopupTrailer(type) {
   <span class="close">&times;</span>
       <div class="popup__content">
           <iframe id="iframe__trailer" width="560" height="315" src="https://www.youtube.com/embed/${key}" frameborder="0" allowfullscreen></iframe>
+      </div>
+  `;
+}
+
+// Display popup tv-show trailer window
+export async function displayPopupTvShowTrailer() {
+  const id = window.location.search.split("=")[1];
+
+  const key = await getTvShowVideo("tv", id);
+
+  const popupWindow = document.querySelector("#popup__trailer");
+
+  popupWindow.innerHTML = `
+  <span class="close">&times;</span>
+      <div class="popup__content">
+          <iframe id="iframe__trailer" width="560" height="315" src="https://www.youtube.com/embed/${key[0]}" frameborder="0" allowfullscreen></iframe>
       </div>
   `;
 }

@@ -21,7 +21,8 @@ import {
   displayTVShowDetails,
   displaySearchResults,
   displayCopyrightInFooter,
-  displayPopupTrailer,
+  displayPopupMovieTrailer,
+  displayPopupTvShowTrailer,
 } from "./displayFunctions.js";
 import {
   displayNowWatchingMoviesSlider,
@@ -124,11 +125,11 @@ function init() {
       break;
     case "/pages/movie-details.html":
       displayMovieDetails();
-      displayPopupTrailer("movie");
+      displayPopupMovieTrailer();
       break;
     case "/pages/tv-details.html":
       displayTVShowDetails();
-      displayPopupTrailer("tv");
+      displayPopupTvShowTrailer;
       break;
     case "/pages/search-result.html":
       searchContent();
