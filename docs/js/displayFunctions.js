@@ -341,10 +341,13 @@ export async function displayMovieDetails() {
   removeSelector(".back");
   displayDetailsContentPosters("movie", movieId);
 
-  document
-    .querySelector("#btn__trailer")
-    .addEventListener("click", displayPopup);
-  document.querySelector(".close").addEventListener("click", hidePopup);
+  // Add event listeners to trailer button and close button if trailer is available
+  if (trailerUrl.length > 0) {
+    document
+      .querySelector("#btn__trailer")
+      .addEventListener("click", displayPopup);
+    document.querySelector(".close").addEventListener("click", hidePopup);
+  }
 
   document.querySelector(
     "title"
@@ -523,10 +526,13 @@ export async function displayTVShowDetails() {
   removeSelector(".back");
   displayDetailsContentPosters("tv", showId);
 
-  document
-    .querySelector("#btn__trailer")
-    .addEventListener("click", displayPopup);
-  document.querySelector(".close").addEventListener("click", hidePopup);
+  // Add event listeners to trailer button and close button if trailer is available
+  if (trailerUrl.length > 0) {
+    document
+      .querySelector("#btn__trailer")
+      .addEventListener("click", displayPopup);
+    document.querySelector(".close").addEventListener("click", hidePopup);
+  }
 
   document.querySelector(
     "title"
