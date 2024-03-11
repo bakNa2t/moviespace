@@ -12,35 +12,35 @@
   background-color: rgba(0, 0, 0, 0.9);
 
   .popup__content {
+    display: flex;
     position: relative;
+    width: max-content;
     height: max-content;
     background-color: var(--secondary-color);
-    padding: 5px;
-    border: 1px solid var(--primary-color);
-    width: max-content;
+    border: 3px solid var(--primary-color);
   }
   .close {
     position: absolute;
     width: fit-content;
     height: fit-content;
-    right: 5px;
-    top: 15px;
+    right: 15px;
+    top: 5px;
     color: var(--secondary-color);
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.3 ease-in-out;
+    transition: all 0.3s ease-in-out;
     &:hover {
       color: var(--primary-color-light);
       text-decoration: none;
       text-shadow: 0 0 4px var(--light-color);
-      transition: all 0.3 ease-in-out;
+      transition: all 0.3s ease-in-out;
     }
     &:focus {
       color: var(--primary-color-light);
       text-decoration: none;
       text-shadow: 0 0 4px var(--light-color);
-      transition: all 0.3 ease-in-out;
+      transition: all 0.3s ease-in-out;
     }
   }
 }
