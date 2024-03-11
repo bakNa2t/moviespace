@@ -857,7 +857,9 @@ export async function displayPopupMovieTrailer() {
   popupWindow.innerHTML = `
   <span class="close">&times;</span>
       <div class="popup__content">
-          <iframe id="iframe__trailer" width="560" height="315" src="https://www.youtube.com/embed/${key}" frameborder="0" allowfullscreen></iframe>
+          <iframe id="iframe__trailer" width="560" height="315" src="https://www.youtube.com/embed/${
+            key[key.length - 1]
+          }" frameborder="0" allowfullscreen></iframe>
       </div>
   `;
 }
@@ -873,7 +875,9 @@ export async function displayPopupTvShowTrailer() {
   popupWindow.innerHTML = `
   <span class="close">&times;</span>
       <div class="popup__content">
-          <iframe id="iframe__trailer" width="560" height="315" src="https://www.youtube.com/embed/${key[0]}" frameborder="0" allowfullscreen></iframe>
+          <iframe id="iframe__trailer" width="560" height="315" src="https://www.youtube.com/embed/${
+            key[key.length - 1]
+          }" frameborder="0" allowfullscreen></iframe>
       </div>
   `;
 }
@@ -895,7 +899,7 @@ async function getMovieVideo(term, itemId) {
   const { results } = await fetchData(`${term}/${itemId}/videos`);
 
   const videoKey = results
-    .filter((result) => result.name === "Official Trailer")
+    .filter((result) => result.type === "Trailer")
     .map((result) => result.key);
 
   return videoKey;
