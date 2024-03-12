@@ -850,7 +850,11 @@ export function displayCopyrightInFooter() {
 export async function displayPopupMovieTrailer() {
   const id = window.location.search.split("=")[1];
 
+  // Retrieve movie trailer key from TMDB
   const key = await getVideoContent("movie", id);
+
+  // Rretrive desc from TMDB
+  const desc = await fetchData(`movie/${id}`);
 
   const popupWindow = document.querySelector("#popup__trailer");
 
@@ -860,6 +864,12 @@ export async function displayPopupMovieTrailer() {
           <iframe id="iframe__trailer" width="560" height="315" src="https://www.youtube.com/embed/${
             key[key.length - 1]
           }" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="popup__info">
+          <p class="popup__title">#&171; ${desc.title} &#187; ( ${
+    desc.release_date
+  } )</p>
+          <p class="popup__desc">${desc.overview}</p>
       </div>
   `;
 }
@@ -904,14 +914,3 @@ async function getVideoContent(term, itemId) {
 
   return videoKey;
 }
-
-//Get tv-show trailer from TMDB
-// async function getTvShowVideo(term, itemId) {
-//   const { results } = await fetchData(`${term}/${itemId}/videos`);
-
-//   const videoKey = results
-//     .filter((result) => result.type === "Trailer")
-//     .map((result) => result.key);
-
-//   return videoKey;
-// }
