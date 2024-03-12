@@ -850,7 +850,7 @@ export function displayCopyrightInFooter() {
 export async function displayPopupMovieTrailer() {
   const id = window.location.search.split("=")[1];
 
-  const key = await getMovieVideo("movie", id);
+  const key = await getVideoContent("movie", id);
 
   const popupWindow = document.querySelector("#popup__trailer");
 
@@ -868,7 +868,7 @@ export async function displayPopupMovieTrailer() {
 export async function displayPopupTvShowTrailer() {
   const id = window.location.search.split("=")[1];
 
-  const key = await getTvShowVideo("tv", id);
+  const key = await getVideoContent("tv", id);
 
   const popupWindow = document.querySelector("#popup__trailer");
 
@@ -894,8 +894,8 @@ async function getMovieShowMembers(term, itemId) {
   return teamList;
 }
 
-//Get movie trailer from TMDB
-async function getMovieVideo(term, itemId) {
+//Get movie/tv-show trailer from TMDB
+async function getVideoContent(term, itemId) {
   const { results } = await fetchData(`${term}/${itemId}/videos`);
 
   const videoKey = results
@@ -906,12 +906,12 @@ async function getMovieVideo(term, itemId) {
 }
 
 //Get tv-show trailer from TMDB
-async function getTvShowVideo(term, itemId) {
-  const { results } = await fetchData(`${term}/${itemId}/videos`);
+// async function getTvShowVideo(term, itemId) {
+//   const { results } = await fetchData(`${term}/${itemId}/videos`);
 
-  const videoKey = results
-    .filter((result) => result.type === "Trailer")
-    .map((result) => result.key);
+//   const videoKey = results
+//     .filter((result) => result.type === "Trailer")
+//     .map((result) => result.key);
 
-  return videoKey;
-}
+//   return videoKey;
+// }
