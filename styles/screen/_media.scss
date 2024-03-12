@@ -279,6 +279,9 @@
         height: 230px;
       }
     }
+    .popup__info {
+      width: 390px;
+    }
   }
 }
 @media screen and (max-width: 400px) {
@@ -356,6 +359,12 @@
       iframe {
         width: 300px;
         height: 180px;
+      }
+    }
+    .popup__info {
+      width: 300px;
+      .popup__desc {
+        font-size: 12px;
       }
     }
   }
