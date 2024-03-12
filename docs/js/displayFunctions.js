@@ -191,7 +191,7 @@ export async function displayMovieDetails() {
   const movieTeam = await getMovieShowMembers("movie", movieId);
 
   //Retrieve movie trailer key
-  const trailerUrl = await getMovieVideo("movie", movieId);
+  const trailerUrl = await getVideoContent("movie", movieId);
 
   // Background movie image as overlay
   displayBackgroundImage("movie", movieDetail.backdrop_path);
@@ -366,7 +366,7 @@ export async function displayTVShowDetails() {
   const showTeam = await getMovieShowMembers("tv", showId);
 
   //Retrieve Tv Show trailer key
-  const trailerUrl = await getTvShowVideo("tv", showId);
+  const trailerUrl = await getVideoContent("tv", showId);
 
   // Background movie image as overlay
   displayBackgroundImage("tv", showDetail.backdrop_path);
