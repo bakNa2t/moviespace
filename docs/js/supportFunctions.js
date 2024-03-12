@@ -129,6 +129,12 @@ export function convertReleaseDate(releaseDate) {
   }
 }
 
+// Split release date to display only year
+export function splitReleaseDate(date) {
+  const elem = date.split("-");
+  return elem[0];
+}
+
 // Add translateX class to last child element in the social links
 export function addTranslateXClass() {
   const desc = document.querySelectorAll(".desc__modal");

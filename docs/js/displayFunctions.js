@@ -8,6 +8,7 @@ import {
   displayBackgroundImage,
   separeteNumberWithComma,
   convertReleaseDate,
+  splitReleaseDate,
   removeSelector,
   addOpacityToSearchContent,
   removeOpacityToSearchContent,
@@ -866,9 +867,9 @@ export async function displayPopupMovieTrailer() {
           }" frameborder="0" allowfullscreen></iframe>
       </div>
       <div class="popup__info">
-          <p class="popup__title">&#171; ${desc.title} &#187; ( ${
-    desc.release_date
-  } )</p>
+          <p class="popup__title">&#171; ${
+            desc.title
+          } &#187; ( ${splitReleaseDate(desc.release_date)} )</p>
           <p class="popup__desc">${desc.overview}</p>
       </div>
   `;
