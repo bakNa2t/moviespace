@@ -879,7 +879,11 @@ export async function displayPopupMovieTrailer() {
 export async function displayPopupTvShowTrailer() {
   const id = window.location.search.split("=")[1];
 
+  // Retrieve tv-show trailer key from TMDB
   const key = await getVideoContent("tv", id);
+
+  // Rretrive desc from TMDB
+  const desc = await fetchData(`tv/${id}`);
 
   const popupWindow = document.querySelector("#popup__trailer");
 
@@ -889,6 +893,18 @@ export async function displayPopupTvShowTrailer() {
           <iframe id="iframe__trailer" width="560" height="315" src="https://www.youtube.com/embed/${
             key[key.length - 1]
           }" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="popup__info">
+          <p class="popup__title">&#171; ${desc.name} &#187; ( ${
+    splitReleaseDate(desc.first_air_date) !==
+    splitReleaseDate(desc.last_air_date)
+      ? `${splitReleaseDate(desc.first_air_date)} - ${splitReleaseDate(
+          desc.last_air_date
+        )}`
+      : `${splitReleaseDate(desc.first_air_date)} - ...`
+  }
+       )</p>
+          <p class="popup__desc">${desc.overview}</p>
       </div>
   `;
 }
