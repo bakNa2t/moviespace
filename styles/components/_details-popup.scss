@@ -2,6 +2,8 @@
   display: none;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -41,6 +43,15 @@
       text-decoration: none;
       text-shadow: 0 0 4px var(--light-color);
       transition: all 0.3s ease-in-out;
+    }
+  }
+  .popup__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 560px;
+    .popup__desc {
+      font-size: 13px;
     }
   }
 }
