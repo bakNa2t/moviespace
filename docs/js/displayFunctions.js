@@ -349,7 +349,7 @@ export async function displayMovieDetails() {
       .addEventListener("click", displayPopup);
     document.querySelector(".close").addEventListener("click", hidePopup);
     document.addEventListener("click", (e) => {
-      if (e.target.id === "popup") {
+      if (e.target.id === "popup__trailer") {
         hidePopup();
       }
     });
@@ -538,6 +538,11 @@ export async function displayTVShowDetails() {
       .querySelector("#btn__trailer")
       .addEventListener("click", displayPopup);
     document.querySelector(".close").addEventListener("click", hidePopup);
+    document.addEventListener("click", (e) => {
+      if (e.target.id === "popup__trailer") {
+        hidePopup();
+      }
+    });
   }
 
   document.querySelector(
