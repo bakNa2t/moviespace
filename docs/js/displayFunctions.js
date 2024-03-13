@@ -860,7 +860,7 @@ export async function displayPopupMovieTrailer() {
   const popupWindow = document.querySelector("#popup__trailer");
 
   popupWindow.innerHTML = `
-  <span class="close">&times;</span>
+  <span class="close">&#10008;</span>
       <div class="popup__content">
           <iframe id="iframe__trailer" width="560" height="315" src="https://www.youtube.com/embed/${
             key[key.length - 1]
@@ -888,7 +888,7 @@ export async function displayPopupTvShowTrailer() {
   const popupWindow = document.querySelector("#popup__trailer");
 
   popupWindow.innerHTML = `
-  <span class="close">&times;</span>
+  <span class="close">&#10008;</span>
       <div class="popup__content">
           <iframe id="iframe__trailer" width="560" height="315" src="https://www.youtube.com/embed/${
             key[key.length - 1]
