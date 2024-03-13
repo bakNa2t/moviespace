@@ -348,6 +348,11 @@ export async function displayMovieDetails() {
       .querySelector("#btn__trailer")
       .addEventListener("click", displayPopup);
     document.querySelector(".close").addEventListener("click", hidePopup);
+    document.addEventListener("click", (e) => {
+      if (e.target.id === "popup") {
+        hidePopup();
+      }
+    });
   }
 
   document.querySelector(
