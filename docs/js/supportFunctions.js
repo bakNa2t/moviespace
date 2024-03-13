@@ -265,4 +265,10 @@ export function displayPopup() {
 // Hide popup trailer for details page
 export function hidePopup() {
   document.querySelector("#popup__trailer").classList.remove("d_flex");
+  stopVideo();
+}
+
+function stopVideo() {
+  const iframe = document.querySelector("#iframe__trailer");
+  iframe.src = iframe.src;
 }
