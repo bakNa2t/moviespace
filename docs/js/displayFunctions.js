@@ -210,7 +210,7 @@ export async function displayMovieDetails() {
   />`
         : `<img
   src="../images/no-image.jpg"
-  class="card-img-top"
+  class="details__top__img"
   alt="${movieDetail.title}"
   />`
     }
@@ -385,12 +385,12 @@ export async function displayTVShowDetails() {
       showDetail.poster_path
         ? `<img
     src="https://image.tmdb.org/t/p/w500${showDetail.poster_path}"
-    class="card-img-top"
+    class="details__top__img"
     alt="${showDetail.name}"
   />`
         : `<img
   src="../images/no-image.jpg"
-  class="card-img-top"
+  class="details__top__img"
   alt="${showDetail.name}"
   />`
     }

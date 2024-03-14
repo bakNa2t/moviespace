@@ -45,7 +45,7 @@
     .content__details {
       .details__top {
         div {
-          img {
+          .details__top__img {
             width: 300px;
             margin-right: 30px;
           }
@@ -217,7 +217,7 @@
       gap: 10px;
       margin: 30px 0 30px;
       div {
-        img {
+        .details__top__img {
           width: 100% !important;
           margin-right: 0 !important;
         }
