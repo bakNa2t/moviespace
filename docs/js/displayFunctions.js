@@ -408,6 +408,16 @@ export async function displayTVShowDetails() {
             : `<span class="font_12">(<em>no votes</em>)</span>`
         }
       </p>
+      <p class="text__muted"><span class="text-secondary">Origin country:</span> 
+      ${
+        showDetail.origin_country.length > 0
+          ? showDetail.origin_country.map(
+              (country) =>
+                `<img src="https://flagcdn.com/${country.toLowerCase()}.svg" alt="Flag of ${country}">`
+            )
+          : "N/A"
+      }
+      </p>
       <p>
         ${
           showDetail.overview
