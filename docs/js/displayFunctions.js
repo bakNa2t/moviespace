@@ -205,7 +205,7 @@ export async function displayMovieDetails() {
       movieDetail.poster_path
         ? `<img
     src="https://image.tmdb.org/t/p/w400${movieDetail.poster_path}"
-    class="card-img-top"
+    class="details__top__img"
     alt="${movieDetail.title}"
   />`
         : `<img
