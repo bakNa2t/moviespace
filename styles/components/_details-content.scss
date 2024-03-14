@@ -60,7 +60,10 @@
           visibility: visible;
         }
       }
-
+      .detail__country {
+        display: flex;
+        gap: 10px;
+      }
       p {
         margin: 10px 0;
         span {

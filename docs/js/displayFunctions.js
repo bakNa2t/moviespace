@@ -408,7 +408,7 @@ export async function displayTVShowDetails() {
             : `<span class="font_12">(<em>no votes</em>)</span>`
         }
       </p>
-      <p class="text__muted"><span class="text-secondary">Origin country:</span> 
+      <p class="detail__country"><span class="text-secondary">Country:</span> 
       ${
         showDetail.origin_country.length > 0
           ? showDetail.origin_country.map(
