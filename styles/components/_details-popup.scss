@@ -33,20 +33,20 @@
     font-size: 15px;
     font-weight: bold;
     border-radius: 50%;
-    color: var(--primary-color);
-    background: var(--secondary-color);
+    color: var(--secondary-color);
+    background: var(--primary-color);
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     &:hover {
-      color: var(--secondary-color);
+      color: var(--primary-color);
       text-shadow: 0 0 3px var(--light-color);
-      background: var(--primary-color);
+      background: var(--secondary-color);
       transition: all 0.3s ease-in-out;
     }
     &:focus {
-      color: var(--primary-color-light);
-      text-decoration: none;
-      text-shadow: 0 0 4px var(--light-color);
+      color: var(--primary-color);
+      text-shadow: 0 0 3px var(--light-color);
+      background: var(--secondary-color);
       transition: all 0.3s ease-in-out;
     }
   }
