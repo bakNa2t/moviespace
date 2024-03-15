@@ -62,6 +62,7 @@
       }
       .detail__country {
         display: flex;
+        align-items: baseline;
         gap: 10px;
         span {
           font-weight: 500;
@@ -75,8 +76,8 @@
           }
         }
         img {
-          width: 28px;
-          height: 21px;
+          width: 24px;
+          height: 18px;
           object-fit: cover;
         }
       }
@@ -172,6 +173,13 @@
     }
     .list__group {
       margin-top: 5px;
+      span {
+        img {
+          width: 16px;
+          height: 12px;
+          object-fit: cover;
+        }
+      }
     }
   }
 }
