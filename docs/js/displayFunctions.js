@@ -519,7 +519,11 @@ export async function displayTVShowDetails() {
         ? showDetail.production_countries
             .map(
               (country) =>
-                `<span class="bg_secondary_light mg_btm4">${country.name}</span>`
+                `<span class="bg_secondary_light mg_btm4">${country.name}
+                <img src="https://flagcdn.com/${country.iso_3166_1.toLowerCase()}.svg" alt="Flag of ${
+                  country.iso_3166_1
+                }">
+                </span>`
             )
             .join(", ")
         : `<span class="bg_secondary_light mg_btm4">N/A</span>`
