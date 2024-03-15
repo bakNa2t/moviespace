@@ -26,20 +26,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 45px;
-    height: 45px;
-    right: 10px;
-    top: 10px;
-    color: var(--secondary-color);
-    font-size: 26px;
+    width: 30px;
+    height: 30px;
+    right: -14px;
+    top: -14px;
+    font-size: 15px;
     font-weight: bold;
     border-radius: 50%;
+    color: var(--primary-color);
+    background: var(--secondary-color);
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     &:hover {
-      color: var(--primary-color-light);
-      text-shadow: 0 0 4px var(--light-color);
-      background: rgb(255, 255, 255, 0.1);
+      color: var(--secondary-color);
+      text-shadow: 0 0 3px var(--light-color);
+      background: var(--primary-color);
       transition: all 0.3s ease-in-out;
     }
     &:focus {

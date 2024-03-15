@@ -880,8 +880,8 @@ export async function displayPopupMovieTrailer() {
   const popupWindow = document.querySelector("#popup__trailer");
 
   popupWindow.innerHTML = `
-  <span class="close">&#10008;</span>
       <div class="popup__content">
+          <span class="close">&#10008;</span>
           <iframe id="iframe__trailer" width="560" height="315" src="https://www.youtube.com/embed/${
             key[key.length - 1]
           }" frameborder="0" allowfullscreen></iframe>
