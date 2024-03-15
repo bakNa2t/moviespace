@@ -411,10 +411,12 @@ export async function displayTVShowDetails() {
       <p class="detail__country"><span class="text-secondary">Country:</span> 
       ${
         showDetail.origin_country.length > 0
-          ? showDetail.origin_country.map(
-              (country) =>
-                `<img src="https://flagcdn.com/${country.toLowerCase()}.svg" alt="Flag of ${country}">`
-            )
+          ? showDetail.origin_country
+              .map(
+                (country) =>
+                  `<img src="https://flagcdn.com/${country.toLowerCase()}.svg" alt="Flag of ${country}">`
+              )
+              .join(" ")
           : "N/A"
       }
       </p>
