@@ -317,7 +317,11 @@ export async function displayMovieDetails() {
         ? movieDetail.production_countries
             .map(
               (country) =>
-                `<span class="bg_secondary_light mg_btm4">${country.name}</span>`
+                `<span class="bg_secondary_light mg_btm4">${country.name}
+                <img src="https://flagcdn.com/${country.iso_3166_1.toLowerCase()}.svg" alt="Flag of ${
+                  country.iso_3166_1
+                }">
+                </span>`
             )
             .join(", ")
         : `<span class="bg_secondary_light mg_btm4">N/A</span>`
@@ -520,7 +524,7 @@ export async function displayTVShowDetails() {
             .map(
               (country) =>
                 `<span class="bg_secondary_light mg_btm4">${country.name}
-                <img src="https://flagcdn.com/${country.iso_3166_1.toLowerCase()}.svg" alt="Flag of ${
+                  <img src="https://flagcdn.com/${country.iso_3166_1.toLowerCase()}.svg" alt="Flag of ${
                   country.iso_3166_1
                 }">
                 </span>`
