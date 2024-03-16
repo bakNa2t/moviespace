@@ -70,6 +70,21 @@
     flex-direction: column;
     gap: 0.5rem;
     width: 560px;
+    visibility: hidden;
+    opacity: 0;
+    animation: fadeUpTrailerInfo 1s ease-in-out forwards;
+
+    @keyframes fadeUpTrailerInfo {
+      from {
+        transform: translateY(200px);
+      }
+      to {
+        transform: translateY(0px);
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
     .popup__desc {
       font-size: 13px;
     }
