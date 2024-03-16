@@ -18,8 +18,23 @@
     position: relative;
     width: max-content;
     height: max-content;
+    visibility: hidden;
+    opacity: 0;
     background-color: var(--secondary-color);
     border: 3px solid var(--primary-color);
+    animation: fadeUpTrailer 1s ease-in-out forwards;
+
+    @keyframes fadeUpTrailer {
+      from {
+        transform: translateY(-200px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0px);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
   .close {
     position: absolute;
