@@ -357,6 +357,11 @@ export async function displayMovieDetails() {
         hidePopup();
       }
     });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        hidePopup();
+      }
+    });
   }
 
   document.querySelector(
@@ -560,6 +565,11 @@ export async function displayTVShowDetails() {
     document.querySelector(".close").addEventListener("click", hidePopup);
     document.addEventListener("click", (e) => {
       if (e.target.id === "popup__trailer") {
+        hidePopup();
+      }
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
         hidePopup();
       }
     });
