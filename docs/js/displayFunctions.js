@@ -926,8 +926,10 @@ export async function displayPopupTvShowTrailer() {
       </div>
       <div class="popup__info">
           <p class="popup__title">&#171; ${desc.name} &#187; ( ${
+    desc.first_air_date &&
+    desc.last_air_date &&
     splitReleaseDate(desc.first_air_date) !==
-    splitReleaseDate(desc.last_air_date)
+      splitReleaseDate(desc.last_air_date)
       ? `${splitReleaseDate(desc.first_air_date)} - ${splitReleaseDate(
           desc.last_air_date
         )}`
