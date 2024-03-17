@@ -103,27 +103,27 @@ export function convertReleaseDate(releaseDate) {
   const data = releaseDate.split("-");
   switch (data[1]) {
     case "01":
-      return `${data[0]} Jan ${data[2]}`;
+      return `${data[2]} Jan ${data[0]}`;
     case "02":
-      return `${data[0]} Feb ${data[2]}`;
+      return `${data[2]} Feb ${data[0]}`;
     case "03":
-      return `${data[0]} Mar ${data[2]}`;
+      return `${data[2]} Mar ${data[0]}`;
     case "04":
-      return `${data[0]} Apr ${data[2]}`;
+      return `${data[2]} Apr ${data[0]}`;
     case "05":
-      return `${data[0]} May ${data[2]}`;
+      return `${data[2]} May ${data[0]}`;
     case "06":
-      return `${data[0]} Jun ${data[2]}`;
+      return `${data[2]} Jun ${data[0]}`;
     case "07":
-      return `${data[0]} Jul ${data[2]}`;
+      return `${data[2]} Jul ${data[0]}`;
     case "08":
-      return `${data[0]} Aug ${data[2]}`;
+      return `${data[2]} Aug ${data[0]}`;
     case "09":
-      return `${data[0]} Sep ${data[2]}`;
+      return `${data[2]} Sep ${data[0]}`;
     case "10":
-      return `${data[0]} Oct ${data[2]}`;
+      return `${data[2]} Oct ${data[0]}`;
     case "11":
-      return `${data[0]} Nov ${data[2]}`;
+      return `${data[2]} Nov ${data[0]}`;
     case "12":
       return `${data[0]} Dec ${data[2]}`;
   }
