@@ -268,7 +268,26 @@ export function hidePopup() {
   stopVideo();
 }
 
+// Stop trailer video when popup is closed
 function stopVideo() {
   const iframe = document.querySelector("#iframe__trailer");
   iframe.src = iframe.src;
+}
+
+// Init event listeners for trailer popup
+export function initTrailerEventListeners() {
+  document
+    .querySelector("#btn__trailer")
+    .addEventListener("click", displayPopup);
+  document.querySelector(".close").addEventListener("click", hidePopup);
+  document.addEventListener("click", (e) => {
+    if (e.target.id === "popup__trailer") {
+      hidePopup();
+    }
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      hidePopup();
+    }
+  });
 }

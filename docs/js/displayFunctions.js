@@ -17,6 +17,7 @@ import {
   removeBtnSortActive,
   displayPopup,
   hidePopup,
+  initTrailerEventListeners,
 } from "./supportFunctions.js";
 
 //Display 12 top rated Movies on the main page
@@ -348,20 +349,7 @@ export async function displayMovieDetails() {
 
   // Add event listeners to trailer button and close button if trailer is available
   if (trailerUrl.length > 0) {
-    document
-      .querySelector("#btn__trailer")
-      .addEventListener("click", displayPopup);
-    document.querySelector(".close").addEventListener("click", hidePopup);
-    document.addEventListener("click", (e) => {
-      if (e.target.id === "popup__trailer") {
-        hidePopup();
-      }
-    });
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        hidePopup();
-      }
-    });
+    initTrailerEventListeners();
   }
 
   document.querySelector(
@@ -559,20 +547,7 @@ export async function displayTVShowDetails() {
 
   // Add event listeners to trailer button and close button if trailer is available
   if (trailerUrl.length > 0) {
-    document
-      .querySelector("#btn__trailer")
-      .addEventListener("click", displayPopup);
-    document.querySelector(".close").addEventListener("click", hidePopup);
-    document.addEventListener("click", (e) => {
-      if (e.target.id === "popup__trailer") {
-        hidePopup();
-      }
-    });
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        hidePopup();
-      }
-    });
+    initTrailerEventListeners();
   }
 
   document.querySelector(
