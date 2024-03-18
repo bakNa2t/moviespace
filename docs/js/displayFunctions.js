@@ -867,15 +867,15 @@ export function displayCopyrightInFooter() {
   footer.appendChild(elemDiv);
 }
 
-// Display popup movie trailer window
-export async function displayPopupMovieTrailer() {
+// Display popup movie/tv-show trailer window
+export async function displayPopupTrailer(term) {
   const id = window.location.search.split("=")[1];
 
-  // Retrieve movie trailer key from TMDB
-  const key = await getVideoContent("movie", id);
+  // Retrieve movie/tv-show trailer key from TMDB
+  const key = await getVideoContent(term, id);
 
-  // Rretrive desc from TMDB
-  const desc = await fetchData(`movie/${id}`);
+  // Rretrive desc details from TMDB
+  const termDetail = await fetchData(`${term}/${id}`);
 
   const popupWindow = document.querySelector("#popup__trailer");
 
@@ -888,48 +888,87 @@ export async function displayPopupMovieTrailer() {
       </div>
       <div class="popup__info">
           <p class="popup__title">&#171; ${
-            desc.title
-          } &#187; ( ${splitReleaseDate(desc.release_date)} )</p>
-          <p class="popup__desc">${desc.overview}</p>
+            term === "movie" ? termDetail.title : termDetail.name
+          } &#187; ( ${
+    term === "movie"
+      ? splitReleaseDate(termDetail.release_date)
+      : termDetail.first_air_date &&
+        termDetail.last_air_date &&
+        splitReleaseDate(termDetail.first_air_date) !==
+          splitReleaseDate(termDetail.last_air_date)
+      ? `${splitReleaseDate(termDetail.first_air_date)} - ${splitReleaseDate(
+          termDetail.last_air_date
+        )}`
+      : `${splitReleaseDate(termDetail.first_air_date)}`
+  } )</p>
+          <p class="popup__desc">${termDetail.overview}</p>
       </div>
   `;
 }
+
+// Display popup movie trailer window
+// export async function displayPopupMovieTrailer() {
+//   const id = window.location.search.split("=")[1];
+
+//   // Retrieve movie trailer key from TMDB
+//   const key = await getVideoContent("movie", id);
+
+//   // Rretrive desc from TMDB
+//   const desc = await fetchData(`movie/${id}`);
+
+//   const popupWindow = document.querySelector("#popup__trailer");
+
+//   popupWindow.innerHTML = `
+//       <div class="popup__content">
+//           <span class="close">&#10008;</span>
+//           <iframe id="iframe__trailer" width="560" height="315" src="https://www.youtube.com/embed/${
+//             key[key.length - 1]
+//           }" frameborder="0" allowfullscreen></iframe>
+//       </div>
+//       <div class="popup__info">
+//           <p class="popup__title">&#171; ${
+//             desc.title
+//           } &#187; ( ${splitReleaseDate(desc.release_date)} )</p>
+//           <p class="popup__desc">${desc.overview}</p>
+//       </div>
+//   `;
+// }
 
 // Display popup tv-show trailer window
-export async function displayPopupTvShowTrailer() {
-  const id = window.location.search.split("=")[1];
+// export async function displayPopupTvShowTrailer() {
+//   const id = window.location.search.split("=")[1];
 
-  // Retrieve tv-show trailer key from TMDB
-  const key = await getVideoContent("tv", id);
+//   // Retrieve tv-show trailer key from TMDB
+//   const key = await getVideoContent("tv", id);
 
-  // Rretrive desc from TMDB
-  const desc = await fetchData(`tv/${id}`);
+//   // Rretrive desc from TMDB
+//   const desc = await fetchData(`tv/${id}`);
 
-  const popupWindow = document.querySelector("#popup__trailer");
+//   const popupWindow = document.querySelector("#popup__trailer");
 
-  popupWindow.innerHTML = `
-      <div class="popup__content">
-      <span class="close">&#10008;</span>
-          <iframe id="iframe__trailer" width="560" height="315" src="https://www.youtube.com/embed/${
-            key[key.length - 1]
-          }" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div class="popup__info">
-          <p class="popup__title">&#171; ${desc.name} &#187; ( ${
-    desc.first_air_date &&
-    desc.last_air_date &&
-    splitReleaseDate(desc.first_air_date) !==
-      splitReleaseDate(desc.last_air_date)
-      ? `${splitReleaseDate(desc.first_air_date)} - ${splitReleaseDate(
-          desc.last_air_date
-        )}`
-      : `${splitReleaseDate(desc.first_air_date)} - ...`
-  }
-       )</p>
-          <p class="popup__desc">${desc.overview}</p>
-      </div>
-  `;
-}
+//   popupWindow.innerHTML = `
+//       <div class="popup__content">
+//       <span class="close">&#10008;</span>
+//           <iframe id="iframe__trailer" width="560" height="315" src="https://www.youtube.com/embed/${
+//             key[key.length - 1]
+//           }" frameborder="0" allowfullscreen></iframe>
+//       </div>
+//       <div class="popup__info">
+//           <p class="popup__title">&#171; ${desc.name} &#187; ( ${
+//     desc.first_air_date &&
+//     desc.last_air_date &&
+//     splitReleaseDate(desc.first_air_date) !==
+//       splitReleaseDate(desc.last_air_date)
+//       ? `${splitReleaseDate(desc.first_air_date)} - ${splitReleaseDate(
+//           desc.last_air_date
+//         )}`
+//       : `${splitReleaseDate(desc.first_air_date)} - ...`
+//   }
+//        )</p>
+//           <p class="popup__desc">${desc.overview}</p>
+//       </div>
+//   `;
+// }
 
 // Get media cast and crew in the person details page
 async function getMovieShowMembers(term, itemId) {
