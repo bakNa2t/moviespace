@@ -284,6 +284,11 @@ export async function displayMovieDetails() {
             ? `${movieDetail.homepage}" target="_blank" class="btn btn_pulse`
             : `#" target="_self" class="btn btn_pulse d_none`
         }">Visit Movie Homepage</a>
+        <a href="${
+          movieDetail.imdb_id
+            ? `https://www.imdb.com/title/${movieDetail.imdb_id}" target="_blank" class="btn btn_pulse`
+            : `#" target="_self" class="btn btn_pulse d_none`
+        }">Visit Movie Homepage</a>
         ${
           trailerUrl.length > 0
             ? `<div id="btn__trailer" class="btn btn_pulse">Trailer</div>`
