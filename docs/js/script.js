@@ -126,11 +126,11 @@ function init() {
       break;
     case "/pages/movie-details.html":
       displayMovieDetails();
-      displayPopupTrailer();
+      displayPopupTrailer("movie");
       break;
     case "/pages/tv-details.html":
       displayTVShowDetails();
-      displayPopupTrailer();
+      displayPopupTrailer("tv");
       break;
     case "/pages/search-result.html":
       searchContent();
