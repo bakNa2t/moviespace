@@ -293,7 +293,7 @@ export function initTrailerEventListeners() {
 }
 
 // Add popup poster img to details page
-export function displayPopupPosterImg(src) {
+export function addPopupPosterImg(src) {
   const popupModal = document.getElementById("popup__poster__img");
 
   popupModal.innerHTML = `
@@ -306,4 +306,10 @@ export function displayPopupPosterImg(src) {
   document.querySelector(".close__img").addEventListener("click", () => {
     popupModal.classList.remove("d_flex");
   });
+}
+
+// Show popup for poster img
+export function showPosterPopup() {
+  const popupImg = document.getElementById("popup__poster__img");
+  popupImg.classList.add("d_flex");
 }

@@ -1,5 +1,6 @@
 import { fetchData } from "./fetchFunctions.js";
 import globalPathName from "./env/globalParam.js";
+import { addPopupPosterImg, showPosterPopup } from "./supportFunctions.js";
 
 // Init swiper plugin for movies/tv-shows slider on current page
 function initSwiper() {
@@ -165,6 +166,15 @@ export async function displayDetailsContentPosters(term, itemId) {
       document.querySelector(".swiper-wrapper").appendChild(elemDiv);
 
       initSwiperPoster();
+
+      // Get src attribute from img element and display it in modal
+      document.querySelectorAll(".swiper-slide img").forEach((img) => {
+        img.addEventListener("click", () => {
+          const src = img.getAttribute("src");
+          showPosterPopup();
+          addPopupPosterImg(src);
+        });
+      });
     });
   } else {
     document.querySelector(".details__posters").style.display = "none";
