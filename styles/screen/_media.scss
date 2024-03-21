@@ -283,6 +283,13 @@
       width: 390px;
     }
   }
+  .popup__poster__img {
+    .popup__wrapper__img {
+      img {
+        width: 390px;
+      }
+    }
+  }
 }
 @media screen and (max-width: 400px) {
   .header__main {
@@ -365,6 +372,13 @@
       width: 300px;
       .popup__desc {
         font-size: 12px;
+      }
+    }
+  }
+  .popup__poster__img {
+    .popup__wrapper__img {
+      img {
+        width: 320px;
       }
     }
   }
