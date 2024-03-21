@@ -190,6 +190,12 @@ export async function displayDetailsContentPosters(term, itemId) {
       document.querySelector(".close__img").addEventListener("click", () => {
         hidePosterPopup();
       });
+      // Close popup modal when clicked on ESC key
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          hidePosterPopup();
+        }
+      });
     });
   } else {
     document.querySelector(".details__posters").style.display = "none";
