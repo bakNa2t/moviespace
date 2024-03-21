@@ -297,8 +297,8 @@ export function addPopupPosterImg(src) {
   const popupModal = document.getElementById("popup__poster__img");
 
   popupModal.innerHTML = `
+    <span class="close__img">&#10008;</span>
     <div class="popup__wrapper__img">
-        <span class="close__img">&#10008;</span>
         <img id="popup__img__src" src="https://image.tmdb.org/t/p/w500${src}" alt="img key: ${src}" />
     </div>
   `;
