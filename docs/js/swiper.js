@@ -1,6 +1,10 @@
 import { fetchData } from "./fetchFunctions.js";
 import globalPathName from "./env/globalParam.js";
-import { addPopupPosterImg, showPosterPopup } from "./supportFunctions.js";
+import {
+  addPopupPosterImg,
+  showPosterPopup,
+  hidePosterPopup,
+} from "./supportFunctions.js";
 
 // Init swiper plugin for movies/tv-shows slider on current page
 function initSwiper() {
@@ -175,6 +179,13 @@ export async function displayDetailsContentPosters(term, itemId) {
           addPopupPosterImg(src);
         });
       });
+      // Close popup modal when clicked outside
+      document
+        .querySelector("#popup__poster__img")
+        .addEventListener("click", (e) => {
+          if (e.target === document.querySelector("#popup__poster__img"))
+            hidePosterPopup();
+        });
     });
   } else {
     document.querySelector(".details__posters").style.display = "none";

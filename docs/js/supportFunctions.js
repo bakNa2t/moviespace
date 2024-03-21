@@ -302,14 +302,16 @@ export function addPopupPosterImg(src) {
         <img id="popup__img__src" src="https://image.tmdb.org/t/p/w500${src}" alt="img key: ${src}" />
     </div>
   `;
-
-  document.querySelector(".close__img").addEventListener("click", () => {
-    popupModal.classList.remove("d_flex");
-  });
 }
 
 // Show popup for poster img
 export function showPosterPopup() {
   const popupImg = document.getElementById("popup__poster__img");
   popupImg.classList.add("d_flex");
+}
+
+// Hie popup for poster img
+export function hidePosterPopup() {
+  const popupImg = document.getElementById("popup__poster__img");
+  popupImg.classList.remove("d_flex");
 }
