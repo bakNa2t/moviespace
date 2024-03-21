@@ -302,6 +302,11 @@ export function addPopupPosterImg(src) {
         <img id="popup__img__src" src="https://image.tmdb.org/t/p/w500${src}" alt="img key: ${src}" />
     </div>
   `;
+
+  // Close popup modal when clicked on close button
+  document.querySelector(".close__img").addEventListener("click", () => {
+    hidePosterPopup();
+  });
 }
 
 // Show popup for poster img
