@@ -186,6 +186,10 @@ export async function displayDetailsContentPosters(term, itemId) {
           if (e.target === document.querySelector("#popup__poster__img"))
             hidePosterPopup();
         });
+      // Close popup modal when clicked on close button
+      document.querySelector(".close__img").addEventListener("click", () => {
+        hidePosterPopup();
+      });
     });
   } else {
     document.querySelector(".details__posters").style.display = "none";
