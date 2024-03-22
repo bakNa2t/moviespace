@@ -276,9 +276,6 @@ function stopVideo() {
 
 // Init event listeners for trailer popup
 export function initTrailerEventListeners() {
-  document
-    .querySelector("#btn__trailer")
-    .addEventListener("click", displayPopup);
   document.querySelector(".fa-regular").addEventListener("click", displayPopup);
   document.querySelector(".close").addEventListener("click", hidePopup);
   document.addEventListener("click", (e) => {
