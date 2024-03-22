@@ -214,7 +214,7 @@ export async function displayMovieDetails() {
         alt="${movieDetail.title}"
         />`
     }
-    <i class="fa-regular fa-circle-play"></i>
+    ${trailerUrl.length > 0 ? `<i class="fa-regular fa-circle-play"></i>` : ""}
     </div>
     <div class="detail__desc">
       <h2>${movieDetail.title}</h2>
@@ -289,11 +289,6 @@ export async function displayMovieDetails() {
             ? `https://www.imdb.com/title/${movieDetail.imdb_id}" target="_blank" class="btn btn_pulse`
             : `#" target="_self" class="btn btn_pulse d_none`
         }">IMDB</a>
-        ${
-          trailerUrl.length > 0
-            ? `<div id="btn__trailer" class="btn btn_pulse">Trailer</div>`
-            : ""
-        }
       </div>
     </div>
   </div>
