@@ -44,9 +44,15 @@
         bottom: 25px;
         left: 20px;
         font-size: 35px;
-        opacity: 0.5;
+        opacity: 0.4;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
+        &:hover {
+          opacity: 1;
+          transition: all 0.3s ease-in-out;
+          text-shadow: 0 0 5px var(--light-color);
+          transform: scale(1.1);
+        }
       }
     }
     .detail__desc {
