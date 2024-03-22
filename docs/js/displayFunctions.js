@@ -201,20 +201,20 @@ export async function displayMovieDetails() {
   const elemDiv = document.createElement("div");
 
   elemDiv.innerHTML = `<div class="details__top">
-    <div>
+    <div class="details__top__img__wrapper">
     ${
       movieDetail.poster_path
-        ? `<img
-    src="https://image.tmdb.org/t/p/w400${movieDetail.poster_path}"
-    class="details__top__img"
-    alt="${movieDetail.title}"
-  />`
+        ? `<img src="https://image.tmdb.org/t/p/w400${movieDetail.poster_path}"
+        class="details__top__img"
+        alt="${movieDetail.title}"
+        />`
         : `<img
-  src="../images/no-image.jpg"
-  class="details__top__img"
-  alt="${movieDetail.title}"
-  />`
+        src="../images/no-image.jpg"
+        class="details__top__img"
+        alt="${movieDetail.title}"
+        />`
     }
+    <i class="fa-regular fa-circle-play"></i>
     </div>
     <div class="detail__desc">
       <h2>${movieDetail.title}</h2>
