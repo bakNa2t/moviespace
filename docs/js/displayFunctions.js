@@ -478,11 +478,6 @@ export async function displayTVShowDetails() {
           ? `${showDetail.homepage}" target="_blank" class="btn btn_pulse`
           : `#" target="_self" class="btn btn_pulse d_none`
       }">Visit TV Show Homepage</a>
-      ${
-        trailerUrl.length > 0
-          ? `<div id="btn__trailer" class="btn btn_pulse">Trailer</div>`
-          : ""
-      }
       </div>
     </div>
   </div>
