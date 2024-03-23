@@ -377,20 +377,21 @@ export async function displayTVShowDetails() {
   const elemDiv = document.createElement("div");
 
   elemDiv.innerHTML = `<div class="details__top">
-    <div>
+    <div class="details__top__img__wrapper">
     ${
       showDetail.poster_path
         ? `<img
-    src="https://image.tmdb.org/t/p/w500${showDetail.poster_path}"
-    class="details__top__img"
-    alt="${showDetail.name}"
-  />`
+        src="https://image.tmdb.org/t/p/w500${showDetail.poster_path}"
+        class="details__top__img"
+        alt="${showDetail.name}"
+        />`
         : `<img
-  src="../images/no-image.jpg"
-  class="details__top__img"
-  alt="${showDetail.name}"
-  />`
+        src="../images/no-image.jpg"
+        class="details__top__img"
+        alt="${showDetail.name}"
+        />`
     }
+    ${trailerUrl.length > 0 ? `<i class="fa-regular fa-circle-play"></i>` : ""}
     </div>
     <div class="detail__desc">
       <h2>${showDetail.name}</h2>
