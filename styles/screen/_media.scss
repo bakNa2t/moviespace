@@ -216,10 +216,14 @@
       flex-direction: column;
       gap: 10px;
       margin: 30px 0 30px;
-      div {
+      .details__top__img__wrapper {
         .details__top__img {
           width: 100% !important;
           margin-right: 0 !important;
+        }
+        .fa-circle-play {
+          left: 15px;
+          bottom: 15px;
         }
       }
       .detail__desc {
@@ -331,6 +335,17 @@
       margin-top: 0 !important;
       font-size: 23px;
       margin: 0 auto 30px;
+    }
+  }
+  .content__details {
+    .details__top {
+      .details__top__img__wrapper {
+        .fa-circle-play {
+          left: 12px;
+          bottom: 12px;
+          font-size: 28px;
+        }
+      }
     }
   }
   .footer__main {
