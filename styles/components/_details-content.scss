@@ -47,11 +47,31 @@
         opacity: 0.4;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
+        &::after {
+          content: "Watch Trailer";
+          position: absolute;
+          left: 50px;
+          top: 50%;
+          transform: translateY(-50%);
+          padding: 5px 10px;
+          width: 150px;
+          font-size: 14px;
+          border: 1px solid var(--light-color);
+          border-radius: 15px;
+          z-index: -1;
+          opacity: 0;
+          pointer-events: none;
+          overflow: hidden;
+          transition: all 0.3s ease-in-out;
+        }
         &:hover {
           opacity: 1;
-          transition: all 0.3s ease-in-out;
-          text-shadow: 0 0 5px var(--light-color);
           transform: translateY(-2px);
+          text-shadow: 0 0 5px var(--light-color);
+          transition: all 0.3s ease-in-out;
+          &::after {
+            opacity: 1;
+          }
         }
       }
     }
