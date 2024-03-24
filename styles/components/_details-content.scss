@@ -58,7 +58,6 @@
           font-size: 14px;
           border: 1px solid var(--light-color);
           border-radius: 15px;
-          letter-spacing: 2px;
           z-index: -1;
           opacity: 0;
           pointer-events: none;
@@ -73,6 +72,7 @@
           &::after {
             opacity: 1;
             width: 180px;
+            letter-spacing: 2px;
             text-shadow: 0 0 5px var(--light-color);
             box-shadow: 0 0 3px var(--light-color);
             transition: all 0.3s ease-in-out;
