@@ -50,11 +50,11 @@
         &::after {
           content: "Watch Trailer";
           position: absolute;
-          left: 50px;
+          left: 45px;
           top: 50%;
           transform: translateY(-50%);
-          padding: 5px 10px;
-          width: 150px;
+          padding: 8px;
+          width: 180px;
           font-size: 14px;
           border: 1px solid var(--light-color);
           border-radius: 15px;
@@ -72,9 +72,11 @@
           &::after {
             opacity: 1;
             width: 180px;
+            text-align: center;
             letter-spacing: 2px;
-            text-shadow: 0 0 5px var(--light-color);
-            box-shadow: 0 0 3px var(--light-color);
+            text-shadow: 0 0 3px var(--light-color);
+            box-shadow: 0 0 8px var(--light-color);
+            background-color: var(--secondary-colo-light2);
             transition: all 0.3s ease-in-out;
           }
         }
