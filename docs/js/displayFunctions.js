@@ -426,16 +426,20 @@ export async function displayTVShowDetails() {
         }
       </p>
       <h5 class="text-secondary">Starring:</h5>
-      <p class="list__group">${showTeam.cast
-        .map(
-          (actor) =>
-            `<span class="bg_secondary_light mg_btm4">${
-              actor.name
-            }</span> <em>("${
-              actor.character !== "" ? actor.character : "N/A"
-            }")</em>`
-        )
-        .join(", ")}</p>
+      <p class="list__group">${
+        showTeam.cast.length > 0
+          ? showTeam.cast
+              .map(
+                (actor) =>
+                  `<span class="bg_secondary_light mg_btm4">${
+                    actor.name
+                  }</span> <em>("${
+                    actor.character !== "" ? actor.character : "N/A"
+                  }")</em>`
+              )
+              .join(", ")
+          : `<span class="bg_secondary_light">N/A</span>`
+      }</p>
       <h5 class="text-secondary">Creators:</h5>
       <p class="list__group">${
         showDetail.created_by.length > 0
