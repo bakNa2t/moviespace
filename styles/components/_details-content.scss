@@ -58,6 +58,7 @@
           font-size: 14px;
           z-index: -1;
           letter-spacing: 2px;
+          text-align: center;
           border: 1px solid var(--light-color);
           border-radius: 15px;
           opacity: 0;
@@ -73,7 +74,6 @@
           &::after {
             opacity: 1;
             width: 180px;
-            text-align: center;
             text-shadow: 0 0 3px var(--light-color);
             box-shadow: 0 0 8px var(--light-color);
             background-color: var(--secondary-color-light2);
