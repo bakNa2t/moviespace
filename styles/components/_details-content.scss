@@ -56,12 +56,13 @@
           padding: 8px;
           width: 180px;
           font-size: 14px;
+          z-index: -1;
+          letter-spacing: 2px;
           border: 1px solid var(--light-color);
           border-radius: 15px;
-          z-index: -1;
           opacity: 0;
-          pointer-events: none;
           overflow: hidden;
+          pointer-events: none;
           transition: all 0.3s ease-in-out;
         }
         &:hover {
@@ -73,10 +74,9 @@
             opacity: 1;
             width: 180px;
             text-align: center;
-            letter-spacing: 2px;
             text-shadow: 0 0 3px var(--light-color);
             box-shadow: 0 0 8px var(--light-color);
-            background-color: var(--secondary-colo-light2);
+            background-color: var(--secondary-color-light2);
             transition: all 0.3s ease-in-out;
           }
         }
