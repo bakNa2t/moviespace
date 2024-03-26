@@ -921,15 +921,15 @@ export async function displaySwiperPopupTrailer(term, id) {
           term === "movie" ? termDetail.title : termDetail.name
         }&#187; (${
     term === "movie"
-      ? showYearDate(termDetail.release_date)
+      ? splitReleaseDate(termDetail.release_date)
       : termDetail.first_air_date &&
         termDetail.last_air_date &&
-        showYearDate(termDetail.first_air_date) !==
-          showYearDate(termDetail.last_air_date)
-      ? `${showYearDate(termDetail.first_air_date)} - ${showYearDate(
+        splitReleaseDate(termDetail.first_air_date) !==
+          splitReleaseDate(termDetail.last_air_date)
+      ? `${splitReleaseDate(termDetail.first_air_date)} - ${splitReleaseDate(
           termDetail.last_air_date
         )}`
-      : `${showYearDate(termDetail.first_air_date)}`
+      : `${splitReleaseDate(termDetail.first_air_date)}`
   })</p>
         <p class="popup__desc">${termDetail.overview}</p> 
       </div>
