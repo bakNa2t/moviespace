@@ -862,7 +862,7 @@ export function displayCopyrightInFooter() {
   footer.appendChild(elemDiv);
 }
 
-// Display popup movie/tv-show trailer window
+// Display popup movie/tv-show trailer window in details page
 export async function displayPopupTrailer(term) {
   const id = window.location.search.split("=")[1];
 
@@ -899,6 +899,45 @@ export async function displayPopupTrailer(term) {
           <p class="popup__desc">${termDetail.overview}</p>
       </div>
   `;
+}
+
+// Display popup movie trailer window for upcoming movies swiper-slide in movies page
+export async function displaySwiperPopupTrailer(term, id) {
+  const key = await getVideoContent(term, id);
+
+  const termDetail = await fetchData(`${term}/${id}`);
+
+  const popupWindow = document.querySelector("#popup__trailer");
+
+  popupWindow.innerHTML = `
+      <div class="popup__content">
+          <span class="close">&#10008;</span>
+          <iframe id="iframe__trailer" width="560" height="315" src="https://www.youtube.com/embed/${
+            key[key.length - 1]
+          }?iv_load_policy=3&modestbranding=1&hd=1&rel=0&showinfo=0&autoplay=1" frameborder="0" allowfullscreen="" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      </div>
+      <div class="popup__info">
+        <p class="popup__title">&#171;${
+          term === "movie" ? termDetail.title : termDetail.name
+        }&#187; (${
+    term === "movie"
+      ? showYearDate(termDetail.release_date)
+      : termDetail.first_air_date &&
+        termDetail.last_air_date &&
+        showYearDate(termDetail.first_air_date) !==
+          showYearDate(termDetail.last_air_date)
+      ? `${showYearDate(termDetail.first_air_date)} - ${showYearDate(
+          termDetail.last_air_date
+        )}`
+      : `${showYearDate(termDetail.first_air_date)}`
+  })</p>
+        <p class="popup__desc">${termDetail.overview}</p> 
+      </div>
+  `;
+
+  document.querySelector(".close").addEventListener("click", () => {
+    hidePopup();
+  });
 }
 
 // Get media cast and crew in the person details page
