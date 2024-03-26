@@ -137,8 +137,13 @@ export async function displayUpcomingMoviesSlider() {
         displayPopup();
       });
     });
+    // Close popup modal when clicked on backdrop
     document.querySelector(".popup").addEventListener("click", (e) => {
       if (e.target === document.getElementById("popup__trailer")) hidePopup();
+    });
+    // Close popup modal when clicked on Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") hidePopup();
     });
   });
 }
