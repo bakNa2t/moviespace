@@ -1,10 +1,12 @@
 import { fetchData } from "./fetchFunctions.js";
 import globalPathName from "./env/globalParam.js";
 import {
+  displayPopup,
   addPopupPosterImg,
   showPosterPopup,
   hidePosterPopup,
 } from "./supportFunctions.js";
+import { displaySwiperPopupTrailer } from "./displayFunctions.js";
 
 // Init swiper plugin for movies/tv-shows slider on current page
 function initSwiper() {
@@ -124,6 +126,16 @@ export async function displayUpcomingMoviesSlider() {
     document.querySelector(".swiper-wrapper").appendChild(elemDiv);
 
     initSwiper();
+
+    // Click on play icon to display popup with trailer
+    document.querySelectorAll(".fa-circle-play").forEach((item) => {
+      item.addEventListener("click", async () => {
+        const id = item.nextElementSibling.getAttribute("href").split("=")[1];
+
+        await displaySwiperPopupTrailer("movie", id);
+        displayPopup();
+      });
+    });
   });
 }
 
