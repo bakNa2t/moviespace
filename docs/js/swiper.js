@@ -104,6 +104,7 @@ export async function displayUpcomingMoviesSlider() {
     elemDiv.classList.add("swiper-slide");
 
     elemDiv.innerHTML = `
+      <i class="fa-regular fa-circle-play"></i>
       <a href= "${
         globalPathName.currentPage === "/"
           ? `pages/movie-details.html?id=${movie.id}`
