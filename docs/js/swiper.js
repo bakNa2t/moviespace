@@ -2,6 +2,7 @@ import { fetchData } from "./fetchFunctions.js";
 import globalPathName from "./env/globalParam.js";
 import {
   displayPopup,
+  hidePopup,
   addPopupPosterImg,
   showPosterPopup,
   hidePosterPopup,
@@ -135,6 +136,9 @@ export async function displayUpcomingMoviesSlider() {
         await displaySwiperPopupTrailer("movie", id);
         displayPopup();
       });
+    });
+    document.querySelector(".popup").addEventListener("click", (e) => {
+      if (e.target === document.getElementById("popup__trailer")) hidePopup();
     });
   });
 }
