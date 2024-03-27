@@ -914,7 +914,7 @@ export async function displaySwiperPopupTrailer(term, id) {
           <span class="close">&#10008;</span>
           <iframe id="iframe__trailer" width="560" height="315" src="https://www.youtube.com/embed/${
             key[key.length - 1]
-          }?iv_load_policy=3&modestbranding=1&hd=1&rel=0&showinfo=0&autoplay=1" frameborder="0" allowfullscreen="" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          }" frameborder="0" allowfullscreen></iframe>
       </div>
       <div class="popup__info">
         <p class="popup__title">&#171;${
