@@ -157,6 +157,10 @@
         .swiper-slide {
           .fa-circle-play {
             font-size: 40px;
+            &::after {
+              left: 40px;
+              font-size: 14px;
+            }
           }
         }
       }
@@ -341,6 +345,10 @@
         .swiper-slide {
           .fa-circle-play {
             font-size: 30px;
+            &::after {
+              left: 35px;
+              font-size: 11px;
+            }
           }
         }
       }
