@@ -160,6 +160,9 @@
             &::after {
               left: 40px;
               font-size: 14px;
+              &:hover {
+                width: 150px;
+              }
             }
           }
         }
@@ -348,6 +351,9 @@
             &::after {
               left: 35px;
               font-size: 11px;
+              &:hover {
+                width: 145px;
+              }
             }
           }
         }
