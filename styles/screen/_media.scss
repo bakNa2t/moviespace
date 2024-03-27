@@ -153,6 +153,13 @@
     }
     .swiper {
       padding: 10px;
+      .swiper-wrapper {
+        .swiper-slide {
+          .fa-circle-play {
+            font-size: 40px;
+          }
+        }
+      }
     }
   }
   .search {
@@ -328,6 +335,15 @@
     padding: 30px;
     h2 {
       margin: 0 auto 20px;
+    }
+    .swiper {
+      .swiper-wrapper {
+        .swiper-slide {
+          .fa-circle-play {
+            font-size: 30px;
+          }
+        }
+      }
     }
   }
   .popular__container {
