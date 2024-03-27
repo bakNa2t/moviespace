@@ -157,6 +157,7 @@ export async function displayOnTheAirShowsSlider() {
     elemDiv.classList.add("swiper-slide");
 
     elemDiv.innerHTML = `
+    <i class="fa-regular fa-circle-play"></i>
       <a href="tv-details.html?id=${show.id}">
         ${
           show.poster_path === null
