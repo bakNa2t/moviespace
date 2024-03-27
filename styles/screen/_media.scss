@@ -158,10 +158,13 @@
           .fa-circle-play {
             font-size: 40px;
             &::after {
-              left: 40px;
+              padding: 10px;
+              left: 65px;
               font-size: 14px;
-              &:hover {
-                width: 150px;
+            }
+            &:hover {
+              &::after {
+                width: 190px;
               }
             }
           }
@@ -349,9 +352,12 @@
           .fa-circle-play {
             font-size: 30px;
             &::after {
-              left: 35px;
+              padding: 8px;
+              left: 55px;
               font-size: 11px;
-              &:hover {
+            }
+            &:hover {
+              &::after {
                 width: 145px;
               }
             }
