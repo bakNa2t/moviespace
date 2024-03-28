@@ -159,13 +159,13 @@
             font-size: 40px;
             &::after {
               padding: 10px;
-              left: 65px;
-              font-size: 14px;
-              width: 145px;
+              left: 90px;
+              font-size: 16px;
+              width: 195px;
             }
             &:hover {
               &::after {
-                width: 145px;
+                width: 195px;
               }
             }
           }
@@ -354,7 +354,7 @@
             font-size: 30px;
             &::after {
               padding: 8px;
-              left: 55px;
+              left: 75px;
               font-size: 11px;
             }
             &:hover {
