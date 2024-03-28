@@ -50,6 +50,49 @@
     padding: 2px;
     border-radius: 4px;
     transition: all 0.4s ease-in-out;
+    .fa-regular {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 32px;
+      opacity: 0.7;
+      z-index: 100;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      &::after {
+        content: "Watch Trailer";
+        position: absolute;
+        left: 45px;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 8px;
+        width: 140px;
+        font-size: 10px;
+        border: 1px solid var(--light-color);
+        border-radius: 15px;
+        z-index: -1;
+        transition: all 0.3s ease-in-out;
+        pointer-events: none;
+        overflow: hidden;
+        text-align: center;
+        opacity: 0;
+      }
+      &:hover {
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+        text-shadow: 0 0 5px var(--light-color);
+        &::after {
+          opacity: 1;
+          letter-spacing: 2px;
+          text-align: center;
+          width: 140px;
+          text-shadow: 0 0 3px var(--light-color);
+          box-shadow: 0 0 8px var(--light-color);
+          background-color: var(--secondary-color-light2);
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
     .card-vote {
       position: absolute;
       top: -10px;
