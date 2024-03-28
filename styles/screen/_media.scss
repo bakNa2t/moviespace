@@ -161,10 +161,11 @@
               padding: 10px;
               left: 65px;
               font-size: 14px;
+              width: 145px;
             }
             &:hover {
               &::after {
-                width: 190px;
+                width: 145px;
               }
             }
           }
