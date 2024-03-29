@@ -107,6 +107,7 @@ export async function displayMostWatchedMovies() {
     const elemDiv = document.createElement("div");
     elemDiv.classList.add("card");
     elemDiv.innerHTML = `
+      <i class="fa-regular fa-circle-play"></i>
       <a href="${
         globalPathName.currentPage === "/"
           ? `pages/movie-details.html?id=${movie.id}`
@@ -150,6 +151,7 @@ export async function displayMostWatchedTVShoes() {
     const elemDiv = document.createElement("div");
     elemDiv.classList.add("card");
     elemDiv.innerHTML = `
+      <i class="fa-regular fa-circle-play"></i>
       <a href="tv-details.html?id=${show.id}">  
         ${
           show.poster_path
