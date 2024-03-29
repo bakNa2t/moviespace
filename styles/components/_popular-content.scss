@@ -63,12 +63,12 @@
       &::after {
         content: "Watch Trailer";
         position: absolute;
-        left: 45px;
+        left: 40px;
         top: 50%;
         transform: translateY(-50%);
         padding: 8px;
-        width: 140px;
-        font-size: 10px;
+        width: 155px;
+        font-size: 12px;
         border: 1px solid var(--light-color);
         border-radius: 15px;
         z-index: -1;
@@ -86,7 +86,7 @@
           opacity: 1;
           letter-spacing: 2px;
           text-align: center;
-          width: 140px;
+          width: 155px;
           text-shadow: 0 0 5px var(--primary-color);
           box-shadow: 0 0 10px var(--secondary-color);
           background-color: var(--secondary-color-light2);
