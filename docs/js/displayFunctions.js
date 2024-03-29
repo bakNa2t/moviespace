@@ -973,7 +973,7 @@ export async function displayPopularContentPopupTrailer(term, id) {
             })</p>
         <p class="popup__desc">${termDetail.overview}</p> 
       </div>`
-          : `<div class="popup__content popup__content_message">
+          : `<div class="popup__content popup__content_msg">
       <span class="close">&#10008;</span>
       Sorry, no trailer available</div>`
       }
