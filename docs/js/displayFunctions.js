@@ -904,7 +904,7 @@ export async function displayPopupTrailer(term) {
 }
 
 // Display popup movie trailer window for upcoming movies swiper-slide in movies page
-export async function displaySwiperPopupTrailer(term, id) {
+export async function displayPopularContentPopupTrailer(term, id) {
   const key = await getVideoContent(term, id);
 
   const termDetail = await fetchData(`${term}/${id}`);

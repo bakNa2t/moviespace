@@ -7,7 +7,7 @@ import {
   showPosterPopup,
   hidePosterPopup,
 } from "./supportFunctions.js";
-import { displaySwiperPopupTrailer } from "./displayFunctions.js";
+import { displayPopularContentPopupTrailer } from "./displayFunctions.js";
 
 // Init swiper plugin for movies/tv-shows slider on current page
 function initSwiper() {
@@ -102,7 +102,7 @@ export async function displayNowWatchingMoviesSlider() {
       item.addEventListener("click", async () => {
         const id = item.nextElementSibling.getAttribute("href").split("=")[1];
 
-        await displaySwiperPopupTrailer("movie", id);
+        await displayPopularContentPopupTrailer("movie", id);
         displayPopup();
       });
     });
@@ -152,7 +152,7 @@ export async function displayUpcomingMoviesSlider() {
       item.addEventListener("click", async () => {
         const id = item.nextElementSibling.getAttribute("href").split("=")[1];
 
-        await displaySwiperPopupTrailer("movie", id);
+        await displayPopularContentPopupTrailer("movie", id);
         displayPopup();
       });
     });
@@ -200,7 +200,7 @@ export async function displayOnTheAirShowsSlider() {
       item.addEventListener("click", async () => {
         const id = item.nextElementSibling.getAttribute("href").split("=")[1];
 
-        await displaySwiperPopupTrailer("tv", id);
+        await displayPopularContentPopupTrailer("tv", id);
         displayPopup();
       });
     });
