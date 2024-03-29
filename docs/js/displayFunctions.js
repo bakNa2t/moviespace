@@ -948,7 +948,9 @@ export async function displayPopularContentPopupTrailer(term, id) {
   const popupWindow = document.querySelector("#popup__trailer");
 
   popupWindow.innerHTML = `
-      <div class="popup__content">
+      ${
+        key && key.length > 0
+          ? `<div class="popup__content">
           <span class="close">&#10008;</span>
           <iframe id="iframe__trailer" width="560" height="315" src="https://www.youtube.com/embed/${
             key[key.length - 1]
@@ -958,19 +960,23 @@ export async function displayPopularContentPopupTrailer(term, id) {
         <p class="popup__title">&#171;${
           term === "movie" ? termDetail.title : termDetail.name
         }&#187; (${
-    term === "movie"
-      ? splitReleaseDate(termDetail.release_date)
-      : termDetail.first_air_date &&
-        termDetail.last_air_date &&
-        splitReleaseDate(termDetail.first_air_date) !==
-          splitReleaseDate(termDetail.last_air_date)
-      ? `${splitReleaseDate(termDetail.first_air_date)} - ${splitReleaseDate(
-          termDetail.last_air_date
-        )}`
-      : `${splitReleaseDate(termDetail.first_air_date)}`
-  })</p>
+              term === "movie"
+                ? splitReleaseDate(termDetail.release_date)
+                : termDetail.first_air_date &&
+                  termDetail.last_air_date &&
+                  splitReleaseDate(termDetail.first_air_date) !==
+                    splitReleaseDate(termDetail.last_air_date)
+                ? `${splitReleaseDate(
+                    termDetail.first_air_date
+                  )} - ${splitReleaseDate(termDetail.last_air_date)}`
+                : `${splitReleaseDate(termDetail.first_air_date)}`
+            })</p>
         <p class="popup__desc">${termDetail.overview}</p> 
-      </div>
+      </div>`
+          : `<div class="popup__content popup__content_message">
+      <span class="close">&#10008;</span>
+      Sorry, no trailer available</div>`
+      }
   `;
 
   document.querySelector(".close").addEventListener("click", () => {
