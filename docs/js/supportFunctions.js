@@ -271,7 +271,9 @@ export function hidePopup() {
 // Stop trailer video when popup is closed
 function stopVideo() {
   const iframe = document.querySelector("#iframe__trailer");
-  iframe.src = iframe.src;
+  if (iframe) {
+    iframe.src = iframe.src;
+  }
 }
 
 // Init event listeners for trailer popup
