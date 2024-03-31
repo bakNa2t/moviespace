@@ -28,6 +28,7 @@ export async function displayTopRatedMovies() {
     const elemDiv = document.createElement("div");
     elemDiv.classList.add("card");
     elemDiv.innerHTML = `
+      <i class="fa-regular fa-circle-play"></i>
       <a href="pages/movie-details.html?id=${movie.id}">
         ${
           movie.poster_path
@@ -67,6 +68,7 @@ export async function displayTopRatedTVShoes() {
     const elemDiv = document.createElement("div");
     elemDiv.classList.add("card");
     elemDiv.innerHTML = `
+      <i class="fa-regular fa-circle-play"></i>
       <a href="pages/tv-details.html?id=${show.id}">  
         ${
           show.poster_path
