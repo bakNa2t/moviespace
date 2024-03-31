@@ -61,7 +61,7 @@ export async function displayTopRatedMovies() {
 }
 
 //Display 12 top rated TVShows on the main page
-export async function displayTopRatedTVShoes() {
+export async function displayTopRatedTVShows() {
   const { results } = await fetchData("tv/top_rated");
 
   results.slice(0, 12).forEach((show) => {
@@ -164,7 +164,7 @@ export async function displayMostWatchedMovies() {
 }
 
 //Display 20 most watched(popular) TVShows on the tv page
-export async function displayMostWatchedTVShoes() {
+export async function displayMostWatchedTVShows() {
   const { results } = await fetchData("tv/popular");
 
   results.forEach((show) => {

@@ -14,15 +14,13 @@ import {
 import { searchAPIData } from "./fetchFunctions.js";
 import {
   displayTopRatedMovies,
-  displayTopRatedTVShoes,
+  displayTopRatedTVShows,
   displayMostWatchedMovies,
-  displayMostWatchedTVShoes,
+  displayMostWatchedTVShows,
   displayMovieDetails,
   displayTVShowDetails,
   displaySearchResults,
   displayCopyrightInFooter,
-  // displayPopupMovieTrailer,
-  // displayPopupTvShowTrailer,
   displayPopupTrailer,
 } from "./displayFunctions.js";
 import {
@@ -103,7 +101,7 @@ function init() {
       displayNowWatchingMoviesSlider();
       displayLabelCheckedDefault();
       displayTopRatedMovies();
-      displayTopRatedTVShoes();
+      displayTopRatedTVShows();
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
       displayLogoBtnBack();
@@ -120,7 +118,7 @@ function init() {
       displayNavLinkActive();
       displayLabelCheckedDefault();
       displayOnTheAirShowsSlider();
-      displayMostWatchedTVShoes();
+      displayMostWatchedTVShows();
       displayToTheTopBtn();
       clickMoveToTheTopBtn();
       break;
