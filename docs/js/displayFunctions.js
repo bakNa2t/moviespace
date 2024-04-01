@@ -28,7 +28,7 @@ export async function displayTopRatedMovies() {
     const elemDiv = document.createElement("div");
     elemDiv.classList.add("card");
     elemDiv.innerHTML = `
-      <i class="fa-regular fa-circle-play"></i>
+      <i class="fa-regular fa-circle-play fa-play-movie"></i>
       <a href="pages/movie-details.html?id=${movie.id}">
         ${
           movie.poster_path
@@ -59,7 +59,7 @@ export async function displayTopRatedMovies() {
     document.querySelector("#top__rated__movies").appendChild(elemDiv);
 
     // Click on play icon to display popup with trailer
-    document.querySelectorAll(".fa-circle-play").forEach((item) => {
+    document.querySelectorAll(".fa-play-movie").forEach((item) => {
       item.addEventListener("click", async () => {
         const id = item.nextElementSibling.getAttribute("href").split("=")[1];
 
@@ -86,7 +86,7 @@ export async function displayTopRatedTVShows() {
     const elemDiv = document.createElement("div");
     elemDiv.classList.add("card");
     elemDiv.innerHTML = `
-      <i class="fa-regular fa-circle-play"></i>
+      <i class="fa-regular fa-circle-play fa-play-tv-show"></i>
       <a href="pages/tv-details.html?id=${show.id}">  
         ${
           show.poster_path
@@ -117,7 +117,7 @@ export async function displayTopRatedTVShows() {
     document.querySelector("#top__rated__shows").appendChild(elemDiv);
 
     // Click on play icon to display popup with trailer
-    document.querySelectorAll(".fa-circle-play").forEach((item) => {
+    document.querySelectorAll(".fa-play-tv-show").forEach((item) => {
       item.addEventListener("click", async () => {
         const id = item.nextElementSibling.getAttribute("href").split("=")[1];
 
