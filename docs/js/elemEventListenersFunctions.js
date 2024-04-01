@@ -1,4 +1,5 @@
 import { displayPopularContentPopupTrailer } from "./displayFunctions.js";
+import { displayPopup, hidePopup } from "./supportFunctions.js";
 
 export function initPopupEventListenersInArray(term, selector) {
   // Click on play icon to display popup with trailer
