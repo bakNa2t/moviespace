@@ -1,13 +1,11 @@
 import { fetchData } from "./fetchFunctions.js";
 import globalPathName from "./env/globalParam.js";
 import {
-  displayPopup,
-  hidePopup,
   addPopupPosterImg,
   showPosterPopup,
   hidePosterPopup,
 } from "./supportFunctions.js";
-import { displayPopularContentPopupTrailer } from "./displayFunctions.js";
+import { initPopupEventListenersInArray } from "./elemEventListenersFunctions.js";
 
 // Init swiper plugin for movies/tv-shows slider on current page
 function initSwiper() {
@@ -97,23 +95,8 @@ export async function displayNowWatchingMoviesSlider() {
 
     initSwiper();
 
-    // Click on play icon to display popup with trailer
-    document.querySelectorAll(".fa-circle-play").forEach((item) => {
-      item.addEventListener("click", async () => {
-        const id = item.nextElementSibling.getAttribute("href").split("=")[1];
-
-        await displayPopularContentPopupTrailer("movie", id);
-        displayPopup();
-      });
-    });
-    // Close popup modal when clicked on backdrop
-    document.querySelector(".popup").addEventListener("click", (e) => {
-      if (e.target === document.getElementById("popup__trailer")) hidePopup();
-    });
-    // Close popup modal when clicked on Escape
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") hidePopup();
-    });
+    // Dispaly/hide popup trailer for main page
+    initPopupEventListenersInArray("movie", ".fa-circle-play");
   });
 }
 
@@ -147,23 +130,8 @@ export async function displayUpcomingMoviesSlider() {
 
     initSwiper();
 
-    // Click on play icon to display popup with trailer
-    document.querySelectorAll(".fa-circle-play").forEach((item) => {
-      item.addEventListener("click", async () => {
-        const id = item.nextElementSibling.getAttribute("href").split("=")[1];
-
-        await displayPopularContentPopupTrailer("movie", id);
-        displayPopup();
-      });
-    });
-    // Close popup modal when clicked on backdrop
-    document.querySelector(".popup").addEventListener("click", (e) => {
-      if (e.target === document.getElementById("popup__trailer")) hidePopup();
-    });
-    // Close popup modal when clicked on Escape
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") hidePopup();
-    });
+    // Dispaly/hide popup trailer for main page
+    initPopupEventListenersInArray("movie", ".fa-circle-play");
   });
 }
 
@@ -195,23 +163,8 @@ export async function displayOnTheAirShowsSlider() {
 
     initSwiper();
 
-    // Click on play icon to display popup with trailer
-    document.querySelectorAll(".fa-circle-play").forEach((item) => {
-      item.addEventListener("click", async () => {
-        const id = item.nextElementSibling.getAttribute("href").split("=")[1];
-
-        await displayPopularContentPopupTrailer("tv", id);
-        displayPopup();
-      });
-    });
-    // Close popup modal when clicked on backdrop
-    document.querySelector(".popup").addEventListener("click", (e) => {
-      if (e.target === document.getElementById("popup__trailer")) hidePopup();
-    });
-    // Close popup modal when clicked on Escape
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") hidePopup();
-    });
+    // Dispaly/hide popup trailer for main page
+    initPopupEventListenersInArray("tv", ".fa-circle-play");
   });
 }
 

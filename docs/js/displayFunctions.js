@@ -15,9 +15,7 @@ import {
   sortByReleaseDateDesc,
   sortByReleaseDateAsc,
   removeBtnSortActive,
-  displayPopup,
   hidePopup,
-  initTrailerEventListeners,
 } from "./supportFunctions.js";
 import {
   initPopupEventListenersInArray,

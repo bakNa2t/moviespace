@@ -276,22 +276,6 @@ function stopVideo() {
   }
 }
 
-// Init event listeners for trailer popup
-export function initTrailerEventListeners() {
-  document.querySelector(".fa-regular").addEventListener("click", displayPopup);
-  document.querySelector(".close").addEventListener("click", hidePopup);
-  document.addEventListener("click", (e) => {
-    if (e.target.id === "popup__trailer") {
-      hidePopup();
-    }
-  });
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      hidePopup();
-    }
-  });
-}
-
 // Add popup poster img to details page
 export function addPopupPosterImg(src) {
   const popupModal = document.getElementById("popup__poster__img");
