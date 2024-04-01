@@ -1,3 +1,5 @@
+import { displayPopularContentPopupTrailer } from "./displayFunctions.js";
+
 export function initPopupEventListenersInArray(term, selector) {
   // Click on play icon to display popup with trailer
   document.querySelectorAll(selector).forEach((item) => {
