@@ -19,6 +19,7 @@ import {
   hidePopup,
   initTrailerEventListeners,
 } from "./supportFunctions.js";
+import { initPopupEventListenersInArray } from "./elemEventListenersFunctions.js";
 
 //Display 12 top rated Movies on the main page
 export async function displayTopRatedMovies() {
@@ -58,23 +59,8 @@ export async function displayTopRatedMovies() {
 
     document.querySelector("#top__rated__movies").appendChild(elemDiv);
 
-    // Click on play icon to display popup with trailer
-    document.querySelectorAll(".fa-play-movie").forEach((item) => {
-      item.addEventListener("click", async () => {
-        const id = item.nextElementSibling.getAttribute("href").split("=")[1];
-
-        await displayPopularContentPopupTrailer("movie", id);
-        displayPopup();
-      });
-    });
-    // Close popup modal when clicked on backdrop
-    document.querySelector(".popup").addEventListener("click", (e) => {
-      if (e.target === document.getElementById("popup__trailer")) hidePopup();
-    });
-    // Close popup modal when clicked on Escape
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") hidePopup();
-    });
+    // Dispaly/hide popup trailer for main page
+    initPopupEventListenersInArray("movie", ".fa-play-movie");
   });
 }
 
@@ -116,23 +102,8 @@ export async function displayTopRatedTVShows() {
 
     document.querySelector("#top__rated__shows").appendChild(elemDiv);
 
-    // Click on play icon to display popup with trailer
-    document.querySelectorAll(".fa-play-tv-show").forEach((item) => {
-      item.addEventListener("click", async () => {
-        const id = item.nextElementSibling.getAttribute("href").split("=")[1];
-
-        await displayPopularContentPopupTrailer("tv", id);
-        displayPopup();
-      });
-    });
-    // Close popup modal when clicked on backdrop
-    document.querySelector(".popup").addEventListener("click", (e) => {
-      if (e.target === document.getElementById("popup__trailer")) hidePopup();
-    });
-    // Close popup modal when clicked on Escape
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") hidePopup();
-    });
+    // Dispaly/hide popup trailer for main page
+    initPopupEventListenersInArray("tv", ".fa-play-tv-show");
   });
 }
 
