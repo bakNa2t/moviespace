@@ -19,7 +19,10 @@ import {
   hidePopup,
   initTrailerEventListeners,
 } from "./supportFunctions.js";
-import { initPopupEventListenersInArray } from "./elemEventListenersFunctions.js";
+import {
+  initPopupEventListenersInArray,
+  initPopupEventListenersInDetails,
+} from "./elemEventListenersFunctions.js";
 
 //Display 12 top rated Movies on the main page
 export async function displayTopRatedMovies() {
@@ -366,7 +369,7 @@ export async function displayMovieDetails() {
 
   // Add event listeners to trailer button and close button if trailer is available
   if (trailerUrl.length > 0) {
-    initTrailerEventListeners();
+    initPopupEventListenersInDetails();
   }
 
   document.querySelector(
@@ -564,7 +567,7 @@ export async function displayTVShowDetails() {
 
   // Add event listeners to trailer button and close button if trailer is available
   if (trailerUrl.length > 0) {
-    initTrailerEventListeners();
+    initPopupEventListenersInDetails();
   }
 
   document.querySelector(

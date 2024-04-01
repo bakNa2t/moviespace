@@ -1,6 +1,7 @@
 import { displayPopularContentPopupTrailer } from "./displayFunctions.js";
 import { displayPopup, hidePopup } from "./supportFunctions.js";
 
+// Init trailer popup event listeners for movies/tv-shows in array
 export function initPopupEventListenersInArray(term, selector) {
   // Click on play icon to display popup with trailer
   document.querySelectorAll(selector).forEach((item) => {
@@ -18,5 +19,21 @@ export function initPopupEventListenersInArray(term, selector) {
   // Close popup modal when clicked on Escape
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") hidePopup();
+  });
+}
+
+// Init trailer popup event listeners for details page
+export function initPopupEventListenersInDetails() {
+  document.querySelector(".fa-regular").addEventListener("click", displayPopup);
+  document.querySelector(".close").addEventListener("click", hidePopup);
+  document.addEventListener("click", (e) => {
+    if (e.target.id === "popup__trailer") {
+      hidePopup();
+    }
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      hidePopup();
+    }
   });
 }
