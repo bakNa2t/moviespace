@@ -216,6 +216,18 @@ export async function displayMostWatchedTVShows() {
 
     // Dispaly/hide popup trailer for main page
     initPopupEventListenersInArray("tv", ".fa-circle-play");
+
+    // Display popup card short description for most viewed tv shows
+    document.querySelectorAll(".card__vote").forEach((item) => {
+      item.addEventListener("mouseenter", (e) => {
+        const desc = e.target.nextElementSibling;
+        desc.classList.add("d_flex");
+      });
+      item.addEventListener("mouseleave", (e) => {
+        const desc = e.target.nextElementSibling;
+        desc.classList.remove("d_flex");
+      });
+    });
   });
 }
 
