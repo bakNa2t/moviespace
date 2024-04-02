@@ -138,6 +138,9 @@ export async function displayMostWatchedMovies() {
         }
       </a>
       <div class="card__vote">${movie.vote_average.toFixed(1)}</div>
+      <div class="card__short__desc">
+        <h5>${movie.title}</h5>
+        <p>${movie.overview}</p></div>
       <div class="card__body">
         <h5 class="card__title">
           <a href="movie-details.html?id=${movie.id}">${movie.title}</a>
