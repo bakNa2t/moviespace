@@ -65,6 +65,7 @@
       font-size: 12px;
       font-weight: 600;
       z-index: 30;
+      cursor: help;
       color: var(--primary-color-light);
       background-color: var(--secondary-color);
       border: 2px solid var(--primary-color);
@@ -99,7 +100,7 @@
           visibility: visible;
         }
       }
-      h4 {
+      h5 {
         margin-bottom: 5px;
       }
       p {
