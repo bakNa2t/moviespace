@@ -53,7 +53,7 @@
     .fa-regular {
       @include trailerIcon;
     }
-    .card-vote {
+    .card__vote {
       position: absolute;
       top: -10px;
       right: -10px;
@@ -75,10 +75,10 @@
       border-top-left-radius: 2px;
       border-top-right-radius: 2px;
     }
-    .card-body {
+    .card__body {
       padding: 10px;
       font-size: 20px;
-      .card-title {
+      .card__title {
         color: var(--text-color);
         text-shadow: 0 0 2px var(--light-color);
         a {
@@ -91,9 +91,9 @@
           }
         }
       }
-      .card-text {
+      .card__text {
         margin-top: 3px;
-        .text-muted {
+        .text__muted {
           color: var(--primary-color-light);
           text-shadow: -1px -1px 1px #682860;
           span {

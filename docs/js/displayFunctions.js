@@ -46,13 +46,13 @@ export async function displayTopRatedMovies() {
     />`
         }
       </a>
-      <div class="card-vote">${movie.vote_average.toFixed(1)}</div>
-      <div class="card-body">
-        <h5 class="card-title">
+      <div class="card__vote">${movie.vote_average.toFixed(1)}</div>
+      <div class="card__body">
+        <h5 class="card__title">
           <a href="pages/movie-details.html?id=${movie.id}">${movie.title}</a>
         </h5>
-        <p class="card-text">
-          <small class="text-muted">Release date: <span>${
+        <p class="card__text">
+          <small class="text__muted">Release date: <span>${
             movie.release_date
           }</span></small>
         </p>
@@ -89,13 +89,13 @@ export async function displayTopRatedTVShows() {
     />`
         }
       </a>
-      <div class="card-vote">${show.vote_average.toFixed(1)}</div>
-      <div class="card-body">
-        <h5 class="card-title">
+      <div class="card__vote">${show.vote_average.toFixed(1)}</div>
+      <div class="card__body">
+        <h5 class="card__title">
           <a href="pages/tv-details.html?id=${show.id}">${show.name}</a>
         </h5>
-        <p class="card-text">
-          <small class="text-muted">Air date: <span>${
+        <p class="card__text">
+          <small class="text__muted">Air date: <span>${
             show.first_air_date
           }</span></small>
         </p>
@@ -137,13 +137,13 @@ export async function displayMostWatchedMovies() {
     />`
         }
       </a>
-      <div class="card-vote">${movie.vote_average.toFixed(1)}</div>
-      <div class="card-body">
-        <h5 class="card-title">
+      <div class="card__vote">${movie.vote_average.toFixed(1)}</div>
+      <div class="card__body">
+        <h5 class="card__title">
           <a href="movie-details.html?id=${movie.id}">${movie.title}</a>
         </h5>
-        <p class="card-text">
-          <small class="text-muted">Release date: <span>${
+        <p class="card__text">
+          <small class="text__muted">Release date: <span>${
             movie.release_date
           }</span></small>
         </p>
@@ -180,13 +180,13 @@ export async function displayMostWatchedTVShows() {
     />`
         }
       </a>
-      <div class="card-vote">${show.vote_average.toFixed(1)}</div>
-      <div class="card-body">
-        <h5 class="card-title">
+      <div class="card__vote">${show.vote_average.toFixed(1)}</div>
+      <div class="card__body">
+        <h5 class="card__title">
           <a href="tv-details.html?id=${show.id}">${show.name}</a>
         </h5>
-        <p class="card-text">
-          <small class="text-muted">Air date: <span>${
+        <p class="card__text">
+          <small class="text__muted">Air date: <span>${
             show.first_air_date
           }</span></small>
         </p>
