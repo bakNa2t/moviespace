@@ -156,6 +156,18 @@ export async function displayMostWatchedMovies() {
 
     // Dispaly/hide popup trailer for main page
     initPopupEventListenersInArray("movie", ".fa-circle-play");
+
+    // Display popup card short description for most viewed movies
+    document.querySelectorAll(".card__vote").forEach((item) => {
+      item.addEventListener("mouseenter", (e) => {
+        const desc = e.target.nextElementSibling;
+        desc.classList.add("d_flex");
+      });
+      item.addEventListener("mouseleave", (e) => {
+        const desc = e.target.nextElementSibling;
+        desc.classList.remove("d_flex");
+      });
+    });
   });
 }
 
