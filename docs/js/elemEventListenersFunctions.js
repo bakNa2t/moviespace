@@ -37,3 +37,17 @@ export function initPopupEventListenersInDetails() {
     }
   });
 }
+
+// Init card short description popup event listeners for movies/tv-shows cards
+export function initCardPopupEventListeners() {
+  document.querySelectorAll(".card__vote").forEach((item) => {
+    item.addEventListener("mouseenter", (e) => {
+      const desc = e.target.nextElementSibling;
+      desc.classList.add("d_flex");
+    });
+    item.addEventListener("mouseleave", (e) => {
+      const desc = e.target.nextElementSibling;
+      desc.classList.remove("d_flex");
+    });
+  });
+}

@@ -20,6 +20,7 @@ import {
 import {
   initPopupEventListenersInArray,
   initPopupEventListenersInDetails,
+  initCardPopupEventListeners,
 } from "./elemEventListenersFunctions.js";
 
 //Display 12 top rated Movies on the main page
@@ -159,16 +160,7 @@ export async function displayMostWatchedMovies() {
     initPopupEventListenersInArray("movie", ".fa-circle-play");
 
     // Display popup card short description for most viewed movies
-    document.querySelectorAll(".card__vote").forEach((item) => {
-      item.addEventListener("mouseenter", (e) => {
-        const desc = e.target.nextElementSibling;
-        desc.classList.add("d_flex");
-      });
-      item.addEventListener("mouseleave", (e) => {
-        const desc = e.target.nextElementSibling;
-        desc.classList.remove("d_flex");
-      });
-    });
+    initCardPopupEventListeners();
   });
 }
 
@@ -218,16 +210,7 @@ export async function displayMostWatchedTVShows() {
     initPopupEventListenersInArray("tv", ".fa-circle-play");
 
     // Display popup card short description for most viewed tv shows
-    document.querySelectorAll(".card__vote").forEach((item) => {
-      item.addEventListener("mouseenter", (e) => {
-        const desc = e.target.nextElementSibling;
-        desc.classList.add("d_flex");
-      });
-      item.addEventListener("mouseleave", (e) => {
-        const desc = e.target.nextElementSibling;
-        desc.classList.remove("d_flex");
-      });
-    });
+    initCardPopupEventListeners();
   });
 }
 
