@@ -48,6 +48,14 @@ export async function displayTopRatedMovies() {
         }
       </a>
       <div class="card__vote">${movie.vote_average.toFixed(1)}</div>
+      <div class="card__short__desc">
+        <h5>${movie.title}</h5>
+        <p>${
+          movie.overview
+            ? movie.overview
+            : "Sorry, but no description found. We will try to fix this issue as soon as possible. Thank you for your understanding."
+        }</p>
+      </div>
       <div class="card__body">
         <h5 class="card__title">
           <a href="pages/movie-details.html?id=${movie.id}">${movie.title}</a>
@@ -63,6 +71,9 @@ export async function displayTopRatedMovies() {
 
     // Dispaly/hide popup trailer for main page
     initPopupEventListenersInArray("movie", ".fa-play-movie");
+
+    // Display/hide card short description for main page
+    initCardPopupEventListeners();
   });
 }
 
@@ -91,6 +102,14 @@ export async function displayTopRatedTVShows() {
         }
       </a>
       <div class="card__vote">${show.vote_average.toFixed(1)}</div>
+      <div class="card__short__desc">
+        <h5>${show.name}</h5>
+        <p>${
+          show.overview
+            ? show.overview
+            : "Sorry, but no description found. We will try to fix this issue as soon as possible. Thank you for your understanding."
+        }</p>
+      </div>
       <div class="card__body">
         <h5 class="card__title">
           <a href="pages/tv-details.html?id=${show.id}">${show.name}</a>
@@ -106,6 +125,9 @@ export async function displayTopRatedTVShows() {
 
     // Dispaly/hide popup trailer for main page
     initPopupEventListenersInArray("tv", ".fa-play-tv-show");
+
+    // Display/hide card short description for main page
+    initCardPopupEventListeners();
   });
 }
 
@@ -191,7 +213,11 @@ export async function displayMostWatchedTVShows() {
       <div class="card__vote">${show.vote_average.toFixed(1)}</div>
       <div class="card__short__desc">
         <h5>${show.name}</h5>
-        <p>${show.overview}</p>
+        <p>${
+          show.overview
+            ? show.overview
+            : "Sorry, but no description found. We will try to fix this issue as soon as possible. Thank you for your understanding."
+        }</p>
       </div>
       <div class="card__body">
         <h5 class="card__title">
