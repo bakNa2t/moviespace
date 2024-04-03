@@ -49,7 +49,7 @@ export async function displayTopRatedMovies() {
       </a>
       <div class="card__vote">${movie.vote_average.toFixed(1)}</div>
       <div class="card__short__desc">
-        <h5>${movie.title}</h5>
+        <h4>${movie.title}</h4>
         <p>${
           movie.overview
             ? movie.overview
@@ -103,7 +103,7 @@ export async function displayTopRatedTVShows() {
       </a>
       <div class="card__vote">${show.vote_average.toFixed(1)}</div>
       <div class="card__short__desc">
-        <h5>${show.name}</h5>
+        <h4>${show.name}</h4>
         <p>${
           show.overview
             ? show.overview
@@ -162,7 +162,7 @@ export async function displayMostWatchedMovies() {
       </a>
       <div class="card__vote">${movie.vote_average.toFixed(1)}</div>
       <div class="card__short__desc">
-        <h5>${movie.title}</h5>
+        <h4>${movie.title}</h4>
         <p>${movie.overview}</p>
       </div>
       <div class="card__body">
@@ -212,7 +212,7 @@ export async function displayMostWatchedTVShows() {
       </a>
       <div class="card__vote">${show.vote_average.toFixed(1)}</div>
       <div class="card__short__desc">
-        <h5>${show.name}</h5>
+        <h4>${show.name}</h4>
         <p>${
           show.overview
             ? show.overview
