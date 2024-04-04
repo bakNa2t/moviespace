@@ -661,13 +661,13 @@ export function displaySearchResults(results) {
     />`
         }
       </a>
-      <div class="card-vote">${
+      <div class="card__vote">${
         result.vote_average > 0
           ? result.vote_average.toFixed(1)
           : result.vote_average
       }</div>
-      <div class="card-body">
-        <h5 class="card-title"><a href="${
+      <div class="card__body">
+        <h5 class="card__title"><a href="${
           globalPathName.searchResult.type
         }-details.html?id=${result.id}">
         ${
@@ -676,8 +676,8 @@ export function displaySearchResults(results) {
             : result.name
         }</a>
         </h5>
-        <p class="card-text">
-          <small class="text-muted">${
+        <p class="card__text">
+          <small class="text__muted">${
             globalPathName.searchResult.type === "movie"
               ? "Release date"
               : "First air date"

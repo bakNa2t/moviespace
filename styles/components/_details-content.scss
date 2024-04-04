@@ -46,6 +46,7 @@
         font-size: 35px;
         opacity: 0.4;
         cursor: pointer;
+        text-shadow: 0 0 5px var(--primary-color);
         transition: all 0.3s ease-in-out;
         &::after {
           content: "Watch Trailer";
