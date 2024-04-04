@@ -719,6 +719,9 @@ export function displaySearchResults(results) {
     }</div>`;
 
     document.querySelector("#search__content").appendChild(elemDiv);
+
+    // Display popup card short description for movies/tv-shows search results
+    initCardPopupEventListeners();
   });
 
   //Display date heading "Release" or "Air Date" depending on type of search
