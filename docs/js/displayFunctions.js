@@ -287,6 +287,20 @@ export async function displayMovieDetails() {
       : `<span class="font_12">(<em>no votes</em>)</span>`
   }
       </p>
+      <p class="detail__country"><span class="text-secondary">Country:</span> 
+      ${
+        movieDetail.production_countries.length > 0
+          ? movieDetail.production_countries
+              .map(
+                (country) =>
+                  `<img src="https://flagcdn.com/${country.iso_3166_1.toLowerCase()}.svg" alt="${
+                    country.iso_3166_1
+                  }">`
+              )
+              .join(", ")
+          : "N/A"
+      }
+      </p>
       <p class="text__muted"><span class="text-secondary">Release date:</span> ${
         movieDetail.release_date
           ? convertReleaseDate(movieDetail.release_date)
