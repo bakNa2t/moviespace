@@ -666,6 +666,15 @@ export function displaySearchResults(results) {
           ? result.vote_average.toFixed(1)
           : result.vote_average
       }</div>
+      ${
+        globalPathName.searchResult.type === "movie"
+          ? `<div class="card__short__desc">
+        <h4>${result.title}</h4>
+        <p>${result.overview}</p></div>`
+          : `<div class="card__short__desc">
+        <h4>${result.name}</h4>
+        <p>${result.overview}</p></div>`
+      }
       <div class="card__body">
         <h5 class="card__title"><a href="${
           globalPathName.searchResult.type
