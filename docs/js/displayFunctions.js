@@ -166,7 +166,11 @@ export async function displayMostWatchedMovies() {
       <div class="card__vote">${movie.vote_average.toFixed(1)}</div>
       <div class="card__short__desc">
         <h4>${movie.title}</h4>
-        <p><em>Overview:</em> ${movie.overview}</p>
+        <p><em>Overview:</em> ${
+          movie.overview.length > 300
+            ? `${movie.overview.slice(0, 300)}...`
+            : movie.overview
+        }</p>
         <p><em>Cast:</em> ${
           cast.length > 0
             ? cast
