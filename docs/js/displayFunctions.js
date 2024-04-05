@@ -136,7 +136,10 @@ export async function displayMostWatchedMovies() {
   const { results } = await fetchData("movie/popular");
   // console.log(results);
 
-  results.forEach((movie) => {
+  results.forEach(async (movie) => {
+    // Get cast for each movie
+    const { cast } = await getMovieShowMembers("movie", movie.id);
+
     const elemDiv = document.createElement("div");
     elemDiv.classList.add("card");
     elemDiv.innerHTML = `
@@ -164,6 +167,14 @@ export async function displayMostWatchedMovies() {
       <div class="card__short__desc">
         <h4>${movie.title}</h4>
         <p>${movie.overview}</p>
+        <p>${
+          cast.length > 0
+            ? cast
+                .slice(0, 5)
+                .map((actor) => `<span class="mg_btm4">${actor.name}</span>`)
+                .join(", ")
+            : `<span>N/A</span>`
+        }</p>
       </div>
       <div class="card__body">
         <h5 class="card__title">
