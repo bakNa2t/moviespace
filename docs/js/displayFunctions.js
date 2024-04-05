@@ -232,9 +232,11 @@ export async function displayMostWatchedTVShows() {
       <div class="card__short__desc">
         <h4>${show.name}</h4>
         <p><em>Overview:</em> ${
-          show.overview && show.overview.length > 300
+          !show.overview
+            ? "Sorry, but no description found. We will try to fix this issue as soon as possible. Thank you for your understanding."
+            : show.overview.length > 300
             ? `${show.overview.slice(0, 300)}...`
-            : "Sorry, but no description found. We will try to fix this issue as soon as possible. Thank you for your understanding."
+            : show.overview
         }</p>
         <p><em>Cast:</em> ${
           cast.length > 0
