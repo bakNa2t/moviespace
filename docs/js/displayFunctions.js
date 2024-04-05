@@ -137,7 +137,7 @@ export async function displayMostWatchedMovies() {
   // console.log(results);
 
   results.forEach(async (movie) => {
-    // Get cast for each movie
+    // Retrieve cast for each movie
     const { cast } = await getMovieShowMembers("movie", movie.id);
 
     const elemDiv = document.createElement("div");
@@ -166,8 +166,8 @@ export async function displayMostWatchedMovies() {
       <div class="card__vote">${movie.vote_average.toFixed(1)}</div>
       <div class="card__short__desc">
         <h4>${movie.title}</h4>
-        <p>${movie.overview}</p>
-        <p>${
+        <p><em>Overview:</em> ${movie.overview}</p>
+        <p><em>Cast:</em> ${
           cast.length > 0
             ? cast
                 .slice(0, 5)
