@@ -205,7 +205,10 @@ export async function displayMostWatchedMovies() {
 export async function displayMostWatchedTVShows() {
   const { results } = await fetchData("tv/popular");
 
-  results.forEach((show) => {
+  results.forEach(async (show) => {
+    // Retrieve cast for each tv-show
+    const { cast } = await getMovieShowMembers("tv", show.id);
+
     const elemDiv = document.createElement("div");
     elemDiv.classList.add("card");
     elemDiv.innerHTML = `
@@ -228,10 +231,18 @@ export async function displayMostWatchedTVShows() {
       <div class="card__vote">${show.vote_average.toFixed(1)}</div>
       <div class="card__short__desc">
         <h4>${show.name}</h4>
-        <p>${
-          show.overview
-            ? show.overview
+        <p><em>Overview:</em> ${
+          show.overview && show.overview.length > 300
+            ? `${show.overview.slice(0, 300)}...`
             : "Sorry, but no description found. We will try to fix this issue as soon as possible. Thank you for your understanding."
+        }</p>
+        <p><em>Cast:</em> ${
+          cast.length > 0
+            ? cast
+                .slice(0, 5)
+                .map((actor) => `<span class="mg_btm4">${actor.name}</span>`)
+                .join(", ")
+            : `<span>N/A</span>`
         }</p>
       </div>
       <div class="card__body">
