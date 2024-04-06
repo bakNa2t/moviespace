@@ -55,11 +55,6 @@ export async function displayTopRatedMovies() {
       <div class="card__short__desc">
         <h4>${movie.title}</h4>
         <p><em>Overview:</em> ${
-          movie.overview.length > 300
-            ? `${movie.overview.slice(0, 300)}...`
-            : movie.overview
-        }</p>
-        <p><em>Overview:</em> ${
           !movie.overview
             ? "Sorry, but no description found. We will try to fix this issue as soon as possible. Thank you for your understanding."
             : movie.overview.length > 300
@@ -100,8 +95,12 @@ export async function displayTopRatedMovies() {
 export async function displayTopRatedTVShows() {
   const { results } = await fetchData("tv/top_rated");
 
-  results.slice(0, 12).forEach((show) => {
+  results.slice(0, 12).forEach(async (show) => {
     const elemDiv = document.createElement("div");
+
+    // Retrieve cast for each tv-show
+    const { cast } = await getMovieShowMembers("tv", show.id);
+
     elemDiv.classList.add("card");
     elemDiv.innerHTML = `
       <i class="fa-regular fa-circle-play fa-play-tv-show"></i>
@@ -123,10 +122,20 @@ export async function displayTopRatedTVShows() {
       <div class="card__vote">${show.vote_average.toFixed(1)}</div>
       <div class="card__short__desc">
         <h4>${show.name}</h4>
-        <p>${
-          show.overview
-            ? show.overview
-            : "Sorry, but no description found. We will try to fix this issue as soon as possible. Thank you for your understanding."
+        <p><em>Overview:</em> ${
+          !show.overview
+            ? "Sorry, but no description found. We will try to fix this issue as soon as possible. Thank you for your understanding."
+            : show.overview.length > 300
+            ? `${show.overview.slice(0, 300)}...`
+            : show.overview
+        }</p>
+        <p><em>Cast:</em> ${
+          cast.length > 0
+            ? cast
+                .slice(0, 5)
+                .map((actor) => `<span class="mg_btm4">${actor.name}</span>`)
+                .join(", ")
+            : `<span>N/A</span>`
         }</p>
       </div>
       <div class="card__body">
