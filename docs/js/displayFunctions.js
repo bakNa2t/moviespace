@@ -54,10 +54,17 @@ export async function displayTopRatedMovies() {
       <div class="card__vote">${movie.vote_average.toFixed(1)}</div>
       <div class="card__short__desc">
         <h4>${movie.title}</h4>
-        <p>${
-          movie.overview
-            ? movie.overview
-            : "Sorry, but no description found. We will try to fix this issue as soon as possible. Thank you for your understanding."
+        <p><em>Overview:</em> ${
+          movie.overview.length > 300
+            ? `${movie.overview.slice(0, 300)}...`
+            : movie.overview
+        }</p>
+        <p><em>Overview:</em> ${
+          !movie.overview
+            ? "Sorry, but no description found. We will try to fix this issue as soon as possible. Thank you for your understanding."
+            : movie.overview.length > 300
+            ? `${movie.overview.slice(0, 300)}...`
+            : movie.overview
         }</p>
         <p><em>Cast:</em> ${
           cast.length > 0
