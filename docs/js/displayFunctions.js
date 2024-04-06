@@ -27,8 +27,12 @@ import {
 export async function displayTopRatedMovies() {
   const { results } = await fetchData("movie/top_rated");
 
-  results.slice(0, 12).forEach((movie) => {
+  results.slice(0, 12).forEach(async (movie) => {
     const elemDiv = document.createElement("div");
+
+    // Retrieve cast for each movie
+    const { cast } = await getMovieShowMembers("movie", movie.id);
+
     elemDiv.classList.add("card");
     elemDiv.innerHTML = `
       <i class="fa-regular fa-circle-play fa-play-movie"></i>
@@ -54,6 +58,14 @@ export async function displayTopRatedMovies() {
           movie.overview
             ? movie.overview
             : "Sorry, but no description found. We will try to fix this issue as soon as possible. Thank you for your understanding."
+        }</p>
+        <p><em>Cast:</em> ${
+          cast.length > 0
+            ? cast
+                .slice(0, 5)
+                .map((actor) => `<span class="mg_btm4">${actor.name}</span>`)
+                .join(", ")
+            : `<span>N/A</span>`
         }</p>
       </div>
       <div class="card__body">
