@@ -314,6 +314,7 @@ export async function displayMovieDetails() {
 
   displaySpinner();
 
+  //Retrieve movie details data
   const movieDetail = await fetchData(`movie/${movieId}`);
 
   //Retrieve movie cast and crew
@@ -344,7 +345,7 @@ export async function displayMovieDetails() {
     ${trailerUrl.length > 0 ? `<i class="fa-regular fa-circle-play"></i>` : ""}
     </div>
     <div class="detail__desc">
-      <h2>${movieDetail.title}</h2>
+      <h2>${movieDetail.title ? movieDetail.title : "N/A"}</h2>
       <p><i class="fas fa-star text-primary"></i> ${
         movieDetail.vote_average > 0
           ? `${movieDetail.vote_average.toFixed(1)} / 10`
@@ -512,6 +513,7 @@ export async function displayTVShowDetails() {
 
   displaySpinner();
 
+  // Retrieve TVShow details data
   const showDetail = await fetchData(`tv/${showId}`);
 
   //Retrieve TVShow cast and crew
@@ -543,7 +545,7 @@ export async function displayTVShowDetails() {
     ${trailerUrl.length > 0 ? `<i class="fa-regular fa-circle-play"></i>` : ""}
     </div>
     <div class="detail__desc">
-      <h2>${showDetail.name}</h2>
+      <h2>${showDetail.name ? showDetail.name : "N/A"}</h2>
       <p><i class="fas fa-star text-primary"></i> ${
         showDetail.vote_average > 0
           ? `${showDetail.vote_average.toFixed(1)} / 10`
