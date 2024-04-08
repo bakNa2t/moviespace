@@ -797,7 +797,6 @@ export function displaySearchResults(results) {
                   ? `${result.overview.slice(0, 300)}...`
                   : result.overview
               }</p>
-              <p>${result.overview}</p>
               <p><em>Cast:</em> ${
                 cast.length > 0
                   ? cast
