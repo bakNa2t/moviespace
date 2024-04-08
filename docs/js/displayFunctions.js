@@ -769,25 +769,46 @@ export function displaySearchResults(results) {
       ${
         globalPathName.searchResult.type === "movie"
           ? `<div class="card__short__desc">
-          <h4>${result.name}</h4>
-          <p><em>Overview:</em> ${
-            !result.overview
-              ? "Sorry, but no description found. We will try to fix this issue as soon as possible. Thank you for your understanding."
-              : result.overview.length > 300
-              ? `${result.overview.slice(0, 300)}...`
-              : result.overview
-          }</p>
-          <p><em>Cast:</em> ${
-            cast.length > 0
-              ? cast
-                  .slice(0, 5)
-                  .map((actor) => `<span class="mg_btm4">${actor.name}</span>`)
-                  .join(", ")
-              : `<span>N/A</span>`
-          }</p>`
+              <h4>${result.title}</h4>
+              <p><em>Overview:</em> ${
+                !result.overview
+                  ? "Sorry, but no description found. We will try to fix this issue as soon as possible. Thank you for your understanding."
+                  : result.overview.length > 300
+                  ? `${result.overview.slice(0, 300)}...`
+                  : result.overview
+              }</p>
+              <p><em>Cast:</em> ${
+                cast.length > 0
+                  ? cast
+                      .slice(0, 5)
+                      .map(
+                        (actor) => `<span class="mg_btm4">${actor.name}</span>`
+                      )
+                      .join(", ")
+                  : `<span>N/A</span>`
+              }</p>
+            </div>`
           : `<div class="card__short__desc">
-        <h4>${result.name}</h4>
-        <p>${result.overview}</p></div>`
+              <h4>${result.name}</h4>
+              <p><em>Overview:</em> ${
+                !result.overview
+                  ? "Sorry, but no description found. We will try to fix this issue as soon as possible. Thank you for your understanding."
+                  : result.overview.length > 300
+                  ? `${result.overview.slice(0, 300)}...`
+                  : result.overview
+              }</p>
+              <p>${result.overview}</p>
+              <p><em>Cast:</em> ${
+                cast.length > 0
+                  ? cast
+                      .slice(0, 5)
+                      .map(
+                        (actor) => `<span class="mg_btm4">${actor.name}</span>`
+                      )
+                      .join(", ")
+                  : `<span>N/A</span>`
+              }</p>
+            </div>`
       }
       <div class="card__body">
         <h5 class="card__title"><a href="${
