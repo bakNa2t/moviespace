@@ -608,6 +608,7 @@ export async function displayTVShowDetails() {
                 .length > 0
                 ? showTeam.crew
                     .filter((crew) => crew.job === "Executive Producer")
+                    .slice(0, 5)
                     .map(
                       (crew) =>
                         `<span class="bg_secondary_light mg_btm4">${crew.name}</span>`
