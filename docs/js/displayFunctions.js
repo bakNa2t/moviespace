@@ -224,7 +224,7 @@ export async function displayMostWatchedMovies() {
         </h5>
         <p class="card__text">
           <small class="text__muted">Release date: <span>${
-            movie.release_date
+            movie.release_date ? movie.release_date : "N/A"
           }</span></small>
         </p>
       </div>`;
@@ -293,7 +293,7 @@ export async function displayMostWatchedTVShows() {
         </h5>
         <p class="card__text">
           <small class="text__muted">Air date: <span>${
-            show.first_air_date
+            show.first_air_date ? show.first_air_date : "N/A"
           }</span></small>
         </p>
       </div>`;
