@@ -217,6 +217,9 @@ export async function displayMostWatchedMovies() {
                 .join(", ")
             : `<span>N/A</span>`
         }</p>
+        <p><em>Year: </em>${
+          movie.release_date ? splitReleaseDate(movie.release_date) : "N/A"
+        }</p>
       </div>
       <div class="card__body">
         <h5 class="card__title">
@@ -286,7 +289,7 @@ export async function displayMostWatchedTVShows() {
                 .join(", ")
             : `<span>N/A</span>`
         }</p>
-        <p><em>Air year:</em>${
+        <p><em>Air year: </em>${
           show.first_air_date ? splitReleaseDate(show.first_air_date) : "N/A"
         }</p>
       </div>
