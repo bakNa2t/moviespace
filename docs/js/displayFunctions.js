@@ -286,6 +286,13 @@ export async function displayMostWatchedTVShows() {
                 .join(", ")
             : `<span>N/A</span>`
         }</p>
+        <p><em>Year:</em>${
+          show.first_air_date
+            ? `(${splitReleaseDate(show.first_air_date)} - ${splitReleaseDate(
+                show.last_air_date
+              )})`
+            : "N/A"
+        }</p>
       </div>
       <div class="card__body">
         <h5 class="card__title">
