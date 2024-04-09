@@ -73,7 +73,7 @@ export async function displayTopRatedMovies() {
                 .join(", ")
             : `<span>N/A</span>`
         }</p>
-        <p><em>Year: </em>${
+        <p><em>Year:</em> ${
           movie.release_date ? splitReleaseDate(movie.release_date) : "N/A"
         }</p>
       </div>
@@ -146,7 +146,7 @@ export async function displayTopRatedTVShows() {
                 .join(", ")
             : `<span>N/A</span>`
         }</p>
-        <p><em>Air year: </em>${
+        <p><em>Air year:</em> ${
           show.first_air_date ? splitReleaseDate(show.first_air_date) : "N/A"
         }</p>
       </div>
@@ -223,7 +223,7 @@ export async function displayMostWatchedMovies() {
                 .join(", ")
             : `<span>N/A</span>`
         }</p>
-        <p><em>Year: </em>${
+        <p><em>Year:</em> ${
           movie.release_date ? splitReleaseDate(movie.release_date) : "N/A"
         }</p>
       </div>
@@ -295,7 +295,7 @@ export async function displayMostWatchedTVShows() {
                 .join(", ")
             : `<span>N/A</span>`
         }</p>
-        <p><em>Air year: </em>${
+        <p><em>Air year:</em> ${
           show.first_air_date ? splitReleaseDate(show.first_air_date) : "N/A"
         }</p>
       </div>
@@ -799,6 +799,11 @@ export function displaySearchResults(results) {
                       .join(", ")
                   : `<span>N/A</span>`
               }</p>
+              <p><em>Year:</em> ${
+                movie.release_date
+                  ? splitReleaseDate(movie.release_date)
+                  : "N/A"
+              }</p>
             </div>`
           : `<div class="card__short__desc">
               <h4>${result.name}</h4>
@@ -818,6 +823,11 @@ export function displaySearchResults(results) {
                       )
                       .join(", ")
                   : `<span>N/A</span>`
+              }</p>
+              <p><em>Air year:</em> ${
+                show.first_air_date
+                  ? splitReleaseDate(show.first_air_date)
+                  : "N/A"
               }</p>
             </div>`
       }
