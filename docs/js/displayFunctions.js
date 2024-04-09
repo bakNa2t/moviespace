@@ -73,6 +73,9 @@ export async function displayTopRatedMovies() {
                 .join(", ")
             : `<span>N/A</span>`
         }</p>
+        <p><em>Year: </em>${
+          movie.release_date ? splitReleaseDate(movie.release_date) : "N/A"
+        }</p>
       </div>
       <div class="card__body">
         <h5 class="card__title">
@@ -142,6 +145,9 @@ export async function displayTopRatedTVShows() {
                 .map((actor) => `<span class="mg_btm4">${actor.name}</span>`)
                 .join(", ")
             : `<span>N/A</span>`
+        }</p>
+        <p><em>Air year: </em>${
+          show.first_air_date ? splitReleaseDate(show.first_air_date) : "N/A"
         }</p>
       </div>
       <div class="card__body">
