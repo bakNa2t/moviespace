@@ -779,11 +779,17 @@ export function displaySearchResults(results) {
   results.forEach(async (result) => {
     const elemDiv = document.createElement("div");
 
-    // Retrieve cast data for each movie/tv-show
+    // Retrieve cast list for each movie/tv-show
     const { cast } =
       globalPathName.searchResult.type === "movie"
         ? await getMovieShowMembers("movie", result.id)
         : await getMovieShowMembers("tv", result.id);
+
+    // Retrieve genres list for each movie
+    const { genres } =
+      globalPathName.searchResult.type === "movie"
+        ? await fetchData(`movie/${result.id}`)
+        : await fetchData(`tv/${result.id}`);
 
     elemDiv.classList.add("card");
     elemDiv.innerHTML = `
@@ -838,6 +844,15 @@ export function displaySearchResults(results) {
                       .join(", ")
                   : `<span>N/A</span>`
               }</p>
+              <p><em>Genres:</em> ${
+                genres.length > 0
+                  ? genres
+                      .map(
+                        (genre) => `<span class="mg_btm4">${genre.name}</span>`
+                      )
+                      .join(", ")
+                  : "N/A"
+              }</p>
               <p><em>Year:</em> ${
                 movie.release_date
                   ? splitReleaseDate(movie.release_date)
@@ -862,6 +877,15 @@ export function displaySearchResults(results) {
                       )
                       .join(", ")
                   : `<span>N/A</span>`
+              }</p>
+              <p><em>Genres:</em> ${
+                genres.length > 0
+                  ? genres
+                      .map(
+                        (genre) => `<span class="mg_btm4">${genre.name}</span>`
+                      )
+                      .join(", ")
+                  : "N/A"
               }</p>
               <p><em>Air year:</em> ${
                 show.first_air_date
