@@ -30,8 +30,11 @@ export async function displayTopRatedMovies() {
   results.slice(0, 12).forEach(async (movie) => {
     const elemDiv = document.createElement("div");
 
-    // Retrieve cast for each movie
+    // Retrieve cast list for each movie
     const { cast } = await getMovieShowMembers("movie", movie.id);
+
+    // Retrieve genres list for each movie
+    const { genres } = await fetchData(`movie/${movie.id}`);
 
     elemDiv.classList.add("card");
     elemDiv.innerHTML = `
@@ -73,6 +76,13 @@ export async function displayTopRatedMovies() {
                 .join(", ")
             : `<span>N/A</span>`
         }</p>
+        <p><em>Genres:</em> ${
+          genres.length > 0
+            ? genres
+                .map((genre) => `<span class="mg_btm4">${genre.name}</span>`)
+                .join(", ")
+            : "N/A"
+        }</p>
         <p><em>Year:</em> ${
           movie.release_date ? splitReleaseDate(movie.release_date) : "N/A"
         }</p>
@@ -98,15 +108,18 @@ export async function displayTopRatedMovies() {
   });
 }
 
-//Display 12 top rated TVShows on the main page
+//Display 12 top rated TV-Shows on the main page
 export async function displayTopRatedTVShows() {
   const { results } = await fetchData("tv/top_rated");
 
   results.slice(0, 12).forEach(async (show) => {
     const elemDiv = document.createElement("div");
 
-    // Retrieve cast for each tv-show
+    // Retrieve cast list for each tv-show
     const { cast } = await getMovieShowMembers("tv", show.id);
+
+    // Retrieve genres list for each tv-show
+    const { genres } = await fetchData(`tv/${show.id}`);
 
     elemDiv.classList.add("card");
     elemDiv.innerHTML = `
@@ -145,6 +158,13 @@ export async function displayTopRatedTVShows() {
                 .map((actor) => `<span class="mg_btm4">${actor.name}</span>`)
                 .join(", ")
             : `<span>N/A</span>`
+        }</p>
+        <p><em>Genres:</em> ${
+          genres.length > 0
+            ? genres
+                .map((genre) => `<span class="mg_btm4">${genre.name}</span>`)
+                .join(", ")
+            : "N/A"
         }</p>
         <p><em>Air year:</em> ${
           show.first_air_date ? splitReleaseDate(show.first_air_date) : "N/A"
@@ -227,9 +247,9 @@ export async function displayMostWatchedMovies() {
         }</p>
         <p><em>Genres:</em> ${
           genres.length > 0
-            ? genres.map(
-                (genre) => `<span class="mg_btm4">${genre.name}</span>`
-              )
+            ? genres
+                .map((genre) => `<span class="mg_btm4">${genre.name}</span>`)
+                .join(", ")
             : "N/A"
         }</p>
         <p><em>Year:</em> ${
@@ -257,15 +277,15 @@ export async function displayMostWatchedMovies() {
   });
 }
 
-//Display 20 most watched(popular) TVShows on the tv page
+//Display 20 most watched(popular) TV-Shows on the tv page
 export async function displayMostWatchedTVShows() {
   const { results } = await fetchData("tv/popular");
 
   results.forEach(async (show) => {
-    // Retrieve genres for each tv-show
+    // Retrieve cast list for each tv-show
     const { cast } = await getMovieShowMembers("tv", show.id);
 
-    // Retrieve TVShow details data
+    // Retrieve genres list for each tv-show
     const { genres } = await fetchData(`tv/${show.id}`);
 
     const elemDiv = document.createElement("div");
@@ -309,9 +329,9 @@ export async function displayMostWatchedTVShows() {
         }</p>
         <p><em>Genres:</em> ${
           genres.length > 0
-            ? genres.map(
-                (genre) => `<span class="mg_btm4">${genre.name}</span>`
-              )
+            ? genres
+                .map((genre) => `<span class="mg_btm4">${genre.name}</span>`)
+                .join(", ")
             : "N/A"
         }</p>
         <p><em>Air year:</em> ${
