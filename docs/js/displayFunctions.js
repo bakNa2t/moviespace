@@ -854,8 +854,8 @@ export function displaySearchResults(results) {
                   : "N/A"
               }</p>
               <p><em>Year:</em> ${
-                movie.release_date
-                  ? splitReleaseDate(movie.release_date)
+                result.release_date
+                  ? splitReleaseDate(result.release_date)
                   : "N/A"
               }</p>
             </div>`
@@ -888,8 +888,8 @@ export function displaySearchResults(results) {
                   : "N/A"
               }</p>
               <p><em>Air year:</em> ${
-                show.first_air_date
-                  ? splitReleaseDate(show.first_air_date)
+                result.first_air_date
+                  ? splitReleaseDate(result.first_air_date)
                   : "N/A"
               }</p>
             </div>`
