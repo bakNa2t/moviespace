@@ -174,11 +174,13 @@ export async function displayTopRatedTVShows() {
 //Display 20 most watched(popular) Movies on the movie page
 export async function displayMostWatchedMovies() {
   const { results } = await fetchData("movie/popular");
-  // console.log(results);
 
   results.forEach(async (movie) => {
     // Retrieve cast for each movie
     const { cast } = await getMovieShowMembers("movie", movie.id);
+
+    // Retrieve genres for each movie
+    const { genres } = await fetchData(`movie/${movie.id}`);
 
     const elemDiv = document.createElement("div");
     elemDiv.classList.add("card");
@@ -223,6 +225,13 @@ export async function displayMostWatchedMovies() {
                 .join(", ")
             : `<span>N/A</span>`
         }</p>
+        <p><em>Genres:</em> ${
+          genres.length > 0
+            ? genres.map(
+                (genre) => `<span class="mg_btm4">${genre.name}</span>`
+              )
+            : "N/A"
+        }</p>
         <p><em>Year:</em> ${
           movie.release_date ? splitReleaseDate(movie.release_date) : "N/A"
         }</p>
@@ -253,8 +262,11 @@ export async function displayMostWatchedTVShows() {
   const { results } = await fetchData("tv/popular");
 
   results.forEach(async (show) => {
-    // Retrieve cast for each tv-show
+    // Retrieve genres for each tv-show
     const { cast } = await getMovieShowMembers("tv", show.id);
+
+    // Retrieve TVShow details data
+    const { genres } = await fetchData(`tv/${show.id}`);
 
     const elemDiv = document.createElement("div");
     elemDiv.classList.add("card");
@@ -294,6 +306,13 @@ export async function displayMostWatchedTVShows() {
                 .map((actor) => `<span class="mg_btm4">${actor.name}</span>`)
                 .join(", ")
             : `<span>N/A</span>`
+        }</p>
+        <p><em>Genres:</em> ${
+          genres.length > 0
+            ? genres.map(
+                (genre) => `<span class="mg_btm4">${genre.name}</span>`
+              )
+            : "N/A"
         }</p>
         <p><em>Air year:</em> ${
           show.first_air_date ? splitReleaseDate(show.first_air_date) : "N/A"
@@ -426,7 +445,7 @@ export async function displayMovieDetails() {
               .join(", ")
           : `<span class="bg_secondary_light">N/A</span>`
       }</p>
-      <h5 class="text-secondary">Generes:</h5>
+      <h5 class="text-secondary">Genres:</h5>
       <ul class="list__group">
         ${
           movieDetail.genres.length > 0
