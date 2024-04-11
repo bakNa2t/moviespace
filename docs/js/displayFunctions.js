@@ -610,7 +610,8 @@ export async function displayTVShowDetails() {
             : `<span class="font_12">(<em>no votes</em>)</span>`
         }
       </p>
-      <p class="detail__country"><span class="text-secondary">Country:</span> 
+      <div class="detail__text">
+        <h5 class="text-secondary">Country:</h5> 
       ${
         showDetail.origin_country.length > 0
           ? showDetail.origin_country
@@ -621,7 +622,7 @@ export async function displayTVShowDetails() {
               .join(" ")
           : "N/A"
       }
-      </p>
+      </div>
       <p>
         ${
           showDetail.overview
