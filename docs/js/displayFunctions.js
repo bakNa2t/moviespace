@@ -407,7 +407,8 @@ export async function displayMovieDetails() {
       : `<span class="font_12">(<em>no votes</em>)</span>`
   }
       </p>
-      <p class="detail__country"><span class="text-secondary">Country:</span> 
+      <div class="detail__country">
+      <h5 class="text-secondary">Country:</h5> 
       ${
         movieDetail.production_countries.length > 0
           ? movieDetail.production_countries
@@ -424,8 +425,9 @@ export async function displayMovieDetails() {
               .join(" ")
           : "N/A"
       }
-      </p>
-      <p class="text__muted"><span class="text-secondary">Release date:</span> ${
+      </div>
+      <p class="text__muted">
+      <span class="text-secondary">Release date:</span> ${
         movieDetail.release_date
           ? convertReleaseDate(movieDetail.release_date)
           : `<span class="bg_secondary_light">N/A</span>`

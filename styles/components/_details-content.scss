@@ -110,8 +110,11 @@
         display: flex;
         align-items: baseline;
         gap: 10px;
-        span {
-          font-weight: 500;
+        margin: 10px 0;
+        img {
+          width: 24px;
+          height: 18px;
+          object-fit: cover;
         }
       }
       p {
@@ -120,11 +123,6 @@
           em {
             margin-right: 3px;
           }
-        }
-        img {
-          width: 24px;
-          height: 18px;
-          object-fit: cover;
         }
       }
       .list__group {
