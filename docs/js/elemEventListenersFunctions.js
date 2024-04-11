@@ -25,17 +25,23 @@ export function initPopupEventListenersInArray(term, selector) {
 // Init trailer popup event listeners for details page
 export function initPopupEventListenersInDetails() {
   document.querySelector(".fa-regular").addEventListener("click", displayPopup);
-  document.querySelector(".close").addEventListener("click", hidePopup);
+
   document.addEventListener("click", (e) => {
     if (e.target.id === "popup__trailer") {
       hidePopup();
     }
   });
+
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       hidePopup();
     }
   });
+
+  setTimeout(
+    () => document.querySelector(".close").addEventListener("click", hidePopup),
+    1000
+  );
 }
 
 // Init card short description popup event listeners for movies/tv-shows cards
